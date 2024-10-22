@@ -18,7 +18,7 @@ EnsembleModel::EnsembleModel(AdaptiveMetronomeAudioProcessor* processorPtr)
 
 	oscManager = std::make_unique<OSCManager>(this);
 	xmlManager = std::make_unique<XMLManager>(this, processorPtr);
-	logManager = std::make_unique<LogManager>(this);
+	logManager = std::make_unique<LogManager>(this, processorPtr);
 
 	playersInUse.clear();
 	resetFlag.clear();
@@ -281,6 +281,13 @@ void EnsembleModel::saveConfigToXmlFile() {
 		logManager->postLatestOnsets(onsets, delays);
 	}
 
+	void EnsembleModel::storeOnsetDetailsForPlayer(int bufferIndex, int playerIndex)
+	{
+		// Store the log information about the latest onset from the given player
+		// in the logging buffers.
+		logManager->storeOnsetDetailsForPlayer(bufferIndex, playerIndex);
+	}
+
 #pragma endregion Logging related functions that interacts with the (possible) LoggingManager Class object
 
 //==============================================================================
@@ -463,9 +470,10 @@ void EnsembleModel::calculateNewIntervals()
 
 	//==========================================================================
 	// Add details of most recent onsets to buffers to be logged.
-	if (loggingFifo)
+
+	if (logManager->loggingFifo)
 	{
-		auto writer = loggingFifo->write(static_cast <int> (players.size()));
+		auto writer = logManager->loggingFifo->write(static_cast <int> (players.size()));
 
 		int p = 0;
 
@@ -515,34 +523,6 @@ void EnsembleModel::getLatestAlphas()
 	//            }
 	//        }
 	//    }
-}
-
-void EnsembleModel::storeOnsetDetailsForPlayer(int bufferIndex, int playerIndex)
-{
-	// Store the log information about the latest onset from the given player
-	// in the logging buffers.
-	auto& data = loggingBuffer[bufferIndex];
-
-	data.onsetTime = players[playerIndex]->getLatestOnsetTime();
-	data.onsetInterval = players[playerIndex]->getPlayedOnsetInterval();
-	data.userInput = players[playerIndex]->wasLatestOnsetUserInput();
-	data.delay = players[playerIndex]->getLatestOnsetDelay();
-	data.motorNoise = players[playerIndex]->getMotorNoise();
-	data.timeKeeperNoise = players[playerIndex]->getTimeKeeperNoise();
-
-	for (int i = 0; i < players.size(); ++i)
-	{
-		data.asyncs[i] = players[playerIndex]->getLatestOnsetTime() - players[i]->getLatestOnsetTime();
-		//        data.alphas [i] = *(*alphaParams) [playerIndex][i];
-		data.alphas[i] = processor->alphaParameter(playerIndex, i)->get();
-
-		//        data.betas [i] = *(*betaParams) [playerIndex][i];
-		data.betas[i] = processor->betaParameter(playerIndex, i)->get();
-	}
-
-	data.tkNoiseStd = players[playerIndex]->getTimeKeeperNoiseStd();
-	data.mNoiseStd = players[playerIndex]->getMotorNoiseStd();
-	data.volume = players[playerIndex]->getLatestVolume();
 }
 
 void EnsembleModel::createPlayers(const juce::MidiFile & file)

@@ -39,13 +39,14 @@ public:
     std::atomic<bool> continueLogging;
 
     // Logging Functions
-    LogManager(EnsembleModel* model);
+    LogManager(EnsembleModel* model, AdaptiveMetronomeAudioProcessor* proc);
     ~LogManager();
 
     void LogManager::initialiseLoggingBuffer();
     void LogManager::startLoggerLoop();
     void LogManager::stopLoggerLoop();
     void LogManager::loggerLoop();
+    void storeOnsetDetailsForPlayer(int bufferIndex, int playerIndex);
     void LogManager::writeLogHeader(juce::FileOutputStream& logStream);
     void LogManager::logOnsetDetails(juce::FileOutputStream& logStream);
     void LogManager::logOnsetDetailsForPlayer(int bufferIndex,

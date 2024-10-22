@@ -14,8 +14,8 @@
 using std::function;
 using namespace std::chrono_literals;
 
-LogManager::LogManager(EnsembleModel* model)
-    : ensembleModel(model) {}
+LogManager::LogManager(EnsembleModel* model, AdaptiveMetronomeAudioProcessor* proc)
+    : ensembleModel(model), processor(proc){}
 
 LogManager::~LogManager() = default;
 
@@ -253,5 +253,34 @@ void LogManager::loggerLoop() {
 		logOnsetDetails(logStream);
 		std::this_thread::sleep_for(50ms);
 	}
+}
+
+void LogManager::storeOnsetDetailsForPlayer(int bufferIndex, int playerIndex)
+{
+	// Store the log information about the latest onset from the given player
+	// in the logging buffers.
+	auto& data = loggingBuffer[bufferIndex];
+	auto& player = ensembleModel->players[playerIndex];
+
+	data.onsetTime = player->getLatestOnsetTime();
+	data.onsetInterval = player->getPlayedOnsetInterval();
+	data.userInput = player->wasLatestOnsetUserInput();
+	data.delay = player->getLatestOnsetDelay();
+	data.motorNoise = player->getMotorNoise();
+	data.timeKeeperNoise = player->getTimeKeeperNoise();
+
+	for (int i = 0; i < ensembleModel->players.size(); ++i)
+	{
+		data.asyncs[i] = player->getLatestOnsetTime() - ensembleModel->players[i]->getLatestOnsetTime();
+		//        data.alphas [i] = *(*alphaParams) [playerIndex][i];
+		data.alphas[i] = processor->alphaParameter(playerIndex, i)->get();
+
+		//        data.betas [i] = *(*betaParams) [playerIndex][i];
+		data.betas[i] = processor->betaParameter(playerIndex, i)->get();
+	}
+
+	data.tkNoiseStd = player->getTimeKeeperNoiseStd();
+	data.mNoiseStd = player->getMotorNoiseStd();
+	data.volume = player->getLatestVolume();
 }
 
