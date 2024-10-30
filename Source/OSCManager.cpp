@@ -47,9 +47,8 @@ void OSCManager::connectOSCReceiver(int portNumber) {
 // setting log filenames, and updating the number of intro tones.
 void OSCManager::oscMessageReceived(const juce::OSCMessage& message) {
 	juce::OSCAddressPattern oscPattern = message.getAddressPattern();
-	juce::String oscAddress = oscPattern.toString();
 
-	if (oscAddress == "/loadConfig") {
+	if (juce::String oscAddress = oscPattern.toString(); oscAddress == "/loadConfig") {
 		if (message[0].isString()) {
 			auto configFilename = message[0].getString();
 			auto configFile = juce::File::getSpecialLocation(juce::File::userDocumentsDirectory).getChildFile(ensembleModel->configSubfolder).getChildFile(configFilename); // Assuming configSubfolder is a member of ensembleModel

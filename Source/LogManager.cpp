@@ -4,11 +4,14 @@
 using std::function;
 using namespace std::chrono_literals;
 
+// Constructor for LogManager, initialises with a model and processor
 LogManager::LogManager(EnsembleModel* model, AdaptiveMetronomeAudioProcessor* proc)
     : ensembleModel(model), processor(proc){}
 
+// Default destructor for LogManager
 LogManager::~LogManager() = default;
 
+// Initialises the logging buffer based on the number of players
 void LogManager::initialiseLoggingBuffer()
 {
     int playerSize = ensembleModel->players.size();
@@ -25,6 +28,7 @@ void LogManager::initialiseLoggingBuffer()
 
 }
 
+// Starts the logger loop in a new thread and initializes the logging buffer
 void LogManager::startLoggerLoop() {
     stopLoggerLoop(); // Stops any existing loops that might be occuring
     initialiseLoggingBuffer();
@@ -33,6 +37,7 @@ void LogManager::startLoggerLoop() {
     loggerThread = std::thread([this]() { this->loggerLoop(); });
 }
 
+// Stops the logger loop and joins the logger thread if joinable
 void LogManager::stopLoggerLoop()
 {
     continueLogging = false;
@@ -43,6 +48,7 @@ void LogManager::stopLoggerLoop()
     }
 }
 
+// Writes the log header to the log file
 void LogManager::writeLogHeader(juce::FileOutputStream& logStream)
 {
 	juce::String logLine("N");
@@ -92,6 +98,7 @@ void LogManager::writeLogHeader(juce::FileOutputStream& logStream)
 	logStream.writeText(logLine, false, false, nullptr);
 }
 
+// Logs onset details to the log file, handling the logging buffer
 void LogManager::logOnsetDetails(juce::FileOutputStream& logStream)
 {
 	while (loggingFifo->getNumReady() > 0) {
@@ -161,6 +168,7 @@ void LogManager::logOnsetDetails(juce::FileOutputStream& logStream)
 	}
 }
 
+// Helper function to log onset details for a specific player
 void LogManager::logOnsetDetailsForPlayer(int bufferIndex, juce::String& onsetLog, juce::String& intervalLog, juce::String& userInputLog, juce::String& delayLog, juce::String& mNoiseLog, juce::String& tkNoiseLog, juce::String& asyncLog, juce::String& alphaLog, juce::String& betaLog, juce::String& tkNoiseStdLog, juce::String& mNoiseStdLog, juce::String& velocityLog)
 {
 	auto& data = loggingBuffer[bufferIndex];
@@ -185,6 +193,7 @@ void LogManager::logOnsetDetailsForPlayer(int bufferIndex, juce::String& onsetLo
 	velocityLog += ", " + juce::String(data.volume);
 }
 
+// Sends the latest onset times and delays to the server
 void LogManager::postLatestOnsets(const std::vector<int>& onsets, const std::vector<int>& delays) {
 	//==========================================================================
 		// onsets contains the onset time in samples for each of the players' most
