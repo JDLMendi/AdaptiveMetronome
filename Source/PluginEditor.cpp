@@ -57,7 +57,8 @@ AdaptiveMetronomeAudioProcessorEditor::AdaptiveMetronomeAudioProcessorEditor (Ad
     initialiseEnsembleParameters (processor.ensemble);
     
     //==========================================================================
-    int paramWidth = 0, paramHeight = 0;
+    int paramWidth = 0;
+    int paramHeight = 0;
     EnsembleParametersComponent::calculateWidthAndHeight (4, paramWidth, paramHeight);
     
     setSize (paramWidth, paramHeight + instructionStripHeight + optionsStripHeight);
@@ -90,8 +91,7 @@ void AdaptiveMetronomeAudioProcessorEditor::reduceAlpha()
 
 void AdaptiveMetronomeAudioProcessorEditor::timerCallback()
 {
-    auto oscConnected = processor.ensemble.isOscReceiverConnected();
-    if (oscConnected)
+    if (processor.ensemble.isOscReceiverConnected())
     {
         oscOn.setToggleState(true, juce::dontSendNotification);
         auto tooltipString = juce::String("Listening on port ");
@@ -373,7 +373,8 @@ AdaptiveMetronomeAudioProcessorEditor::EnsembleParametersComponent::EnsemblePara
         betaAttachments.push_back (std::move (betaAttachmentRow));
     }
     
-    int width = 0, height = 0;
+    int width = 0;
+    int height = 0;
     calculateWidthAndHeight (nPlayers, width, height);
     setSize(width, height);
 }
@@ -391,7 +392,7 @@ void AdaptiveMetronomeAudioProcessorEditor::EnsembleParametersComponent::resized
 {
     //==========================================================================
     // Don't place anything if there are no players
-    if (playerColumnLabels.size() == 0)
+    if (playerColumnLabels.empty())
     {
         return;
     }
