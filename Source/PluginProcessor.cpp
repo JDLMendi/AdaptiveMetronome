@@ -19,9 +19,7 @@ AdaptiveMetronomeAudioProcessor::AdaptiveMetronomeAudioProcessor()
     ensemble.setAlphaBetaParams(0.25);
 }
 
-AdaptiveMetronomeAudioProcessor::~AdaptiveMetronomeAudioProcessor()
-{
-}
+AdaptiveMetronomeAudioProcessor::~AdaptiveMetronomeAudioProcessor() = default;
 
 //==============================================================================
 bool AdaptiveMetronomeAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const

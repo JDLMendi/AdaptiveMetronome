@@ -168,7 +168,7 @@ void LogManager::logOnsetDetails(juce::FileOutputStream& logStream)
 	}
 }
 
-// Helper function to log onset details for a specific player
+// Logs onset details for a specific player
 void LogManager::logOnsetDetailsForPlayer(int bufferIndex, juce::String& onsetLog, juce::String& intervalLog, juce::String& userInputLog, juce::String& delayLog, juce::String& mNoiseLog, juce::String& tkNoiseLog, juce::String& asyncLog, juce::String& alphaLog, juce::String& betaLog, juce::String& tkNoiseStdLog, juce::String& mNoiseStdLog, juce::String& velocityLog)
 {
 	auto& data = loggingBuffer[bufferIndex];

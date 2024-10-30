@@ -18,9 +18,7 @@ Player::Player (int index, const juce::MidiMessageSequence *seq, int midiChannel
     initialiseScore (seq);
 }
 
-Player::~Player()
-{
-}
+Player::~Player() = default;
 
 //==============================================================================
 bool Player::isUserOperated()
@@ -110,7 +108,7 @@ double Player::generateMotorNoise()
 
 double Player::generateTimeKeeperNoise()
 {
-    //    tkNoiseDistribution.param (std::normal_distribution <double>::param_type(timeKeeperMean, tkNoiseStdParam.get() / 1000.0));
+    // tkNoiseDistribution.param (std::normal_distribution <double>::param_type(timeKeeperMean, tkNoiseStdParam.get() / 1000.0));
     float tkNoiseStdParam = processor->tkNoiseStdParameter(playerIndex)->get();
     tkNoiseDistribution.param (std::normal_distribution <double>::param_type(timeKeeperMean, tkNoiseStdParam / 1000.0));
 

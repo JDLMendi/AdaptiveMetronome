@@ -14,9 +14,7 @@ UserPlayer::UserPlayer (int index, const juce::MidiMessageSequence *seq, int mid
 {
 }
 
-UserPlayer::~UserPlayer()
-{
-}
+UserPlayer::~UserPlayer() = default;
 
 //==============================================================================
 bool UserPlayer::isUserOperated()
