@@ -22,17 +22,25 @@ class EnsembleModel :
 	public juce::ActionBroadcaster
 {
 public:
-	std::atomic_flag alphasUpToDate;
-	double sampleRate = 44100.0;
-	int logLineCounter = 0;
-	int numUserPlayers = 1;
-	std::vector<std::unique_ptr<Player>> players;
+
 	juce::MidiFile midiFile;
+	std::vector<std::unique_ptr<Player>> players;
 
 	// Constructor & Destructor
 	EnsembleModel();
 	EnsembleModel(AdaptiveMetronomeAudioProcessor* processorPtr);
 	~EnsembleModel();
+
+	// Getters
+	bool getAlphasUpToDate();
+	double getSampleRate();
+
+	// Setters
+	void setAlphasUpToDate(bool flag);
+	void setSampleRate(double newSampleRate);
+	void setNumUserPlayers(int newNumUserPlayers);
+
+	void clearAlpha();
 
 	// Initialisation of the Model
 	void prepareToPlay(double newSampleRate);
@@ -86,8 +94,6 @@ private:
 	std::unique_ptr<LogManager> logManager;
 
 	AdaptiveMetronomeAudioProcessor* processor = nullptr;
-
-	
 	
 
 	// Timing & Score Management
@@ -106,7 +112,8 @@ private:
 	// Player Initialisation & Playback
 	std::atomic_flag playersInUse;
 	std::atomic_flag resetFlag;
-	
+	//std::vector<std::unique_ptr<Player>> players;
+	int numUserPlayers = 1;
 	void createAlphaBetaParameters();
 	void resetPlayers();
 	void playScore(const juce::MidiBuffer& inMidi, juce::MidiBuffer& outMidi, int sampleIndex);
@@ -145,7 +152,7 @@ private:
 	std::unique_ptr<juce::AbstractFifo> loggingFifo;
 	std::thread loggerThread;
 	std::atomic<bool> continueLogging;
-
+	/*int logLineCounter = 0;*/
 	void initialiseLoggingBuffer();
 	void startLoggerLoop();
 	void stopLoggerLoop();
@@ -166,7 +173,8 @@ private:
 	std::vector<std::vector<float>> pollingBuffer;
 	std::thread pollingThread;
 	std::atomic<bool> continuePolling;
-	/*std::atomic_flag alphasUpToDate;*/
+	std::atomic_flag alphasUpToDate;
+	double sampleRate = 44100.0;
 	void initialisePollingBuffers();
 	void startPollingLoop();
 	void stopPollingLoop();

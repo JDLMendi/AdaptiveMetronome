@@ -1,13 +1,3 @@
-/*
-  ==============================================================================
-
-    LogManager.cpp
-    Created: 21 Oct 2024 12:04:41am
-    Author:  jhund
-
-  ==============================================================================
-*/
-
 #include "LogManager.h"
 #include <thread>
 
@@ -110,7 +100,7 @@ void LogManager::logOnsetDetails(juce::FileOutputStream& logStream)
 		std::vector<int> latestOnsets(playerSize);
 		std::vector<int> latestDelays(playerSize);
 
-		juce::String logLine(ensembleModel->logLineCounter++);
+		juce::String logLine(logLineCounter++);
 
 		juce::String onsetLog;
 		juce::String intervalLog;
@@ -174,7 +164,7 @@ void LogManager::logOnsetDetails(juce::FileOutputStream& logStream)
 void LogManager::logOnsetDetailsForPlayer(int bufferIndex, juce::String& onsetLog, juce::String& intervalLog, juce::String& userInputLog, juce::String& delayLog, juce::String& mNoiseLog, juce::String& tkNoiseLog, juce::String& asyncLog, juce::String& alphaLog, juce::String& betaLog, juce::String& tkNoiseStdLog, juce::String& mNoiseStdLog, juce::String& velocityLog)
 {
 	auto& data = loggingBuffer[bufferIndex];
-	double sampleRate = ensembleModel->sampleRate;
+	double sampleRate = ensembleModel->getSampleRate();
 	
 	onsetLog += ", " + juce::String(data.onsetTime / sampleRate);
 	intervalLog += ", " + juce::String(data.onsetInterval / sampleRate);
@@ -208,7 +198,7 @@ void LogManager::postLatestOnsets(const std::vector<int>& onsets, const std::vec
 		// Once you've sent those to the server indicate to the polling thread that
 		// it should start to poll for new alphas.
 
-	ensembleModel->alphasUpToDate.clear();
+	ensembleModel->clearAlpha();
 }
 
 void LogManager::loggerLoop() {
@@ -245,7 +235,7 @@ void LogManager::loggerLoop() {
 	// Write the header for the log file.
 	writeLogHeader(logStream);
 
-	ensembleModel->logLineCounter = 0;
+	logLineCounter = 0;
 
 	// Main logging loop, logs onset details every 50ms.
 	while (continueLogging)

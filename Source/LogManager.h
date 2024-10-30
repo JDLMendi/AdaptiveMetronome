@@ -37,6 +37,7 @@ public:
     std::unique_ptr<juce::AbstractFifo> loggingFifo;
     std::thread loggerThread;
     std::atomic<bool> continueLogging;
+    int logLineCounter = 0;
 
     // Logging Functions
     LogManager(EnsembleModel* model, AdaptiveMetronomeAudioProcessor* proc);

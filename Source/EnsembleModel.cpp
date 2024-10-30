@@ -15,7 +15,6 @@ class OSCManager;
 EnsembleModel::EnsembleModel(AdaptiveMetronomeAudioProcessor* processorPtr)
 	: processor(processorPtr)
 {
-
 	oscManager = std::make_unique<OSCManager>(this);
 	xmlManager = std::make_unique<XMLManager>(this, processorPtr);
 	logManager = std::make_unique<LogManager>(this, processorPtr);
@@ -44,12 +43,44 @@ int EnsembleModel::getNumPlayers()
 
 int EnsembleModel::getNumUserPlayers()
 {
-	return static_cast <int> (numUserPlayers);
+	return numUserPlayers;
 }
 
 bool EnsembleModel::isPlayerUserOperated(int playerIndex)
 {
 	return players[playerIndex]->isUserOperated();
+}
+
+//std::atomic_flag alphasUpToDate;
+//double sampleRate = 44100.0;
+//int logLineCounter = 0;
+//int numUserPlayers = 1;
+//std::vector<std::unique_ptr<Player>> players;
+//juce::MidiFile midiFile;
+
+bool EnsembleModel::getAlphasUpToDate() {
+	return alphasUpToDate.test_and_set(); // true if set, false otherwise
+}
+
+double EnsembleModel::getSampleRate() {
+	return sampleRate;
+}
+
+void EnsembleModel::setAlphasUpToDate(bool flag) {
+	if (flag) {
+		alphasUpToDate.test_and_set();  // Sets the flag to true
+	}
+	else {
+		alphasUpToDate.clear(); // Sets the flag to false
+	}
+}
+
+void EnsembleModel::setSampleRate(double newSampleRate) {
+	sampleRate = newSampleRate;
+}
+
+void EnsembleModel::setNumUserPlayers(int newNumUserPlayers) {
+	numUserPlayers = newNumUserPlayers;
 }
 
 juce::AudioParameterInt& EnsembleModel::getPlayerChannelParameter(int playerIndex)
@@ -105,16 +136,15 @@ void EnsembleModel::setAlphaBetaParams(float valueIn)
 	}
 }
 
+void EnsembleModel::clearAlpha()
+{
+	alphasUpToDate.clear();
+}
+
 // Prepares the model for playback by setting the new sample rate
 void EnsembleModel::prepareToPlay(double newSampleRate)
 {
 	sampleRate = newSampleRate;
-}
-
-// Releases resources used by the model
-void EnsembleModel::releaseResources()
-{
-	return;
 }
 
 // Resets the state of all players and re-initialises variables, such as counters and loops for logging and polling
@@ -137,7 +167,7 @@ void EnsembleModel::resetPlayers()
 	startPollingLoop();
 
 	// Reset each player in the players array
-	for (auto& player : players)
+	for (auto const& player : players)
 	{
 		player->reset();
 	}
@@ -170,7 +200,7 @@ void EnsembleModel::createAlphaBetaParameters()
 
 // Establishes a connection to an OSC sender at the specified IP address and port number.
 // Default IP is "127.0.0.1" and the default port is 8000.
-void EnsembleModel::connectOSCSender(int portNumber=8000, juce::String IPAddress = "127.0.0.1")
+void EnsembleModel::connectOSCSender(int portNumber = 8000, juce::String IPAddress = "127.0.0.1")
 {
 	oscManager->connectOSCSender(portNumber, IPAddress);
 }
@@ -194,6 +224,7 @@ void EnsembleModel::oscMessageReceived(const juce::OSCMessage& message)
 	oscManager->oscMessageReceived(message);
 }
 
+// Retrieves the current port that it is Receiving from
 int EnsembleModel::getCurrentReceivePort() {
 	return oscManager->getCurrentReceivePort();
 }
@@ -208,11 +239,12 @@ void EnsembleModel::loadConfigFromXml(juce::File configFile) {
 	xmlManager->loadConfig(configFile);
 }
 
+// saveConfigToXmlFile looks to saving an XML file for later use (parameters and such are saved)
 void EnsembleModel::saveConfigToXmlFile() {
 	xmlManager->saveConfig();
 }
 
-#pragma endregion XML related functions that interacts with the (possible) XMLManager Class object
+#pragma endregion XML related functions that interacts with the XMLManager Class object
 
 //==============================================================================
 
@@ -220,81 +252,81 @@ void EnsembleModel::saveConfigToXmlFile() {
 
 // Initializes the logging buffer based on the number of players.
 // Sets the size of the buffer, creates the FIFO (First In, First Out) structure, and initializes the async, alpha, and beta parameters for logging.
-	void EnsembleModel::initialiseLoggingBuffer()
-	{
-		logManager->initialiseLoggingBuffer();
-	}
+void EnsembleModel::initialiseLoggingBuffer()
+{
+	logManager->initialiseLoggingBuffer();
+}
 
-	// Starts the logger loop in a separate thread, initializing the logging buffer and setting a flag to continue logging.
-	void EnsembleModel::startLoggerLoop()
-	{
-		logManager->startLoggerLoop();
-	}
+// Starts the logger loop in a separate thread, initializing the logging buffer and setting a flag to continue logging.
+void EnsembleModel::startLoggerLoop()
+{
+	logManager->startLoggerLoop();
+}
 
-	// Stops the logger loop by setting the flag to false and joining the logging thread.
-	void EnsembleModel::stopLoggerLoop()
-	{
-		logManager->stopLoggerLoop();
-	}
+// Stops the logger loop by setting the flag to false and joining the logging thread.
+void EnsembleModel::stopLoggerLoop()
+{
+	logManager->stopLoggerLoop();
+}
 
-	// Main logging loop that writes log data to a file at regular intervals.
-	// Creates a log file in the user's documents folder (with optional subfolder and file name overrides), writes a header, and logs onset details.
-	void EnsembleModel::loggerLoop()
-	{
-		logManager->loggerLoop();
-	}
+// Main logging loop that writes log data to a file at regular intervals.
+// Creates a log file in the user's documents folder (with optional subfolder and file name overrides), writes a header, and logs onset details.
+void EnsembleModel::loggerLoop()
+{
+	logManager->loggerLoop();
+}
 
-	// Writes the header (column names) for the log file, including player information, delays, noise, asyncs, alphas, betas, etc.
-	void EnsembleModel::writeLogHeader(juce::FileOutputStream& logStream)
-	{
-		logManager->writeLogHeader(logStream);
-	}
+// Writes the header (column names) for the log file, including player information, delays, noise, asyncs, alphas, betas, etc.
+void EnsembleModel::writeLogHeader(juce::FileOutputStream& logStream)
+{
+	logManager->writeLogHeader(logStream);
+}
 
-	// Logs onset details for each player and writes them to the log file.
-	// This function reads from the logging FIFO, writes onset data for all players, and sends the latest onsets to a server.
-	void EnsembleModel::logOnsetDetails(juce::FileOutputStream& logStream)
-	{
-		logManager->logOnsetDetails(logStream);
-	}
+// Logs onset details for each player and writes them to the log file.
+// This function reads from the logging FIFO, writes onset data for all players, and sends the latest onsets to a server.
+void EnsembleModel::logOnsetDetails(juce::FileOutputStream& logStream)
+{
+	logManager->logOnsetDetails(logStream);
+}
 
-	// Logs onset details for a specific player based on the buffer index, filling the relevant log strings with data.
-	void EnsembleModel::logOnsetDetailsForPlayer(int bufferIndex,
-		juce::String& onsetLog,
-		juce::String& intervalLog,
-		juce::String& userInputLog,
-		juce::String& delayLog,
-		juce::String& mNoiseLog,
-		juce::String& tkNoiseLog,
-		juce::String& asyncLog,
-		juce::String& alphaLog,
-		juce::String& betaLog,
-		juce::String& tkNoiseStdLog,
-		juce::String& mNoiseStdLog,
-		juce::String& velocityLog)
-	{
-		logManager->logOnsetDetailsForPlayer(bufferIndex, onsetLog, intervalLog, userInputLog, delayLog, mNoiseLog, tkNoiseLog, asyncLog, alphaLog, betaLog, tkNoiseStdLog, mNoiseStdLog, velocityLog);
-	}
+// Logs onset details for a specific player based on the buffer index, filling the relevant log strings with data.
+void EnsembleModel::logOnsetDetailsForPlayer(int bufferIndex,
+	juce::String& onsetLog,
+	juce::String& intervalLog,
+	juce::String& userInputLog,
+	juce::String& delayLog,
+	juce::String& mNoiseLog,
+	juce::String& tkNoiseLog,
+	juce::String& asyncLog,
+	juce::String& alphaLog,
+	juce::String& betaLog,
+	juce::String& tkNoiseStdLog,
+	juce::String& mNoiseStdLog,
+	juce::String& velocityLog)
+{
+	logManager->logOnsetDetailsForPlayer(bufferIndex, onsetLog, intervalLog, userInputLog, delayLog, mNoiseLog, tkNoiseLog, asyncLog, alphaLog, betaLog, tkNoiseStdLog, mNoiseStdLog, velocityLog);
+}
 
-	// NOT IMPLEMENTED
-	void EnsembleModel::postLatestOnsets(const std::vector <int>& onsets, const std::vector <int>& delays)
-	{
-		logManager->postLatestOnsets(onsets, delays);
-	}
+// NOT IMPLEMENTED
+void EnsembleModel::postLatestOnsets(const std::vector <int>& onsets, const std::vector <int>& delays)
+{
+	logManager->postLatestOnsets(onsets, delays);
+}
 
-	void EnsembleModel::storeOnsetDetailsForPlayer(int bufferIndex, int playerIndex)
-	{
-		// Store the log information about the latest onset from the given player
-		// in the logging buffers.
-		logManager->storeOnsetDetailsForPlayer(bufferIndex, playerIndex);
-	}
+void EnsembleModel::storeOnsetDetailsForPlayer(int bufferIndex, int playerIndex)
+{
+	// Store the log information about the latest onset from the given player
+	// in the logging buffers.
+	logManager->storeOnsetDetailsForPlayer(bufferIndex, playerIndex);
+}
 
-#pragma endregion Logging related functions that interacts with the (possible) LoggingManager Class object
+#pragma endregion Logging related functions that interacts with the LoggingManager Class object
 
 //==============================================================================
 
 #pragma region MIDI Functions
 
-bool EnsembleModel::loadMidiFile(const juce::File & file, int userPlayers)
+bool EnsembleModel::loadMidiFile(const juce::File& file, int userPlayers)
 {
 	if (FlagLock lock(playersInUse); !lock.locked)
 	{
@@ -326,7 +358,7 @@ bool EnsembleModel::loadMidiFile(const juce::File & file, int userPlayers)
 }
 
 // Main method for processing incoming midi stream
-void EnsembleModel::processMidiBlock(const juce::MidiBuffer & inMidi, juce::MidiBuffer & outMidi, int numSamples, double tempo)
+void EnsembleModel::processMidiBlock(const juce::MidiBuffer& inMidi, juce::MidiBuffer& outMidi, int numSamples, double tempo)
 {
 	if (FlagLock lock(playersInUse); !lock.locked)
 	{
@@ -359,7 +391,7 @@ void EnsembleModel::processMidiBlock(const juce::MidiBuffer & inMidi, juce::Midi
 	}
 }
 
-bool EnsembleModel::checkMidiSequenceHasNotes(const juce::MidiMessageSequence * seq)
+bool EnsembleModel::checkMidiSequenceHasNotes(const juce::MidiMessageSequence* seq)
 {
 	for (auto event : *seq)
 	{
@@ -372,7 +404,7 @@ bool EnsembleModel::checkMidiSequenceHasNotes(const juce::MidiMessageSequence * 
 	return false;
 }
 
-void EnsembleModel::soundOffAllChannels(juce::MidiBuffer & midi)
+void EnsembleModel::soundOffAllChannels(juce::MidiBuffer& midi)
 {
 	for (int channel = 1; channel <= 16; ++channel)
 	{
@@ -383,9 +415,9 @@ void EnsembleModel::soundOffAllChannels(juce::MidiBuffer & midi)
 }
 
 // Called from EnsembleModel::processMidiBlock
-void EnsembleModel::playScore(const juce::MidiBuffer & inMidi, juce::MidiBuffer & outMidi, int sampleIndex)
+void EnsembleModel::playScore(const juce::MidiBuffer& inMidi, juce::MidiBuffer& outMidi, int sampleIndex)
 {
-	for (auto& player : players)
+	for (auto const& player : players)
 	{
 		player->processSample(inMidi, outMidi, sampleIndex);
 	}
@@ -433,7 +465,7 @@ bool EnsembleModel::newOnsetsAvailable()
 {
 	bool available = true;
 
-	for (auto& player : players)
+	for (auto const& player : players)
 	{
 		available = available && player->hasNotePlayed();
 	}
@@ -454,7 +486,7 @@ void EnsembleModel::calculateNewIntervals()
 	{
 		if (!players[i]->isUserOperated())
 		{
-			//            players [i]->recalculateOnsetInterval (samplesPerBeat, players, alphaParams [i], betaParams [i]);
+			// players [i]->recalculateOnsetInterval (samplesPerBeat, players, alphaParams [i], betaParams [i]);
 			players[i]->recalculateOnsetInterval(samplesPerBeat, players);
 		}
 	}
@@ -491,7 +523,7 @@ void EnsembleModel::calculateNewIntervals()
 
 void EnsembleModel::clearOnsetsAvailable()
 {
-	for (auto& player : players)
+	for (auto const& player : players)
 	{
 		player->resetNotePlayed();
 	}
@@ -525,7 +557,7 @@ void EnsembleModel::getLatestAlphas()
 	//    }
 }
 
-void EnsembleModel::createPlayers(const juce::MidiFile & file)
+void EnsembleModel::createPlayers(const juce::MidiFile& file)
 {
 	//==========================================================================
 	// Delete Old Players
@@ -578,9 +610,8 @@ void EnsembleModel::createPlayers(const juce::MidiFile & file)
 
 bool EnsembleModel::reset()
 {
-	FlagLock lock(playersInUse);
 
-	if (!lock.locked)
+	if (FlagLock lock(playersInUse); !lock.locked)
 	{
 		return false;
 	}
@@ -596,7 +627,7 @@ bool EnsembleModel::reset()
 
 #pragma region IntroTone Functions
 
-void EnsembleModel::playIntroTones(juce::MidiBuffer & midi, int sampleIndex)
+void EnsembleModel::playIntroTones(juce::MidiBuffer& midi, int sampleIndex)
 {
 	if (introCounter == 0)
 	{
@@ -615,7 +646,7 @@ void EnsembleModel::playIntroTones(juce::MidiBuffer & midi, int sampleIndex)
 	++introCounter;
 }
 
-void EnsembleModel::introToneOn(juce::MidiBuffer & midi, int sampleIndex)
+void EnsembleModel::introToneOn(juce::MidiBuffer& midi, int sampleIndex)
 {
 	if (introTonesPlayed % 4 == 0)
 	{
@@ -627,7 +658,7 @@ void EnsembleModel::introToneOn(juce::MidiBuffer & midi, int sampleIndex)
 	}
 }
 
-void EnsembleModel::introToneOff(juce::MidiBuffer & midi, int sampleIndex)
+void EnsembleModel::introToneOff(juce::MidiBuffer& midi, int sampleIndex)
 {
 	if (introTonesPlayed % 4 == 0)
 	{
@@ -639,7 +670,7 @@ void EnsembleModel::introToneOff(juce::MidiBuffer & midi, int sampleIndex)
 	}
 }
 
-void EnsembleModel::playUserIntro(const juce::MidiBuffer & inMidi, juce::MidiBuffer & outMidi, int sampleIndex)
+void EnsembleModel::playUserIntro(const juce::MidiBuffer& inMidi, juce::MidiBuffer& outMidi, int sampleIndex)
 {
 	for (auto& player : players)
 	{
@@ -656,7 +687,7 @@ void EnsembleModel::playUserIntro(const juce::MidiBuffer & inMidi, juce::MidiBuf
 
 #pragma region FlagLock Functions
 
-EnsembleModel::FlagLock::FlagLock(std::atomic_flag & f)
+EnsembleModel::FlagLock::FlagLock(std::atomic_flag& f)
 	: flag(f),
 	locked(!flag.test_and_set())
 {
@@ -675,7 +706,7 @@ EnsembleModel::FlagLock::~FlagLock()
 
 void EnsembleModel::initialisePollingBuffers()
 {
-	int bufferSize = static_cast <int> (10 * players.size());
+	auto bufferSize = static_cast <int> (10 * players.size());
 
 	pollingFifo = std::make_unique <juce::AbstractFifo>(bufferSize);
 
@@ -713,7 +744,7 @@ void EnsembleModel::pollingLoop()
 	{
 		if (!alphasUpToDate.test_and_set())
 		{
-			// getNewAlphas(); //Not used
+			// getNewAlphas(); //Not used 
 		}
 
 		std::this_thread::sleep_for(50ms);
@@ -762,4 +793,3 @@ void EnsembleModel::pollingLoop()
 	//        alphasUpToDate.clear();
 	//    }
 	//}
-

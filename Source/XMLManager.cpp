@@ -63,7 +63,7 @@ void XMLManager::loadConfig(juce::File configFile) {
 	// "NumUserPlayers": Check if numUserPlayers has changed
 	if (config->hasAttribute("NumUserPlayers"))
 	{
-		ensembleModel->numUserPlayers = config->getIntAttribute("NumUserPlayers");
+		ensembleModel->setNumUserPlayers(config->getIntAttribute("NumUserPlayers"));
 		playersNeedRecreating = true;
 	}
 
@@ -77,15 +77,15 @@ void XMLManager::loadConfig(juce::File configFile) {
 		if (!midiFile.existsAsFile()) { return; }
 
 		//Loads the Midifile into the ensemble model
-		ensembleModel->loadMidiFile(midiFile, ensembleModel->numUserPlayers);
+		ensembleModel->loadMidiFile(midiFile, ensembleModel->getNumUserPlayers());
 
 		// Players are automatically reinitialised when a new midi file is loaded, so flag can be set back to false
 		playersNeedRecreating = false;
 	}
 
 	// Limit number of user players to the number of available tracks in the loaded midi file
-	if (ensembleModel->numUserPlayers > midiFile.getNumTracks()) {
-		ensembleModel->numUserPlayers = midiFile.getNumTracks();
+	if (ensembleModel->getNumUserPlayers() > midiFile.getNumTracks()) {
+		ensembleModel->setNumUserPlayers(midiFile.getNumTracks());
 	}
 
 	if (playersNeedRecreating) {
@@ -138,7 +138,7 @@ void XMLManager::saveConfig()
 {
 #ifdef JUCE_WINDOWS
 	auto xmlOutput = &juce::XmlElement("EnsembleModelConfig");
-	xmlOutput->setAttribute("numUserPlayers", ensembleModel->numUserPlayers);
+	xmlOutput->setAttribute("numUserPlayers", ensembleModel->getNumUserPlayers());
 
 	auto xmlAlphas = xmlOutput->createNewChildElement("Alphas");
 	auto xmlBetas = xmlOutput->createNewChildElement("Betas");
