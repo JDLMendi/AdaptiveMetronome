@@ -114,24 +114,11 @@ void UserPlayer::processNoteOn (const juce::MidiBuffer &inMidi, juce::MidiBuffer
     {
         // Filters ... ignore if following conditions are true ....
         
-        // Ignore if score has not progressed half an interval length
-        if (scoreCounter <= (onsetInterval / 2))
-        {
-           break;
-        }
-        
-        // Ignore If previous note has not yet been processed
-        if (notePlayed) {
-            break;
-        }
-        
-        // Ignore If time since last onset is less than 50% of onset interval
-        if (samplesSinceLastOnset < onsetInterval/2) {
-            break;
-        }
-        
-        // Stop early if there are MIDI events after this time.
-        if ((*it).samplePosition != sampleIndex)
+        // Ignore conditions
+        if (scoreCounter <= (onsetInterval / 2) // Ignore if score has not progressed half an interval length
+            || notePlayed // Ignore If previous note has not yet been processed
+            || samplesSinceLastOnset < onsetInterval / 2 // Ignore If time since last onset is less than 50 % of onset interval
+            || (*it).samplePosition != sampleIndex) // Stop early if there are MIDI events after this time.
         {
             break;
         }
