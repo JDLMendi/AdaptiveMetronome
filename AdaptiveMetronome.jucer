@@ -6,7 +6,7 @@
               pluginCharacteristicsValue="pluginIsMidiEffectPlugin,pluginProducesMidiOut,pluginWantsMidiIn"
               companyWebsite="https://arme-project.co.uk/" pluginManufacturer="ARME"
               bundleIdentifier="com.ARME.AdaptiveMetronome" aaxIdentifier="com.ARME.AdaptiveMetronome"
-              displaySplashScreen="1">
+              displaySplashScreen="1" version="1.0.5">
   <MAINGROUP id="W50gFU" name="AdaptiveMetronome">
     <GROUP id="{3D843B26-CABE-6601-C112-2D32A102DAFB}" name="Source">
       <GROUP id="{48CA9AA9-4BBE-3A35-2F80-7B9E2520CEEA}" name="Headers">
@@ -35,27 +35,6 @@
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX">
-      <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="AdaptiveMetronome"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="AdaptiveMetronome"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
-      </MODULEPATHS>
-    </XCODE_MAC>
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
@@ -74,7 +53,7 @@
         <MODULEPATH id="juce_graphics" path="../../juce"/>
         <MODULEPATH id="juce_gui_basics" path="../../juce"/>
         <MODULEPATH id="juce_gui_extra" path="../../juce"/>
-        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../juce"/>
       </MODULEPATHS>
     </VS2022>
   </EXPORTFORMATS>
