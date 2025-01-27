@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="Y9CQrD" name="AdaptiveMetronome" projectType="audioplug"
+<JUCERPROJECT id="Y9CQrD" name="Adaptive Metronome" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
               pluginAUMainType="'aumi'" pluginManufacturerCode="ARME" pluginFormats="buildAU,buildVST3"
-              pluginCharacteristicsValue="pluginIsMidiEffectPlugin,pluginProducesMidiOut,pluginWantsMidiIn"
+              pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
               companyWebsite="https://arme-project.co.uk/" pluginManufacturer="ARME"
               bundleIdentifier="com.ARME.AdaptiveMetronome" aaxIdentifier="com.ARME.AdaptiveMetronome"
-              displaySplashScreen="1">
-  <MAINGROUP id="W50gFU" name="AdaptiveMetronome">
+              displaySplashScreen="1" version="1.0.4" pluginVST3Category="Analyzer,Fx,Tools">
+  <MAINGROUP id="W50gFU" name="Adaptive Metronome">
     <GROUP id="{3D843B26-CABE-6601-C112-2D32A102DAFB}" name="Source">
-      <FILE id="vK7dKD" name="UserPlayer.cpp" compile="1" resource="0" file="Source/UserPlayer.cpp"/>
-      <FILE id="FmR7Vv" name="UserPlayer.h" compile="0" resource="0" file="Source/UserPlayer.h"/>
-      <FILE id="QZSlnU" name="EnsembleModel.cpp" compile="1" resource="0"
-            file="Source/EnsembleModel.cpp"/>
-      <FILE id="S9PNfy" name="EnsembleModel.h" compile="0" resource="0" file="Source/EnsembleModel.h"/>
-      <FILE id="q7q2PM" name="Player.cpp" compile="1" resource="0" file="Source/Player.cpp"/>
-      <FILE id="bwzuHz" name="Player.h" compile="0" resource="0" file="Source/Player.h"/>
+      <GROUP id="{48CA9AA9-4BBE-3A35-2F80-7B9E2520CEEA}" name="Model">
+        <FILE id="QZSlnU" name="EnsembleModel.cpp" compile="1" resource="0"
+              file="Source/EnsembleModel.cpp"/>
+        <FILE id="S9PNfy" name="EnsembleModel.h" compile="0" resource="0" file="Source/EnsembleModel.h"/>
+      </GROUP>
+      <GROUP id="{01BAD2AB-861B-6423-E86F-55CD7AD29B48}" name="Classes">
+        <FILE id="vK7dKD" name="UserPlayer.cpp" compile="1" resource="0" file="Source/UserPlayer.cpp"/>
+        <FILE id="FmR7Vv" name="UserPlayer.h" compile="0" resource="0" file="Source/UserPlayer.h"/>
+        <FILE id="q7q2PM" name="Player.cpp" compile="1" resource="0" file="Source/Player.cpp"/>
+        <FILE id="bwzuHz" name="Player.h" compile="0" resource="0" file="Source/Player.h"/>
+      </GROUP>
+      <GROUP id="{F865D43C-B679-B310-D93D-36664EB3413E}" name="GUI">
+        <FILE id="TfAdgI" name="PluginEditor.cpp" compile="1" resource="0"
+              file="Source/PluginEditor.cpp"/>
+        <FILE id="wHARtp" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      </GROUP>
       <FILE id="KmJ3eM" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="ZjjkPp" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
-      <FILE id="TfAdgI" name="PluginEditor.cpp" compile="1" resource="0"
-            file="Source/PluginEditor.cpp"/>
-      <FILE id="wHARtp" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX">
-      <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="AdaptiveMetronome"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="AdaptiveMetronome"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../Downloads/GitClones/JUCE/modules"/>
-        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
-      </MODULEPATHS>
-    </XCODE_MAC>
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
@@ -66,7 +51,7 @@
         <MODULEPATH id="juce_graphics" path="../../juce"/>
         <MODULEPATH id="juce_gui_basics" path="../../juce"/>
         <MODULEPATH id="juce_gui_extra" path="../../juce"/>
-        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../juce"/>
       </MODULEPATHS>
     </VS2022>
   </EXPORTFORMATS>
