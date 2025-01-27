@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="Y9CQrD" name="Adaptive Metronome" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
-              pluginAUMainType="'aumi'" pluginManufacturerCode="ARME" pluginFormats="buildAU,buildVST3"
+              pluginAUMainType="'aumi'" pluginManufacturerCode="ARME" pluginFormats="buildAU,buildStandalone,buildVST3"
               pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
               companyWebsite="https://arme-project.co.uk/" pluginManufacturer="ARME"
               bundleIdentifier="com.ARME.AdaptiveMetronome" aaxIdentifier="com.ARME.AdaptiveMetronome"

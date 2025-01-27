@@ -35,7 +35,7 @@ private:
     //==============================================================================
     juce::Label instructionLabel, userPlayersLabel, versionLabel;
     juce::ComboBox userPlayersSelector;
-    juce::TextButton resetButton, loadMidiButton;
+    juce::TextButton resetButton, loadMIDIButton, loadXMLButton;
     juce::ToggleButton oscOn;
     std::unique_ptr <juce::FileChooser> fileChooser;
 
@@ -43,8 +43,9 @@ private:
 
     //==============================================================================
     void resetButtonCallback();
-    void loadMidiButtonCallback();
-    void loadMidiFile (juce::File file);
+    void loadMIDIButtonCallback();
+    void loadXMLButtonCallback();
+    void loadFile(juce::File file);
     
     //==============================================================================
     class EnsembleParametersComponent : public juce::Component
