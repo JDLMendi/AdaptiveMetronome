@@ -6,7 +6,8 @@
               pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
               companyWebsite="https://arme-project.co.uk/" pluginManufacturer="ARME"
               bundleIdentifier="com.ARME.AdaptiveMetronome" aaxIdentifier="com.ARME.AdaptiveMetronome"
-              displaySplashScreen="1" version="1.0.4" pluginVST3Category="Analyzer,Fx,Tools">
+              displaySplashScreen="1" version="1.0.41" pluginVST3Category="Analyzer,Fx,Tools"
+              companyName="Augmented Reality Music Ensemble">
   <MAINGROUP id="W50gFU" name="Adaptive Metronome">
     <GROUP id="{3D843B26-CABE-6601-C112-2D32A102DAFB}" name="Source">
       <GROUP id="{48CA9AA9-4BBE-3A35-2F80-7B9E2520CEEA}" name="Model">
