@@ -71,6 +71,8 @@ public:
     bool isOscReceiverConnected();
 
     void setAlphaBetaParams(float valueIn);
+    juce::String getMidiFileName();
+    bool isMidiLoaded();
     
 private:
     //==============================================================================
@@ -78,6 +80,8 @@ private:
     
     // Previously a local variable in loadMidifile()
     juce::MidiFile midiFile;
+    juce::File midiFilePath;
+    bool midiLoaded = false;
 
     //==============================================================================
     // Timing parameters

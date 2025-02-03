@@ -17,6 +17,16 @@ EnsembleModel::EnsembleModel(AdaptiveMetronomeAudioProcessor* processorPtr)
     addListener(this, "/reset");
     addListener(this, "/setLogname");
     addListener(this, "/numIntroTones");
+
+    // New OSC Listener Addresses
+    addListener(this, "/loadMidiFile");
+    addListener(this, "/ensembleDetails");
+    addListener(this, "/playersDetails");
+    addListener(this, "/adapativeMetronome");
+
+#ifdef JUCE_DEBUG
+    connectOSCSender(8080, "127.0.0.1"); //Automatically call for this when loading the DEBUG version of this project
+#endif
 }
 
 EnsembleModel::~EnsembleModel()
@@ -36,12 +46,23 @@ void EnsembleModel::setAlphaBetaParams(float valueIn)
     }
 }
 
+juce::String EnsembleModel::getMidiFileName()
+{
+    return midiFilePath.getFileName();
+}
+
+bool EnsembleModel::isMidiLoaded() {
+    return midiLoaded;
+}
+
+
+
 //==============================================================================
 // OSC Messaging
-void EnsembleModel::connectOSCSender(int portNumber, juce::String IPAddress = "127.0.0.1")
+void EnsembleModel::connectOSCSender(int portNumber=8080, juce::String IPAddress = "127.0.0.1")
 {
-    if (!OSCSender.connect("127.0.0.1", 8000))
-        DBG("Error: could not connect to UDP port 8000.");
+    if (!OSCSender.connect(IPAddress, portNumber))
+        DBG("Error: could not connect to UDP port " << portNumber);
     else {
         DBG("OSC SENDER CONNECTED");
     }
@@ -105,6 +126,37 @@ void EnsembleModel::oscMessageReceived(const juce::OSCMessage& message)
             numIntroTones = message[0].getInt32();
         }
     }
+    else if (oscAddress == "/loadMidiFile")
+    {
+        if (message[0].isString()) {
+            juce::File file(message[0].getString());
+
+            if (file.existsAsFile())
+            {
+                juce::FileInputStream inputStream(file);
+
+                if (inputStream.openedOk())
+                {
+                    loadMidiFile(file, numUserPlayers);
+                    DBG("MIDI file successfully loaded");
+                }
+                else
+                {
+                    DBG("Failed to open MIDI file stream.");
+                }
+            }
+        }
+    }
+    else if (oscAddress == "/ensembleDetails") { // New message to return details of the current EnsembleModel
+
+    }
+    else if (oscAddress == "/playersDetails") {// New message to return details of all the players in the model
+    
+    }
+    else if (oscAddress == "/adapativeMetronome") { // New message to return both EnsembleModel and Players
+
+    }
+
     sendActionMessage("OSC Received");
 }
 
@@ -112,6 +164,8 @@ void EnsembleModel::oscMessageReceived(const juce::OSCMessage& message)
 bool EnsembleModel::loadMidiFile (const juce::File &file, int userPlayers)
 {
     FlagLock lock (playersInUse);
+    midiFilePath = file;
+    midiLoaded = true;
     
     if (!lock.locked)
     {

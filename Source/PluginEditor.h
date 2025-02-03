@@ -44,6 +44,7 @@ private:
     //==============================================================================
     void resetButtonCallback();
     void loadMIDIButtonCallback();
+    bool updateMIDIButton(juce::String fileName);
     void loadXMLButtonCallback();
     void loadFile(juce::File file);
     

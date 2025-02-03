@@ -107,14 +107,17 @@ void AdaptiveMetronomeAudioProcessorEditor::timerCallback()
         auto tooltipString = juce::String("Listening on port ");
         tooltipString << processor.ensemble.currentReceivePort;
         oscOn.setTooltip(tooltipString);
-    } else 
+    }
+    else
     {
         oscOn.setToggleState(false, juce::dontSendNotification);
         oscOn.setTooltip("OSC not connected");
     }
-    
+
     versionLabel.setTooltip(processor.ensemble.logFilenameOverride);
-    
+    if (processor.ensemble.isMidiLoaded()) { //  Only loads if midi has been loaded before. Prevents it showing nothing when the plugin loads
+        updateMIDIButton(processor.ensemble.getMidiFileName());
+    }
 }
 
 //==============================================================================
@@ -254,21 +257,10 @@ void AdaptiveMetronomeAudioProcessorEditor::loadMIDIButtonCallback()
         [this](const juce::FileChooser& chooser)
         {
             auto selectedFile = chooser.getResult();
-
             if (selectedFile.existsAsFile()) // Check if a file was selected
             {
                 auto fileName = selectedFile.getFileName();
-
-                // Update the button text only if a new file is loaded
-                if (fileName != loadMIDIButton.getButtonText())
-                {
-                    loadMIDIButton.setButtonText(fileName);
-                    DBG("MIDI File Loaded: " << fileName);
-
-                    // Enable the Reset and Load XML Config buttons
-                    resetButton.setEnabled(true);
-                    loadXMLButton.setEnabled(true);
-
+                if (updateMIDIButton(fileName)) {
                     loadFile(selectedFile);
                 }
             }
@@ -277,7 +269,25 @@ void AdaptiveMetronomeAudioProcessorEditor::loadMIDIButtonCallback()
                 // No file selected, do nothing
                 DBG("No file selected.");
             }
+            
         });
+}
+
+bool AdaptiveMetronomeAudioProcessorEditor::updateMIDIButton(juce::String fileName)
+{
+    // Update the button text only if a new file is loaded
+    if (fileName != loadMIDIButton.getButtonText())
+    {
+        loadMIDIButton.setButtonText(fileName);
+        DBG("MIDI File Loaded: " << fileName);
+
+        // Enable the Reset and Load XML Config buttons
+        resetButton.setEnabled(true);
+        loadXMLButton.setEnabled(true);
+        return true;
+        
+    }
+    return false;
 }
 
 void AdaptiveMetronomeAudioProcessorEditor::loadFile(juce::File file)
