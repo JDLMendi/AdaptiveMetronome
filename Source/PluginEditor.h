@@ -35,7 +35,7 @@ private:
     //==============================================================================
     juce::Label instructionLabel, userPlayersLabel, versionLabel;
     juce::ComboBox userPlayersSelector;
-    juce::TextButton resetButton, loadMIDIButton, loadXMLButton;
+    juce::TextButton resetButton, loadFileButton;
     juce::ToggleButton oscOn;
     std::unique_ptr <juce::FileChooser> fileChooser;
 
@@ -43,9 +43,9 @@ private:
 
     //==============================================================================
     void resetButtonCallback();
-    void loadMIDIButtonCallback();
-    bool updateMIDIButton(juce::String fileName);
-    void loadXMLButtonCallback();
+    void loadFileButtonCallback();
+    bool updateFileTooltip(juce::File fileName);
+    /*void loadXMLButtonCallback();*/
     void loadFile(juce::File file);
     
     //==============================================================================

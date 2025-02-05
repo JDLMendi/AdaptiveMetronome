@@ -73,6 +73,7 @@ public:
     void setAlphaBetaParams(float valueIn);
     juce::String getMidiFileName();
     bool isMidiLoaded();
+    juce::File getMidiFile();
     
 private:
     //==============================================================================

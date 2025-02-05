@@ -8,10 +8,9 @@ AdaptiveMetronomeAudioProcessorEditor::AdaptiveMetronomeAudioProcessorEditor (Ad
       processor (p),
       instructionLabel (juce::String(), "Wait for 4 tones, then start tapping along..."),
       userPlayersLabel (juce::String(), "No. User Players:"),
-      versionLabel(juce::String(), "(v1.0.41)"),
+      versionLabel(juce::String(), "(v1.0.43)"),
       resetButton ("Reset"),
-      loadXMLButton ("Load XML Config"),
-      loadMIDIButton ("Load MIDI"),
+      loadFileButton ("Load File"),
       oscOn("")
 {
         
@@ -41,6 +40,12 @@ AdaptiveMetronomeAudioProcessorEditor::AdaptiveMetronomeAudioProcessorEditor (Ad
     }
     
     userPlayersSelector.setSelectedId (2);
+    userPlayersSelector.onChange = [this]() {
+            if (processor.ensemble.isMidiLoaded()) {
+                DBG("No. User Players changed!");
+                loadFile(processor.ensemble.getMidiFile());
+            }
+        };
     
     //==========================================================================
     addAndMakeVisible (resetButton);
@@ -48,14 +53,9 @@ AdaptiveMetronomeAudioProcessorEditor::AdaptiveMetronomeAudioProcessorEditor (Ad
     resetButton.setEnabled(false);
     resetButton.setTooltip("Reset the Ensemble Play");
     
-    addAndMakeVisible (loadMIDIButton);
-    loadMIDIButton.addListener (this);
-    loadMIDIButton.setTooltip("Load MIDI File");
-
-    addAndMakeVisible(loadXMLButton);
-    loadXMLButton.addListener (this);
-    loadMIDIButton.setTooltip("Load XML Configuration File");
-    loadXMLButton.setEnabled(false);
+    addAndMakeVisible (loadFileButton);
+    loadFileButton.addListener (this);
+    loadFileButton.setTooltip("Load File");
 
     addAndMakeVisible (ensembleParametersViewport);
     
@@ -115,10 +115,16 @@ void AdaptiveMetronomeAudioProcessorEditor::timerCallback()
     }
 
     versionLabel.setTooltip(processor.ensemble.logFilenameOverride);
+
     if (processor.ensemble.isMidiLoaded()) { //  Only loads if midi has been loaded before. Prevents it showing nothing when the plugin loads
-        updateMIDIButton(processor.ensemble.getMidiFileName());
+        if (loadFileButton.getTooltip() != processor.ensemble.getMidiFile().getFullPathName()) {
+            DBG("MIDI in EnsembleModel is different, loading EnsembleModel MIDI");
+            loadFile(processor.ensemble.getMidiFile());
+        }
     }
 }
+
+    
 
 //==============================================================================
 // Checks if the DefaultEnsembleConfig.xml file exists in documents folder, and loads it automatically. 
@@ -157,11 +163,8 @@ void AdaptiveMetronomeAudioProcessorEditor::resized()
     // Static strip at bottom of screen.
     auto optionsStripBounds = bounds.removeFromBottom (optionsStripHeight);
     
-    auto loadMIDIButtonBounds = optionsStripBounds.removeFromRight (loadMIDIButton.getBestWidthForHeight (optionsStripHeight));
-    loadMIDIButton.setBounds (loadMIDIButtonBounds.reduced (padding));
-
-    auto loadXMLButtonBounds = optionsStripBounds.removeFromRight(loadXMLButton.getBestWidthForHeight(optionsStripHeight));
-    loadXMLButton.setBounds(loadXMLButtonBounds.reduced(padding));
+    auto loadFileButtonBounds = optionsStripBounds.removeFromRight (loadFileButton.getBestWidthForHeight (optionsStripHeight));
+    loadFileButton.setBounds (loadFileButtonBounds.reduced (padding));
 
     auto resetButtonBounds = optionsStripBounds.removeFromRight (resetButton.getBestWidthForHeight (optionsStripHeight));
     resetButton.setBounds (resetButtonBounds.reduced (padding));
@@ -197,13 +200,9 @@ void AdaptiveMetronomeAudioProcessorEditor::buttonClicked (juce::Button *button)
     {
         resetButtonCallback();
     }
-    else if (button == &loadMIDIButton) 
+    else if (button == &loadFileButton) 
     {
-        loadMIDIButtonCallback();
-    }
-    else
-    {
-        loadXMLButtonCallback();
+        loadFileButtonCallback();
     }
 }
 
@@ -212,44 +211,11 @@ void AdaptiveMetronomeAudioProcessorEditor::resetButtonCallback()
     processor.resetEnsemble();
 }
 
-void AdaptiveMetronomeAudioProcessorEditor::loadXMLButtonCallback() {
-    fileChooser = std::make_unique<juce::FileChooser>("Load XML Config File",
-        juce::File(),
-        "*.xml");
-
-    auto flags = juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles;
-
-    fileChooser->launchAsync(flags,
-        [this](const juce::FileChooser& chooser)
-        {
-            auto selectedFile = chooser.getResult();
-
-            if (selectedFile.existsAsFile()) // Check if a file was selected
-            {
-                auto fileName = selectedFile.getFileName();
-
-                // Update the button text only if a new file is loaded
-                if (fileName != loadXMLButton.getButtonText())
-                {
-                    loadXMLButton.setButtonText(fileName);
-                    DBG("XML Config File Loaded: " << fileName);
-                    loadFile(selectedFile);
-                }
-            }
-            else
-            {
-                // No file selected, do nothing
-                DBG("No file selected.");
-            }
-        });
-}
-
-
-void AdaptiveMetronomeAudioProcessorEditor::loadMIDIButtonCallback()
+void AdaptiveMetronomeAudioProcessorEditor::loadFileButtonCallback()
 {
-    fileChooser = std::make_unique<juce::FileChooser>("Load MIDI File",
+    fileChooser = std::make_unique<juce::FileChooser>("Load MIDI or XML Configuration File",
         juce::File(),
-        "*.mid");
+        "*.mid;*.xml");
 
     auto flags = juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles;
 
@@ -258,11 +224,8 @@ void AdaptiveMetronomeAudioProcessorEditor::loadMIDIButtonCallback()
         {
             auto selectedFile = chooser.getResult();
             if (selectedFile.existsAsFile()) // Check if a file was selected
-            {
-                auto fileName = selectedFile.getFileName();
-                if (updateMIDIButton(fileName)) {
-                    loadFile(selectedFile);
-                }
+            {            
+                loadFile(selectedFile);
             }
             else
             {
@@ -273,17 +236,15 @@ void AdaptiveMetronomeAudioProcessorEditor::loadMIDIButtonCallback()
         });
 }
 
-bool AdaptiveMetronomeAudioProcessorEditor::updateMIDIButton(juce::String fileName)
+bool AdaptiveMetronomeAudioProcessorEditor::updateFileTooltip(juce::File file)
 {
     // Update the button text only if a new file is loaded
-    if (fileName != loadMIDIButton.getButtonText())
+    if (file != loadFileButton.getTooltip())
     {
-        loadMIDIButton.setButtonText(fileName);
-        DBG("MIDI File Loaded: " << fileName);
+        loadFileButton.setTooltip(file.getFullPathName());
 
-        // Enable the Reset and Load XML Config buttons
+        // Enable the Reset
         resetButton.setEnabled(true);
-        loadXMLButton.setEnabled(true);
         return true;
         
     }
@@ -295,7 +256,8 @@ void AdaptiveMetronomeAudioProcessorEditor::loadFile(juce::File file)
     if (file.hasFileExtension(".mid"))
     {
         ensembleParametersViewport.setViewedComponent(nullptr);
-
+        
+        updateFileTooltip(file);
         auto& ensemble = processor.loadMidiFile(file, userPlayersSelector.getSelectedId() - 1);
         initialiseEnsembleParameters(ensemble);
     }

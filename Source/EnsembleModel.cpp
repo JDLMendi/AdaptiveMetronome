@@ -55,6 +55,11 @@ bool EnsembleModel::isMidiLoaded() {
     return midiLoaded;
 }
 
+juce::File EnsembleModel::getMidiFile()
+{
+    return midiFilePath;
+}
+
 
 
 //==============================================================================
@@ -739,6 +744,7 @@ void EnsembleModel::loadConfigFromXml(std::unique_ptr<juce::XmlElement> loadedCo
     if (loadedConfig->hasAttribute("NumUserPlayers"))
     {
         numUserPlayers = loadedConfig->getIntAttribute("NumUserPlayers");
+        DBG("User Players: " << numUserPlayers);
         playersNeedRecreating = true;
     }
     
