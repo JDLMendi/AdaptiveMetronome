@@ -10,7 +10,6 @@ using std::function;
 class AdaptiveMetronomeAudioProcessor;
 
 class EnsembleModel :
-    private juce::OSCReceiver,
     private juce::OSCReceiver::ListenerWithOSCAddress <juce::OSCReceiver::MessageLoopCallback>,
     public juce::ActionBroadcaster
 {
@@ -55,11 +54,16 @@ public:
     //==============================================================================
     // OSC Messaging
     juce::OSCSender OSCSender;
+    juce::OSCReceiver OSCReceiver;
+    bool isOSCInitialised = false;
     int currentReceivePort = -1;
 
+    void initialiseOSC();
     void connectOSCSender(int portNumber, juce::String IPAddress);
     void connectOSCReceiver(int portNumber);
     void oscMessageReceived(const juce::OSCMessage& message);
+    void oscAcknowledge(const juce::String& receivedAddress);
+    void oscSendEnsembleDetails();
     bool isOscReceiverConnected();
 
     //==============================================================================

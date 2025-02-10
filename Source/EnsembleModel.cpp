@@ -13,17 +13,12 @@ EnsembleModel::EnsembleModel(AdaptiveMetronomeAudioProcessor* processorPtr)
     playersInUse.clear();
     resetFlag.clear();
 
-    // OSC Listener addresses
-    addListener(this, "/loadConfig");
-    addListener(this, "/reset");
-    addListener(this, "/setLogname");
-    addListener(this, "/numIntroTones");
+#ifdef JUCE_DEBUG
+    // Code here runs only in Debug mode
+    connectOSCReceiver(8080);
+    connectOSCSender(8090, "127.0.0.1");
+#endif
 
-    // New OSC Listener Addresses
-    addListener(this, "/loadMidiFile");
-    addListener(this, "/ensembleDetails");
-    addListener(this, "/playersDetails");
-    addListener(this, "/adapativeMetronome");
 }
 
 EnsembleModel::~EnsembleModel()
@@ -33,7 +28,7 @@ EnsembleModel::~EnsembleModel()
 }
 
 //==============================================================================
-// MIDI Handling
+// MIDI File Handling
 bool EnsembleModel::loadMidiFile(const juce::File& file, int userPlayers)
 {
     FlagLock lock(playersInUse);
@@ -267,19 +262,41 @@ juce::AudioParameterFloat& EnsembleModel::getBetaParameter(int player1Index, int
 
 //==============================================================================
 // OSC Messaging
-void EnsembleModel::connectOSCSender(int portNumber=8080, juce::String IPAddress = "127.0.0.1")
+
+void EnsembleModel::initialiseOSC()
+{
+    // OSC Listener addresses
+    OSCReceiver.addListener(this, "/loadConfig");
+    OSCReceiver.addListener(this, "/reset");
+    OSCReceiver.addListener(this, "/setLogname");
+    OSCReceiver.addListener(this, "/numIntroTones");
+
+    // New OSC Listener Addresses
+    OSCReceiver.addListener(this, "/loadMidiFile");
+    OSCReceiver.addListener(this, "/ensembleDetails");
+    OSCReceiver.addListener(this, "/playersDetails");
+    OSCReceiver.addListener(this, "/adapativeMetronome");
+    OSCReceiver.addListener(this, "/ping");
+}
+
+void EnsembleModel::connectOSCSender(int portNumber, juce::String IPAddress)
 {
     if (!OSCSender.connect(IPAddress, portNumber))
         DBG("Error: could not connect to UDP port " << portNumber);
     else {
         DBG("OSC SENDER CONNECTED");
+
+        //Initialises a reciever on the same port and localhost. 
+        if (!isOSCInitialised) {
+            initialiseOSC();
+        }
     }
 }
 
 // Connection can be established via config file parameter "OSCReceivePort"
 void EnsembleModel::connectOSCReceiver(int portNumber)
 {
-    if (!connect(portNumber)) 
+    if (!OSCReceiver.connect(portNumber)) 
     {
         currentReceivePort = -1;
         DBG("Error: could not connect to UDP.");
@@ -288,6 +305,11 @@ void EnsembleModel::connectOSCReceiver(int portNumber)
     {
         sendActionMessage("OSC Received");
         currentReceivePort = portNumber;
+
+        if (!isOSCInitialised) { // Initialises the OSC Receiver to respond to messages it receives.
+            initialiseOSC();
+        }
+
         DBG("Connection succeeded");
     }
 }
@@ -334,12 +356,45 @@ void EnsembleModel::oscMessageReceived(const juce::OSCMessage& message)
 
     // Handle simple commands without parameters
     if (oscAddress == "/reset") { reset(); }
-    else if (oscAddress == "/ensembleDetails") { /* Handle ensemble details */ }
+    else if (oscAddress == "/ensembleDetails") { oscSendEnsembleDetails(); }
     else if (oscAddress == "/playersDetails") { /* Handle players details */ }
     else if (oscAddress == "/adapativeMetronome") { /* Handle ensemble and players details */ }
-
-
+    else if (oscAddress == "/ping") { 
+        juce::OSCMessage pongMsg("/pong");
+        OSCSender.send(pongMsg);
+    }
+    
+    oscAcknowledge(oscAddress);
     sendActionMessage("OSC Received");
+}
+
+void EnsembleModel::oscAcknowledge(const juce::String& receivedAddress)
+{
+    juce::OSCMessage ackMessage("/oscAcknowledgment", receivedAddress);
+    OSCSender.send(ackMessage);
+}
+
+void EnsembleModel::oscSendEnsembleDetails()
+{
+    juce::OSCMessage message("/ensembleDetails");
+    // Add all variables to the message
+    message.addInt32(currentReceivePort);
+    message.addInt32(numUserPlayers);
+    message.addString(midiFilePath.getFullPathName());
+    message.addFloat32(sampleRate);
+    message.addInt32(samplesPerBeat);
+    message.addInt32(scoreCounter);
+    message.addInt32(initialTempoSet);
+    message.addInt32(introToneChannel);
+    message.addInt32(numIntroTones);
+    message.addInt32(introToneNoteFirst);
+    message.addInt32(introToneNoteOther);
+    message.addInt32(introToneVel);
+    message.addInt32(introCounter);
+    message.addInt32(introTonesPlayed);
+
+    // Send the OSC message
+    OSCSender.send(message);
 }
 
 bool EnsembleModel::isOscReceiverConnected()
