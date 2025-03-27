@@ -43,6 +43,8 @@ public:
     int getNumUserPlayers();
     bool isPlayerUserOperated(int playerIndex);
     void setAlphaBetaParams(float valueIn);
+
+    // Getters
     juce::AudioParameterInt& getPlayerChannelParameter(int playerIndex);
     juce::AudioParameterFloat& getPlayerDelayParameter(int playerIndex);
     juce::AudioParameterFloat& getPlayerMotorNoiseParameter(int playerIndex);
@@ -132,6 +134,47 @@ private:
         bool locked;
     };
 
+    class PlayerParameters {
+    public:
+        double delay;
+        double tkNoiseSTD;
+        double mNoiseStd;
+        int midiChannel;
+        double volume;
+        std::vector<float> alphas;
+        std::vector<float> betas;
+
+        PlayerParameters(double delay, double tkNoiseSTD, double mNoiseStd,
+            int midiChannel, double volume,
+            const std::vector<float>& alphas,
+            const std::vector<float>& betas)
+            : delay(delay), tkNoiseSTD(tkNoiseSTD), mNoiseStd(mNoiseStd),
+            midiChannel(midiChannel), volume(volume),
+            alphas(alphas), betas(betas) {}
+
+        // Function to generate an OSC message
+        juce::OSCMessage getOSCMessage() const {
+            juce::OSCMessage oscMessage("/playerInfo");
+
+            // Add basic parameters
+            oscMessage.addFloat32(delay);
+            oscMessage.addFloat32(tkNoiseSTD);
+            oscMessage.addFloat32(mNoiseStd);
+            oscMessage.addInt32(midiChannel);
+            oscMessage.addFloat32(volume);
+
+            // Add vector values (alphas and betas)
+            for (float alpha : alphas) {
+                oscMessage.addFloat32(alpha);
+            }
+            for (float beta : betas) {
+                oscMessage.addFloat32(beta);
+            }
+
+            return oscMessage;
+        }
+    };
+
     std::vector <std::unique_ptr <Player> > players;
     std::atomic_flag playersInUse;
     std::atomic_flag resetFlag;
@@ -142,6 +185,7 @@ private:
     void storeOnsetDetailsForPlayer (int bufferIndex, int playerIndex);
     void playScore (const juce::MidiBuffer &inMidi, juce::MidiBuffer &outMidi, int sampleIndex);
     void playUserIntro(const juce::MidiBuffer& inMidi, juce::MidiBuffer& outMidi, int sampleIndex);
+    PlayerParameters getPlayerInfo(int playerIndex);
     
     //==============================================================================
     // Logging

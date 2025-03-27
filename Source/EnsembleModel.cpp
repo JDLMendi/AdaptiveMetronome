@@ -274,8 +274,7 @@ void EnsembleModel::initialiseOSC()
     // New OSC Listener Addresses
     OSCReceiver.addListener(this, "/loadMidiFile");
     OSCReceiver.addListener(this, "/ensembleDetails");
-    OSCReceiver.addListener(this, "/playersDetails");
-    OSCReceiver.addListener(this, "/adapativeMetronome");
+    OSCReceiver.addListener(this, "/playerDetails");
     OSCReceiver.addListener(this, "/ping");
 }
 
@@ -352,13 +351,17 @@ void EnsembleModel::oscMessageReceived(const juce::OSCMessage& message)
                 else { DBG("Failed to open MIDI file stream."); }
             }
         }
+        else if (oscAddress == "/playerDetails" && message[0].isInt32())
+        {
+            int playerIndex = message[0].getInt32();
+            DBG(playerIndex);
+            OSCSender.send(getPlayerInfo(playerIndex).getOSCMessage());
+        }
     }
 
     // Handle simple commands without parameters
     if (oscAddress == "/reset") { reset(); }
     else if (oscAddress == "/ensembleDetails") { oscSendEnsembleDetails(); }
-    else if (oscAddress == "/playersDetails") { /* Handle players details */ }
-    else if (oscAddress == "/adapativeMetronome") { /* Handle ensemble and players details */ }
     else if (oscAddress == "/ping") { 
         juce::OSCMessage pongMsg("/pong");
         OSCSender.send(pongMsg);
@@ -917,6 +920,28 @@ void EnsembleModel::playUserIntro(const juce::MidiBuffer& inMidi, juce::MidiBuff
             player->processIntroSample(inMidi, outMidi, sampleIndex, introToneNoteOther);
         }
     }
+}
+
+EnsembleModel::PlayerParameters EnsembleModel::getPlayerInfo(int playerIndex)
+{
+    DBG("Player Index: " << playerIndex);
+    // Similar to storeOnsetDetailsForPlayers but only the parameters from the GUI we want to retrieve:
+    double delay = players[playerIndex]->getLatestOnsetDelay();
+    double tkNoiseStd = players[playerIndex]->getTimeKeeperNoiseStd();
+    double mNoiseStd = players[playerIndex]->getMotorNoiseStd();
+    double volume = players[playerIndex]->getLatestVolume();
+    int midiChannel = players[playerIndex]->getMidiChannel();
+
+    std::vector<float> alphas;
+    std::vector<float> betas;
+
+    for (int i = 0; i < players.size(); ++i)
+    {
+        alphas[i] = processor->alphaParameter(playerIndex, i)->get();
+        betas[i] = processor->betaParameter(playerIndex, i)->get();
+    }
+
+    return PlayerParameters(delay, tkNoiseStd, mNoiseStd, midiChannel, volume, alphas, betas);
 }
 
 

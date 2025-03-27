@@ -12,7 +12,8 @@ Player::Player (int index, const juce::MidiMessageSequence *seq, int midiChannel
     playerIndex (index),
     sampleRate (sampleRate),
     scoreCounter (scoreCounter),
-    onsetInterval (initialInterval)
+    onsetInterval (initialInterval),
+    midiChannel (midiChannel)
 {
     *processor->channelParameter(playerIndex) = (playerIndex + 1);
     initialiseScore (seq);
@@ -66,6 +67,10 @@ int Player::getOnsetInterval()
 int Player::getPlayedOnsetInterval()
 {
     return currentOnsetTime - previousOnsetTime;
+}
+
+int Player::getMidiChannel() {
+    return midiChannel;
 }
 
 

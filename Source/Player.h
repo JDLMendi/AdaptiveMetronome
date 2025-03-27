@@ -48,6 +48,7 @@ public:
     double getMotorNoiseStd();
     double getTimeKeeperNoiseStd();
     
+    int getMidiChannel();
     //==============================================================================
     bool hasNotePlayed();
     void resetNotePlayed();
@@ -85,6 +86,7 @@ protected:
     std::vector <Note> notes;
     std::size_t currentNoteIndex = 0;
     double latestVolume = 0.0;
+    int midiChannel;
     
     void initialiseScore (const juce::MidiMessageSequence *seq);
     void playNextNote (juce::MidiBuffer &midi, int sampleIndex, int samplesDelay = 0);
