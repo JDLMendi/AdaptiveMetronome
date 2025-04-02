@@ -16,10 +16,18 @@
         <FILE id="S9PNfy" name="EnsembleModel.h" compile="0" resource="0" file="Source/EnsembleModel.h"/>
       </GROUP>
       <GROUP id="{01BAD2AB-861B-6423-E86F-55CD7AD29B48}" name="Classes">
-        <FILE id="vK7dKD" name="UserPlayer.cpp" compile="1" resource="0" file="Source/UserPlayer.cpp"/>
-        <FILE id="FmR7Vv" name="UserPlayer.h" compile="0" resource="0" file="Source/UserPlayer.h"/>
-        <FILE id="q7q2PM" name="Player.cpp" compile="1" resource="0" file="Source/Player.cpp"/>
-        <FILE id="bwzuHz" name="Player.h" compile="0" resource="0" file="Source/Player.h"/>
+        <GROUP id="{FB7CE47B-D3A3-8C86-3469-4F98F7C753C8}" name="OSCHandler">
+          <FILE id="qBuqZm" name="OSCHandler.cpp" compile="1" resource="0" file="Source/OSCHandler.cpp"/>
+          <FILE id="UNJzMt" name="OSCHandler.h" compile="0" resource="0" file="Source/OSCHandler.h"/>
+        </GROUP>
+        <GROUP id="{3399949D-43C8-4A46-CBBD-7818D94CCB4C}" name="Player">
+          <FILE id="q7q2PM" name="Player.cpp" compile="1" resource="0" file="Source/Player.cpp"/>
+          <FILE id="bwzuHz" name="Player.h" compile="0" resource="0" file="Source/Player.h"/>
+        </GROUP>
+        <GROUP id="{54BB05CF-B1A7-73BF-BB62-8749D8FB84C4}" name="UserPlayer">
+          <FILE id="FmR7Vv" name="UserPlayer.h" compile="0" resource="0" file="Source/UserPlayer.h"/>
+          <FILE id="vK7dKD" name="UserPlayer.cpp" compile="1" resource="0" file="Source/UserPlayer.cpp"/>
+        </GROUP>
       </GROUP>
       <GROUP id="{F865D43C-B679-B310-D93D-36664EB3413E}" name="GUI">
         <FILE id="TfAdgI" name="PluginEditor.cpp" compile="1" resource="0"
