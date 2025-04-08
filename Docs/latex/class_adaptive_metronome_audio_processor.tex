@@ -1,0 +1,136 @@
+\doxysection{Adaptive\+Metronome\+Audio\+Processor Class Reference}
+\hypertarget{class_adaptive_metronome_audio_processor}{}\label{class_adaptive_metronome_audio_processor}\index{AdaptiveMetronomeAudioProcessor@{AdaptiveMetronomeAudioProcessor}}
+Inheritance diagram for Adaptive\+Metronome\+Audio\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_adaptive_metronome_audio_processor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a78977b6834f4bc47d03607e733fcc20e}\label{class_adaptive_metronome_audio_processor_a78977b6834f4bc47d03607e733fcc20e} 
+bool {\bfseries is\+Buses\+Layout\+Supported} (const Buses\+Layout \&layouts) const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a7fbe1b74771cff5623a17e5cfd7e5bc8}\label{class_adaptive_metronome_audio_processor_a7fbe1b74771cff5623a17e5cfd7e5bc8} 
+void {\bfseries prepare\+To\+Play} (double sample\+Rate, int samples\+Per\+Block) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_afd19eb619e3eca8d93dff8d162b3666a}\label{class_adaptive_metronome_audio_processor_afd19eb619e3eca8d93dff8d162b3666a} 
+void {\bfseries release\+Resources} () override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_acdb9a1d56f70967cf69eea8872a26f66}\label{class_adaptive_metronome_audio_processor_acdb9a1d56f70967cf69eea8872a26f66} 
+void {\bfseries process\+Block} (juce\+::\+Audio\+Buffer$<$ float $>$ \&, juce\+::\+Midi\+Buffer \&) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_adc8466360c55c9be12cfcd8ee8a2b742}\label{class_adaptive_metronome_audio_processor_adc8466360c55c9be12cfcd8ee8a2b742} 
+bool {\bfseries has\+Editor} () const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a8bff9d700a813fa06b968ed9883a05c2}\label{class_adaptive_metronome_audio_processor_a8bff9d700a813fa06b968ed9883a05c2} 
+juce\+::\+Audio\+Processor\+Editor \texorpdfstring{$\ast$}{*} {\bfseries create\+Editor} () override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a458c1ae15ad572d7335caa54d2b40e8e}\label{class_adaptive_metronome_audio_processor_a458c1ae15ad572d7335caa54d2b40e8e} 
+const juce\+::\+String {\bfseries get\+Name} () const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a410d77c118fa53298f03e9bcf2e1f0c1}\label{class_adaptive_metronome_audio_processor_a410d77c118fa53298f03e9bcf2e1f0c1} 
+bool {\bfseries accepts\+Midi} () const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a15843324a38bbc9b18406a19de4f41b8}\label{class_adaptive_metronome_audio_processor_a15843324a38bbc9b18406a19de4f41b8} 
+bool {\bfseries produces\+Midi} () const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_aea6a56af240316d3de3270e702cd08be}\label{class_adaptive_metronome_audio_processor_aea6a56af240316d3de3270e702cd08be} 
+bool {\bfseries is\+Midi\+Effect} () const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a883b9cbd9e920e811b5896f1774e174c}\label{class_adaptive_metronome_audio_processor_a883b9cbd9e920e811b5896f1774e174c} 
+double {\bfseries get\+Tail\+Length\+Seconds} () const override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a87cdf7fab2dcca7c21cd51d62111c90a}\label{class_adaptive_metronome_audio_processor_a87cdf7fab2dcca7c21cd51d62111c90a} 
+void {\bfseries get\+State\+Information} (juce\+::\+Memory\+Block \&dest\+Data) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a24739829c0d3a14666fb6dc098914f33}\label{class_adaptive_metronome_audio_processor_a24739829c0d3a14666fb6dc098914f33} 
+void {\bfseries set\+State\+Information} (const void \texorpdfstring{$\ast$}{*}data, int size\+In\+Bytes) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a685102b40263e01566f86787c5dcaa1f}\label{class_adaptive_metronome_audio_processor_a685102b40263e01566f86787c5dcaa1f} 
+int {\bfseries get\+Num\+Programs} () override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a1818a2e8050dbffd5c14ccbf301d69b7}\label{class_adaptive_metronome_audio_processor_a1818a2e8050dbffd5c14ccbf301d69b7} 
+int {\bfseries get\+Current\+Program} () override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a24236e85b1568dd5c342e184995ff575}\label{class_adaptive_metronome_audio_processor_a24236e85b1568dd5c342e184995ff575} 
+void {\bfseries set\+Current\+Program} (int index) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a2006f43af33a8ffdcb9aeba64ed13186}\label{class_adaptive_metronome_audio_processor_a2006f43af33a8ffdcb9aeba64ed13186} 
+const juce\+::\+String {\bfseries get\+Program\+Name} (int index) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_af013e0a2df292c8d68e0d2227528571b}\label{class_adaptive_metronome_audio_processor_af013e0a2df292c8d68e0d2227528571b} 
+void {\bfseries change\+Program\+Name} (int index, const juce\+::\+String \&new\+Name) override
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a3d1ab92977a8ffb3a5a681a145147480}\label{class_adaptive_metronome_audio_processor_a3d1ab92977a8ffb3a5a681a145147480} 
+\mbox{\hyperlink{class_ensemble_model}{Ensemble\+Model}} \& {\bfseries load\+Midi\+File} (const juce\+::\+File \&file, int user\+Players)
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a96aed30dfcc0079ab5aff10d0482a345}\label{class_adaptive_metronome_audio_processor_a96aed30dfcc0079ab5aff10d0482a345} 
+\mbox{\hyperlink{class_ensemble_model}{Ensemble\+Model}} \& {\bfseries load\+Xml\+File} (const juce\+::\+File \&file)
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_af865dcd3764f46b789a6e89eeef4b7ba}\label{class_adaptive_metronome_audio_processor_af865dcd3764f46b789a6e89eeef4b7ba} 
+void {\bfseries reset\+Ensemble} ()
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a6b2b4195e7298fcde70b20049afaf435}\label{class_adaptive_metronome_audio_processor_a6b2b4195e7298fcde70b20049afaf435} 
+juce\+::\+Audio\+Processor\+Value\+Tree\+State\+::\+Parameter\+Layout {\bfseries create\+Parameter\+Layout} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_ad7db008674b3a9619c46f21c4bd99008}\label{class_adaptive_metronome_audio_processor_ad7db008674b3a9619c46f21c4bd99008} 
+\mbox{\hyperlink{class_ensemble_model}{Ensemble\+Model}} {\bfseries ensemble}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_ae83468f05e4d637e53b3ed6d05d49bb8}\label{class_adaptive_metronome_audio_processor_ae83468f05e4d637e53b3ed6d05d49bb8} 
+juce\+::\+Audio\+Processor\+Value\+Tree\+State {\bfseries apvts}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a2184f58f036f2c9d710213dfff5eb443}\label{class_adaptive_metronome_audio_processor_a2184f58f036f2c9d710213dfff5eb443} 
+bool {\bfseries has\+Default\+Config\+Been\+Checked} = false
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a71f29a47118790b86c6ff27a2517e6a6}\label{class_adaptive_metronome_audio_processor_a71f29a47118790b86c6ff27a2517e6a6} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Float $>$ {\bfseries volume\+Parameter}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_ae3c6a48d899bd8e7b796ad0644b9fb50}\label{class_adaptive_metronome_audio_processor_ae3c6a48d899bd8e7b796ad0644b9fb50} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Float $>$ {\bfseries delay\+Parameter}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_abbe6de3e4e2c5b88c05a8c2396b838c2}\label{class_adaptive_metronome_audio_processor_abbe6de3e4e2c5b88c05a8c2396b838c2} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Float $>$ {\bfseries m\+Noise\+Std\+Parameter}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a88f9f98a15261958bfcf95a8ba37aa4f}\label{class_adaptive_metronome_audio_processor_a88f9f98a15261958bfcf95a8ba37aa4f} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Float $>$ {\bfseries tk\+Noise\+Std\+Parameter}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_a917161dfb0535265b440faed68674567}\label{class_adaptive_metronome_audio_processor_a917161dfb0535265b440faed68674567} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Int $>$ {\bfseries channel\+Parameter}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_abfbf18afe9022d6a9d82923dc8f51915}\label{class_adaptive_metronome_audio_processor_abfbf18afe9022d6a9d82923dc8f51915} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Float $>$ {\bfseries alpha\+Parameter}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_adee7f154ac4b620de01acdab28ca95fe}\label{class_adaptive_metronome_audio_processor_adee7f154ac4b620de01acdab28ca95fe} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor_1_1_parameter_index_getter}{Parameter\+Index\+Getter}}$<$ juce\+::\+Audio\+Parameter\+Float $>$ {\bfseries beta\+Parameter}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_ac30594ec867b0fa6fd955171cff09f0d}\label{class_adaptive_metronome_audio_processor_ac30594ec867b0fa6fd955171cff09f0d} 
+static const int {\bfseries MAX\+\_\+\+PLAYERS} = 4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_aaae8b0d00e7da057a534617c6b7b2cbe}\label{class_adaptive_metronome_audio_processor_aaae8b0d00e7da057a534617c6b7b2cbe} 
+juce\+::\+Midi\+Buffer {\bfseries midi\+Output\+Buffer}
+\item 
+\Hypertarget{class_adaptive_metronome_audio_processor_aaf26ac844b7b358b5f31cdb638535159}\label{class_adaptive_metronome_audio_processor_aaf26ac844b7b358b5f31cdb638535159} 
+bool {\bfseries was\+Playing} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Plugin\+Processor.\+h\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Plugin\+Processor.\+cpp\end{DoxyCompactItemize}

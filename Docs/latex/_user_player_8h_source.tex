@@ -1,0 +1,42 @@
+\doxysection{User\+Player.\+h}
+\hypertarget{_user_player_8h_source}{}\label{_user_player_8h_source}\index{D:/Projects/ARME/AdaptiveMetronome/Source/UserPlayer.h@{D:/Projects/ARME/AdaptiveMetronome/Source/UserPlayer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }UserPlayer\ :\ \textcolor{keyword}{public}\ Player}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00008\ \ \ \ \ UserPlayer\ (\textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ juce::MidiMessageSequence\ *seq,\ \textcolor{keywordtype}{int}\ midiChannel,\ }
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&sampleRate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&scoreCounter,\ \textcolor{keywordtype}{int}\ initialInterval);}
+\DoxyCodeLine{00010\ \ \ \ \ UserPlayer\ (\textcolor{keywordtype}{int}\ index,\ \textcolor{keyword}{const}\ juce::MidiMessageSequence\ *seq,\ \textcolor{keywordtype}{int}\ midiChannel,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&sampleRate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&scoreCounter,\ \textcolor{keywordtype}{int}\ initialInterval,\ \mbox{\hyperlink{class_adaptive_metronome_audio_processor}{AdaptiveMetronomeAudioProcessor}}\ *processorIn);}
+\DoxyCodeLine{00012\ \ \ \ \ \string~UserPlayer();}
+\DoxyCodeLine{00013\ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ isUserOperated()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ recalculateOnsetInterval\ (\textcolor{keywordtype}{int}\ samplesPerBeat,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector\ <std::unique\_ptr\ <Player>\ >\ \&players)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasLatestOnsetUserInput()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ processIntroSample\ (\textcolor{keyword}{const}\ juce::MidiBuffer\ \&inMidi,\ juce::MidiBuffer\ \&outMidi,\ \textcolor{keywordtype}{int}\ sampleIndex,\ \textcolor{keywordtype}{int}\ introNote)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ bool\ noteTriggeredByUser\ =\ false;}}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ processNoteOn\ (\textcolor{keyword}{const}\ juce::MidiBuffer\ \&inMidi,\ juce::MidiBuffer\ \&outMidi,\ \textcolor{keywordtype}{int}\ sampleIndex)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ introToneLength\ =\ 100;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ samplesToIntroToneOff\ =\ -\/1;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \};}
+
+\end{DoxyCode}

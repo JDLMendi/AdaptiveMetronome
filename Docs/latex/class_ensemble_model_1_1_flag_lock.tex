@@ -1,0 +1,54 @@
+\doxysection{Ensemble\+Model\+::Flag\+Lock Class Reference}
+\hypertarget{class_ensemble_model_1_1_flag_lock}{}\label{class_ensemble_model_1_1_flag_lock}\index{EnsembleModel::FlagLock@{EnsembleModel::FlagLock}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ensemble_model_1_1_flag_lock_aaf42d4b5447032e0bd7b7497a31b695e}{Flag\+Lock}} (std\+::atomic\+\_\+flag \&f)
+\begin{DoxyCompactList}\small\item\em Class for locking the players\+In\+Use flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ensemble_model_1_1_flag_lock_a8387f224ffbd401b9f0a88d8dfc2c551}{\texorpdfstring{$\sim$}{\string~}\+Flag\+Lock}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_ensemble_model_1_1_flag_lock}{Flag\+Lock} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_1_1_flag_lock_a0c8f6c79900a0a1bee29e48fbfb5833d}\label{class_ensemble_model_1_1_flag_lock_a0c8f6c79900a0a1bee29e48fbfb5833d} 
+std\+::atomic\+\_\+flag \& {\bfseries flag}
+\item 
+\Hypertarget{class_ensemble_model_1_1_flag_lock_a34c1641f3ff1651ab44e2a427501c03e}\label{class_ensemble_model_1_1_flag_lock_a34c1641f3ff1651ab44e2a427501c03e} 
+bool {\bfseries locked}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ensemble_model_1_1_flag_lock_aaf42d4b5447032e0bd7b7497a31b695e}\index{EnsembleModel::FlagLock@{EnsembleModel::FlagLock}!FlagLock@{FlagLock}}
+\index{FlagLock@{FlagLock}!EnsembleModel::FlagLock@{EnsembleModel::FlagLock}}
+\doxysubsubsection{\texorpdfstring{FlagLock()}{FlagLock()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_1_1_flag_lock_aaf42d4b5447032e0bd7b7497a31b695e} 
+Ensemble\+Model\+::\+Flag\+Lock\+::\+Flag\+Lock (\begin{DoxyParamCaption}\item[{std\+::atomic\+\_\+flag \&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Class for locking the players\+In\+Use flag. 
+
+This class is used to lock the players\+In\+Use flag when the \doxylink{class_ensemble_model}{Ensemble\+Model} needs to access or modify the player objects. The flag is cleared when the destructor is called.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em f} & a reference to a std\+::atomic\+\_\+flag object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_1_1_flag_lock_a8387f224ffbd401b9f0a88d8dfc2c551}\index{EnsembleModel::FlagLock@{EnsembleModel::FlagLock}!````~FlagLock@{\texorpdfstring{$\sim$}{\string~}FlagLock}}
+\index{````~FlagLock@{\texorpdfstring{$\sim$}{\string~}FlagLock}!EnsembleModel::FlagLock@{EnsembleModel::FlagLock}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FlagLock()}{\string~FlagLock()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_1_1_flag_lock_a8387f224ffbd401b9f0a88d8dfc2c551} 
+Ensemble\+Model\+::\+Flag\+Lock\+::\texorpdfstring{$\sim$}{\string~}\+Flag\+Lock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for \doxylink{class_ensemble_model_1_1_flag_lock}{Flag\+Lock} class. 
+
+The destructor clears the locked flag to unlock the players\+In\+Use flag. This allows the \doxylink{class_ensemble_model}{Ensemble\+Model} to access or modify the player objects again. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Ensemble\+Model.\+h\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Ensemble\+Model.\+cpp\end{DoxyCompactItemize}

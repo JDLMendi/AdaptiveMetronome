@@ -1,0 +1,257 @@
+\doxysection{Ensemble\+Model.\+h}
+\hypertarget{_ensemble_model_8h_source}{}\label{_ensemble_model_8h_source}\index{D:/Projects/ARME/AdaptiveMetronome/Source/EnsembleModel.h@{D:/Projects/ARME/AdaptiveMetronome/Source/EnsembleModel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <JuceHeader.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }std::function;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{AdaptiveMetronomeAudioProcessor}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a}{EnsembleModel}}\ :\ \textcolor{keyword}{private}\ juce::OSCReceiver::ListenerWithOSCAddress<juce::OSCReceiver::MessageLoopCallback>,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ juce::ActionBroadcaster}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Constructor\ and\ Destructor}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a}{EnsembleModel}}(\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{AdaptiveMetronomeAudioProcessor}}\ *processorPtr);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_ensemble_model_a9ceb0658e35ae43a2a92d6a12afed985}{\string~EnsembleModel}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ MIDI\ Handling}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_aa9c846c94a467886c1d2a7c648c362a1}{loadMidiFile}}(\textcolor{keyword}{const}\ juce::File\ \&file,\ \textcolor{keywordtype}{int}\ userPlayers);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_a1e2e91caac2b24c18e3402c3cd61b9a5}{isMidiLoaded}}();}
+\DoxyCodeLine{00025\ \ \ \ \ juce::String\ \mbox{\hyperlink{class_ensemble_model_a5439d1bc9f2e350ad8151cfd349ae930}{getMidiFileName}}();}
+\DoxyCodeLine{00026\ \ \ \ \ juce::File\ \mbox{\hyperlink{class_ensemble_model_a480fbd3e7424882e759107e40d17309b}{getMidiFile}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Processing\ and\ Playback}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a0bf43a9c5c50c3853ba5e01ebef909dc}{prepareToPlay}}(\textcolor{keywordtype}{double}\ newSampleRate);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ab19459d025312f1524ff7a2192c4ba2d}{releaseResources}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_af06ee8adbc8e34be8e3c81d69da78373}{processMidiBlock}}(\textcolor{keyword}{const}\ juce::MidiBuffer\ \&inMidi,\ juce::MidiBuffer\ \&outMidi,\ \textcolor{keywordtype}{int}\ numSamples,\ \textcolor{keywordtype}{double}\ tempo);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_a8c5e69d3481a64524323aa84d98e6027}{reset}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a47fa226722c535fe8f1545ad542ec76a}{resetPlayers}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_aca0da6aff00966cb55da0bea171a9b1f}{soundOffAllChannels}}(juce::MidiBuffer\ \&midi);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_abe34215378c78b5135edb42d950b0aa8}{checkMidiSequenceHasNotes}}(\textcolor{keyword}{const}\ juce::MidiMessageSequence\ *seq);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Player\ Management}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ensemble_model_ab582aa9121cf83c2218f0eed64e580a5}{getNumPlayers}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ensemble_model_a1b192d0906fd4456709b3067196de68f}{getNumUserPlayers}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_a399a635c8b17e8fa2cfd20f86bb509cd}{isPlayerUserOperated}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb}{setAlphaBetaParams}}(\textcolor{keywordtype}{float}\ valueIn);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00046\ \ \ \ \ juce::AudioParameterInt\ \&\mbox{\hyperlink{class_ensemble_model_a8037d9b35af2415e8b0aa0ba94960d67}{getPlayerChannelParameter}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00047\ \ \ \ \ juce::AudioParameterFloat\ \&\mbox{\hyperlink{class_ensemble_model_afd8161d7b9ab390157a731db55564e42}{getPlayerDelayParameter}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00048\ \ \ \ \ juce::AudioParameterFloat\ \&\mbox{\hyperlink{class_ensemble_model_a36d1c40ac945ec76435e8b7934cb24f7}{getPlayerMotorNoiseParameter}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00049\ \ \ \ \ juce::AudioParameterFloat\ \&\mbox{\hyperlink{class_ensemble_model_a57aff2fc4b4c57f80021b284cef138a8}{getPlayerTimeKeeperNoiseParameter}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00050\ \ \ \ \ juce::AudioParameterFloat\ \&\mbox{\hyperlink{class_ensemble_model_ab29e3ff1fb709520386046e080338a84}{getPlayerVolumeParameter}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00051\ \ \ \ \ juce::AudioParameterFloat\ \&\mbox{\hyperlink{class_ensemble_model_a2c7876fe797d2a53e6f74f95dec2b470}{getAlphaParameter}}(\textcolor{keywordtype}{int}\ player1Index,\ \textcolor{keywordtype}{int}\ player2Index);}
+\DoxyCodeLine{00052\ \ \ \ \ juce::AudioParameterFloat\ \&\mbox{\hyperlink{class_ensemble_model_a0c138a7eca02a9690e98d095d5b002ee}{getBetaParameter}}(\textcolor{keywordtype}{int}\ player1Index,\ \textcolor{keywordtype}{int}\ player2Index);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ OSC\ Messaging}}
+\DoxyCodeLine{00056\ \ \ \ \ juce::OSCSender\ OSCSender;}
+\DoxyCodeLine{00057\ \ \ \ \ juce::OSCReceiver\ OSCReceiver;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOSCInitialised\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ currentReceivePort\ =\ -\/1;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a1f9674d65fdd9b7ea279a3cf3af8787f}{initialiseOSC}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a5600a255d4e106d196b777a687dadaaa}{connectOSCSender}}(\textcolor{keywordtype}{int}\ portNumber,\ juce::String\ IPAddress);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a49d70f101c56ee7a23b6167d0beb4a5d}{connectOSCReceiver}}(\textcolor{keywordtype}{int}\ portNumber);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a92d696efea2517eb7ddd85dc93f4393b}{oscMessageReceived}}(\textcolor{keyword}{const}\ juce::OSCMessage\ \&message);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a8b2bcf0b289dc176953177145bb8480c}{oscAcknowledge}}(\textcolor{keyword}{const}\ juce::String\ \&receivedAddress);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ac44339ce6dd581a8254db8dde091dd82}{oscSendEnsembleDetails}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_ad6f0f8594780ec4f7e9b6e955bc6465e}{isOscReceiverConnected}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ XML\ Configuration}}
+\DoxyCodeLine{00071\ \ \ \ \ juce::String\ logSubfolder\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ juce::String\ logFilenameOverride\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00073\ \ \ \ \ juce::String\ configSubfolder\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a5da733fe74f486ab15c5c26a7d90be2e}{saveConfigToXmlFile}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e}{loadConfigFromXml}}(juce::File\ configFile);\ \textcolor{comment}{//\ Loading\ from\ file\ directly}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e}{loadConfigFromXml}}(std::unique\_ptr<juce::XmlElement>\ loadedConfig);}
+\DoxyCodeLine{00078\ \ \ \ \ std::unique\_ptr<juce::XmlElement>\ \mbox{\hyperlink{class_ensemble_model_a47c749e4e0b905fec8a88d0761d28176}{parseXmlConfigFileToXmlElement}}(juce::File\ configFile);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Internal\ State}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_adaptive_metronome_audio_processor}{AdaptiveMetronomeAudioProcessor}}\ *processor\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ numUserPlayers\ =\ 1;}
+\DoxyCodeLine{00085\ \ \ \ \ juce::MidiFile\ midiFile;}
+\DoxyCodeLine{00086\ \ \ \ \ juce::File\ midiFilePath;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ midiLoaded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Timing\ and\ Playback}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ sampleRate\ =\ 44100.0;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ samplesPerBeat\ =\ sampleRate\ /\ 4;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ scoreCounter\ =\ 0;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ initialTempoSet\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Following\ functions\ are\ ammending\ timings\ for\ each\ player\ and\ called\ only\ within\ processMidiBlock()}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_afaad68729d6e76b099e3161bc4990d12}{setTempo}}(\textcolor{keywordtype}{double}\ bpm);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a91652dc39b17226ab242575700ea5a15}{setInitialPlayerTempo}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ensemble_model_ad3d5c4a2dc9348243a24ad1fabf21a1c}{newOnsetsAvailable}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ac29e0499b041f239b897b0ebe5c258cb}{calculateNewIntervals}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a2d9f7f1f98bf202dd83334a0a698bcc2}{clearOnsetsAvailable}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Intro\ Tones}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ introToneChannel\ =\ 16;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ numIntroTones\ =\ 4;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ introToneNoteFirst\ =\ 84;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ introToneNoteOther\ =\ 72;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ juce::uint8\ introToneVel\ =\ 100;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ introCounter\ =\ 0;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ introTonesPlayed\ =\ 0;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a5d933454a98698460828b4bd75044bef}{playIntroTones}}(juce::MidiBuffer\ \&midi,\ \textcolor{keywordtype}{int}\ sampleIndex);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a813885b8bd781e2f80e5546caa82c9a1}{introToneOn}}(juce::MidiBuffer\ \&midi,\ \textcolor{keywordtype}{int}\ sampleIndex);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a6e9e3a7e9f2fb998a570f87ef53d1c48}{introToneOff}}(juce::MidiBuffer\ \&midi,\ \textcolor{keywordtype}{int}\ sampleIndex);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ introToneOnOff(juce::MidiBuffer\ \&midi,\ juce::MidiMessage\ (*function)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ juce::uint8),\ \textcolor{keywordtype}{int}\ sampleIndex);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ Player\ Management}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ The\ following\ functions\ should\ only\ be\ called\ when\ the\ playersInUse}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ flag\ has\ been\ locked\ using\ the\ FlagLock\ class.}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ensemble_model_1_1_flag_lock_aaf42d4b5447032e0bd7b7497a31b695e}{FlagLock}}}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ensemble_model_1_1_flag_lock_aaf42d4b5447032e0bd7b7497a31b695e}{FlagLock}}(std::atomic\_flag\ \&f);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ensemble_model_1_1_flag_lock_a8387f224ffbd401b9f0a88d8dfc2c551}{\string~FlagLock}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ std::atomic\_flag\ \&flag;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ locked;}
+\DoxyCodeLine{00132\ \ \ \ \ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{class\ }PlayerParameters}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delay;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tkNoiseSTD;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mNoiseStd;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ midiChannel;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ volume;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ std::vector<float>\ alphas;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ std::vector<float>\ betas;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ PlayerParameters(\textcolor{keywordtype}{double}\ delay,\ \textcolor{keywordtype}{double}\ tkNoiseSTD,\ \textcolor{keywordtype}{double}\ mNoiseStd,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ midiChannel,\ \textcolor{keywordtype}{double}\ volume,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\ \&alphas,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\ \&betas)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ :\ delay(delay),\ tkNoiseSTD(tkNoiseSTD),\ mNoiseStd(mNoiseStd),}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ midiChannel(midiChannel),\ volume(volume),}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alphas(alphas),\ betas(betas)\ \{\}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Function\ to\ generate\ an\ OSC\ message}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ juce::OSCMessage\ getOSCMessage()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00155\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ juce::OSCMessage\ oscMessage(\textcolor{stringliteral}{"{}/playerInfo"{}});}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ basic\ parameters}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addFloat32(delay);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addFloat32(tkNoiseSTD);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addFloat32(mNoiseStd);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addInt32(midiChannel);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addFloat32(volume);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ vector\ values\ (alphas\ and\ betas)}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ alpha\ :\ alphas)}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addFloat32(alpha);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ beta\ :\ betas)}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oscMessage.addFloat32(beta);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oscMessage;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ std::vector<std::unique\_ptr<Player>>\ players;}
+\DoxyCodeLine{00180\ \ \ \ \ std::atomic\_flag\ playersInUse;}
+\DoxyCodeLine{00181\ \ \ \ \ std::atomic\_flag\ resetFlag;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a5d5d0035fe2a5f64a0e92a2573f9daab}{createPlayers}}(\textcolor{keyword}{const}\ juce::MidiFile\ \&file);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ac6a52e9c021aa8630a8be7c9007bb3fc}{createAlphaBetaParameters}}();}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a0072eca9cce7271df0474270b52f47c4}{getLatestAlphas}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a6a7807101d6f80b898f4fd551e73a6d3}{storeOnsetDetailsForPlayer}}(\textcolor{keywordtype}{int}\ bufferIndex,\ \textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a633b717d9a77d6110c8055116f39ee24}{playScore}}(\textcolor{keyword}{const}\ juce::MidiBuffer\ \&inMidi,\ juce::MidiBuffer\ \&outMidi,\ \textcolor{keywordtype}{int}\ sampleIndex);}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_adb85ab99330368c267f341258a74bd6f}{playUserIntro}}(\textcolor{keyword}{const}\ juce::MidiBuffer\ \&inMidi,\ juce::MidiBuffer\ \&outMidi,\ \textcolor{keywordtype}{int}\ sampleIndex);}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{class_ensemble_model_1_1_player_parameters}{PlayerParameters}}\ \mbox{\hyperlink{class_ensemble_model_ae535f1d011baca8f0756a65f4e9dc732}{getPlayerInfo}}(\textcolor{keywordtype}{int}\ playerIndex);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{comment}{//\ Logging}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//\ A\ bunch\ of\ stuff\ for\ safely\ logging\ onset\ times\ and\ sending\ them\ out\ to\ the}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ server.\ Functions\ defined\ in\ here\ are\ only\ safe\ to\ call\ from\ the\ logging\ thread.}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ensemble_model_1_1_log_data}{LogData}}}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ onsetTime,\ onsetInterval;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ userInput;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delay;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ motorNoise,\ timeKeeperNoise;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ std::vector<int>\ asyncs;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ std::vector<float>\ alphas;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ std::vector<float>\ betas;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tkNoiseStd,\ mNoiseStd;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ volume;}
+\DoxyCodeLine{00208\ \ \ \ \ \};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ std::unique\_ptr<juce::AbstractFifo>\ loggingFifo;}
+\DoxyCodeLine{00211\ \ \ \ \ std::vector<LogData>\ loggingBuffer;}
+\DoxyCodeLine{00212\ \ \ \ \ std::thread\ loggerThread;}
+\DoxyCodeLine{00213\ \ \ \ \ std::atomic<bool>\ continueLogging;}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{int}\ logLineCounter\ =\ 0;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_af8664e4d52e36fcf2b2c765335d72de3}{initialiseLoggingBuffer}}();}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a76ac9f8dc299dc90d42ef9c221a29bdc}{startLoggerLoop}}();}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a89764d6c8778af9b9d3524ca6cb51c99}{stopLoggerLoop}}();}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_aedb8d6aaab985d0203e7814ae80a133e}{loggerLoop}}();}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a531b4f266d892100351d4657e40649f0}{writeLogHeader}}(juce::FileOutputStream\ \&logStream);}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ad96f46ee9258d5d03dc1aebc7aed4b9c}{logOnsetDetails}}(juce::FileOutputStream\ \&logStream);}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ad238fbf951d142db1ea3136ae4572cac}{logOnsetDetailsForPlayer}}(\textcolor{keywordtype}{int}\ bufferIndex,}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&onsetLog,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&intervalLog,}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&userInputLog,}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&delayLog,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&mNoiseLog,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&tkNoiseLog,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&asyncLog,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&alphaLog,}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&betaLog,}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&tkNoiseStdLog,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&mNoiseStdLog,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ juce::String\ \&velocityLog);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{void}\ postLatestOnsets(\textcolor{keyword}{const}\ std::vector<int>\ \&onsets,\ \textcolor{keyword}{const}\ std::vector<int>\ \&delays);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{comment}{//\ Polling\ for\ new\ Alpha\ Values}}
+\DoxyCodeLine{00240\ \ \ \ \ std::unique\_ptr<juce::AbstractFifo>\ pollingFifo;}
+\DoxyCodeLine{00241\ \ \ \ \ std::vector<std::vector<float>>\ pollingBuffer;}
+\DoxyCodeLine{00242\ \ \ \ \ std::thread\ pollingThread;}
+\DoxyCodeLine{00243\ \ \ \ \ std::atomic<bool>\ continuePolling;}
+\DoxyCodeLine{00244\ \ \ \ \ std::atomic\_flag\ alphasUpToDate;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_aa0409cf687dcb20f57bb615dde40b373}{initialisePollingBuffers}}();}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_ad77ce6178c36b1935e3f24960a242141}{startPollingLoop}}();}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a53702dbb1b0baf76f2faa4dcb6a360b6}{stopPollingLoop}}();}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ensemble_model_a8dabdf9d19baeb953ffea24bfc90a2e3}{pollingLoop}}();}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ getNewAlphas();}
+\DoxyCodeLine{00251\ \};}
+
+\end{DoxyCode}
