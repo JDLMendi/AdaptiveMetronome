@@ -1,0 +1,1262 @@
+\doxysection{Ensemble\+Model Class Reference}
+\hypertarget{class_ensemble_model}{}\label{class_ensemble_model}\index{EnsembleModel@{EnsembleModel}}
+Inheritance diagram for Ensemble\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.031308cm]{class_ensemble_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_ensemble_model_1_1_flag_lock}{Flag\+Lock}}
+\item 
+struct \mbox{\hyperlink{struct_ensemble_model_1_1_log_data}{Log\+Data}}
+\item 
+class \mbox{\hyperlink{class_ensemble_model_1_1_player_parameters}{Player\+Parameters}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a}{Ensemble\+Model}} (\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*}processor\+Ptr)
+\begin{DoxyCompactList}\small\item\em Construct a new Ensemble Model object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ensemble_model_a9ceb0658e35ae43a2a92d6a12afed985}{\texorpdfstring{$\sim$}{\string~}\+Ensemble\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_ensemble_model}{Ensemble\+Model}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ensemble_model_aa9c846c94a467886c1d2a7c648c362a1}{load\+Midi\+File}} (const juce\+::\+File \&file, int user\+Players)
+\begin{DoxyCompactList}\small\item\em Load a MIDI file into the \doxylink{class_ensemble_model}{Ensemble\+Model} and create players for each track. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ensemble_model_a1e2e91caac2b24c18e3402c3cd61b9a5}{is\+Midi\+Loaded}} ()
+\begin{DoxyCompactList}\small\item\em Check if a MIDI file has been loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model}. \end{DoxyCompactList}\item 
+juce\+::\+String \mbox{\hyperlink{class_ensemble_model_a5439d1bc9f2e350ad8151cfd349ae930}{get\+Midi\+File\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the MIDI file loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model}. \end{DoxyCompactList}\item 
+juce\+::\+File \mbox{\hyperlink{class_ensemble_model_a480fbd3e7424882e759107e40d17309b}{get\+Midi\+File}} ()
+\begin{DoxyCompactList}\small\item\em Get the MIDI file loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a0bf43a9c5c50c3853ba5e01ebef909dc}{prepare\+To\+Play}} (double new\+Sample\+Rate)
+\begin{DoxyCompactList}\small\item\em Prepare the ensemble model for playback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_ab19459d025312f1524ff7a2192c4ba2d}{release\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Release any resources allocated by the ensemble model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_af06ee8adbc8e34be8e3c81d69da78373}{process\+Midi\+Block}} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int num\+Samples, double tempo)
+\begin{DoxyCompactList}\small\item\em Processes a block of MIDI events and outputs the result. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ensemble_model_a8c5e69d3481a64524323aa84d98e6027}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the ensemble model and its players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a47fa226722c535fe8f1545ad542ec76a}{reset\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Reset the players in the ensemble model. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ensemble_model_ab582aa9121cf83c2218f0eed64e580a5}{get\+Num\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of players in the ensemble model. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ensemble_model_a1b192d0906fd4456709b3067196de68f}{get\+Num\+User\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of user players in the ensemble model. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ensemble_model_a399a635c8b17e8fa2cfd20f86bb509cd}{is\+Player\+User\+Operated}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Determine if a player is user-\/operated or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb}{set\+Alpha\+Beta\+Params}} (float value\+In)
+\begin{DoxyCompactList}\small\item\em Set the alpha and beta parameters for all players to a given value. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Int \& \mbox{\hyperlink{class_ensemble_model_a8037d9b35af2415e8b0aa0ba94960d67}{get\+Player\+Channel\+Parameter}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Get the channel parameter for a given player. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Float \& \mbox{\hyperlink{class_ensemble_model_afd8161d7b9ab390157a731db55564e42}{get\+Player\+Delay\+Parameter}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Get the delay parameter for a given player. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Float \& \mbox{\hyperlink{class_ensemble_model_a36d1c40ac945ec76435e8b7934cb24f7}{get\+Player\+Motor\+Noise\+Parameter}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Get the motor noise parameter for a given player. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Float \& \mbox{\hyperlink{class_ensemble_model_a57aff2fc4b4c57f80021b284cef138a8}{get\+Player\+Time\+Keeper\+Noise\+Parameter}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Get the time keeper noise parameter for a given player. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Float \& \mbox{\hyperlink{class_ensemble_model_ab29e3ff1fb709520386046e080338a84}{get\+Player\+Volume\+Parameter}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Get the volume parameter for a given player. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Float \& \mbox{\hyperlink{class_ensemble_model_a2c7876fe797d2a53e6f74f95dec2b470}{get\+Alpha\+Parameter}} (int player1\+Index, int player2\+Index)
+\begin{DoxyCompactList}\small\item\em Get the alpha parameter for a given player pair. \end{DoxyCompactList}\item 
+juce\+::\+Audio\+Parameter\+Float \& \mbox{\hyperlink{class_ensemble_model_a0c138a7eca02a9690e98d095d5b002ee}{get\+Beta\+Parameter}} (int player1\+Index, int player2\+Index)
+\begin{DoxyCompactList}\small\item\em Get the beta parameter for a given player pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a1f9674d65fdd9b7ea279a3cf3af8787f}{initialise\+OSC}} ()
+\begin{DoxyCompactList}\small\item\em Initialises the OSC listener for the ensemble model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a5600a255d4e106d196b777a687dadaaa}{connect\+OSCSender}} (int port\+Number, juce\+::\+String IPAddress)
+\begin{DoxyCompactList}\small\item\em Connects the OSC sender to a given IP address and port number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a49d70f101c56ee7a23b6167d0beb4a5d}{connect\+OSCReceiver}} (int port\+Number)
+\begin{DoxyCompactList}\small\item\em Connects the OSC receiver to a given port number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a92d696efea2517eb7ddd85dc93f4393b}{osc\+Message\+Received}} (const juce\+::\+OSCMessage \&message)
+\begin{DoxyCompactList}\small\item\em Processes received OSC messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a8b2bcf0b289dc176953177145bb8480c}{osc\+Acknowledge}} (const juce\+::\+String \&received\+Address)
+\item 
+void \mbox{\hyperlink{class_ensemble_model_ac44339ce6dd581a8254db8dde091dd82}{osc\+Send\+Ensemble\+Details}} ()
+\begin{DoxyCompactList}\small\item\em Sends an OSC message with all ensemble model details to the connected OSC receiver. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ensemble_model_ad6f0f8594780ec4f7e9b6e955bc6465e}{is\+Osc\+Receiver\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the OSC receiver is connected and ready to receive messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a5da733fe74f486ab15c5c26a7d90be2e}{save\+Config\+To\+Xml\+File}} ()
+\begin{DoxyCompactList}\small\item\em Saves the current ensemble state to an XML file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e}{load\+Config\+From\+Xml}} (juce\+::\+File config\+File)
+\begin{DoxyCompactList}\small\item\em Loads an XML configuration file and updates the ensemble model with the values found in the file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_afde6a97f8d242fcca15c5af37e9b5e57}{load\+Config\+From\+Xml}} (std\+::unique\+\_\+ptr$<$ juce\+::\+Xml\+Element $>$ loaded\+Config)
+\begin{DoxyCompactList}\small\item\em Loads an XML configuration file and updates the ensemble model with the values found in the file. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ juce\+::\+Xml\+Element $>$ \mbox{\hyperlink{class_ensemble_model_a47c749e4e0b905fec8a88d0761d28176}{parse\+Xml\+Config\+File\+To\+Xml\+Element}} (juce\+::\+File config\+File)
+\begin{DoxyCompactList}\small\item\em Converts an XML configuration file into an Xml\+Element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_ensemble_model_aca0da6aff00966cb55da0bea171a9b1f}{sound\+Off\+All\+Channels}} (juce\+::\+Midi\+Buffer \&midi)
+\begin{DoxyCompactList}\small\item\em Sends MIDI messages to turn off all notes, sound, and controllers on all channels. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_ensemble_model_abe34215378c78b5135edb42d950b0aa8}{check\+Midi\+Sequence\+Has\+Notes}} (const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq)
+\begin{DoxyCompactList}\small\item\em Check if a MIDI sequence contains any note on events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_a2cc693efd20bc92631421fa707378b18}\label{class_ensemble_model_a2cc693efd20bc92631421fa707378b18} 
+juce\+::\+OSCSender {\bfseries OSCSender}
+\item 
+\Hypertarget{class_ensemble_model_abd75458e6e32c47a0d766c7800d15602}\label{class_ensemble_model_abd75458e6e32c47a0d766c7800d15602} 
+juce\+::\+OSCReceiver {\bfseries OSCReceiver}
+\item 
+\Hypertarget{class_ensemble_model_aa05125f90a784d54a8ff53fad406e471}\label{class_ensemble_model_aa05125f90a784d54a8ff53fad406e471} 
+bool {\bfseries is\+OSCInitialised} = false
+\item 
+\Hypertarget{class_ensemble_model_aa394d06e7e24a023c8183f3129371cbf}\label{class_ensemble_model_aa394d06e7e24a023c8183f3129371cbf} 
+int {\bfseries current\+Receive\+Port} = -\/1
+\item 
+\Hypertarget{class_ensemble_model_a0e5e3e32bbaa2632668f11a6141b7a55}\label{class_ensemble_model_a0e5e3e32bbaa2632668f11a6141b7a55} 
+juce\+::\+String {\bfseries log\+Subfolder} = "{}"{}
+\item 
+\Hypertarget{class_ensemble_model_af4eabb1e67e4e0c343e08eeb016f2934}\label{class_ensemble_model_af4eabb1e67e4e0c343e08eeb016f2934} 
+juce\+::\+String {\bfseries log\+Filename\+Override} = "{}"{}
+\item 
+\Hypertarget{class_ensemble_model_a17e14567b78a694f722892d74d91591a}\label{class_ensemble_model_a17e14567b78a694f722892d74d91591a} 
+juce\+::\+String {\bfseries config\+Subfolder} = "{}"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ensemble_model_afaad68729d6e76b099e3161bc4990d12}{set\+Tempo}} (double bpm)
+\begin{DoxyCompactList}\small\item\em Set the tempo of the ensemble model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a91652dc39b17226ab242575700ea5a15}{set\+Initial\+Player\+Tempo}} ()
+\begin{DoxyCompactList}\small\item\em Set the initial tempo of all players in the ensemble model. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ensemble_model_ad3d5c4a2dc9348243a24ad1fabf21a1c}{new\+Onsets\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Checks if new onsets are available for all players in the ensemble model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_ac29e0499b041f239b897b0ebe5c258cb}{calculate\+New\+Intervals}} ()
+\begin{DoxyCompactList}\small\item\em Calculate new onset times for players in the ensemble model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a2d9f7f1f98bf202dd83334a0a698bcc2}{clear\+Onsets\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Reset note played status for all players in the ensemble model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a5d933454a98698460828b4bd75044bef}{play\+Intro\+Tones}} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index)
+\begin{DoxyCompactList}\small\item\em Plays intro tones at the start of the piece. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a813885b8bd781e2f80e5546caa82c9a1}{intro\+Tone\+On}} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index)
+\begin{DoxyCompactList}\small\item\em Turns on the intro tone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a6e9e3a7e9f2fb998a570f87ef53d1c48}{intro\+Tone\+Off}} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index)
+\begin{DoxyCompactList}\small\item\em Turns off the intro tone. \end{DoxyCompactList}\item 
+\Hypertarget{class_ensemble_model_a9f3da4d22cfb9289222bd0baae55ac12}\label{class_ensemble_model_a9f3da4d22cfb9289222bd0baae55ac12} 
+void {\bfseries intro\+Tone\+On\+Off} (juce\+::\+Midi\+Buffer \&midi, juce\+::\+Midi\+Message(\texorpdfstring{$\ast$}{*}function)(int, int, juce\+::uint8), int sample\+Index)
+\item 
+void \mbox{\hyperlink{class_ensemble_model_a5d5d0035fe2a5f64a0e92a2573f9daab}{create\+Players}} (const juce\+::\+Midi\+File \&file)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{class_player}{Player} for each track in the file which has note on events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_ac6a52e9c021aa8630a8be7c9007bb3fc}{create\+Alpha\+Beta\+Parameters}} ()
+\begin{DoxyCompactList}\small\item\em Initialise matrix of alpha and beta parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a0072eca9cce7271df0474270b52f47c4}{get\+Latest\+Alphas}} ()
+\begin{DoxyCompactList}\small\item\em Poll the buffer for new alpha values and update the alpha parameters accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a6a7807101d6f80b898f4fd551e73a6d3}{store\+Onset\+Details\+For\+Player}} (int buffer\+Index, int player\+Index)
+\begin{DoxyCompactList}\small\item\em Store the onset details of a specific player into the logging buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a633b717d9a77d6110c8055116f39ee24}{play\+Score}} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index)
+\begin{DoxyCompactList}\small\item\em Processes the current sample index for all players and updates score timing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_adb85ab99330368c267f341258a74bd6f}{play\+User\+Intro}} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index)
+\begin{DoxyCompactList}\small\item\em Plays the intro tone for all user-\/operated players. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ensemble_model_1_1_player_parameters}{Player\+Parameters}} \mbox{\hyperlink{class_ensemble_model_ae535f1d011baca8f0756a65f4e9dc732}{get\+Player\+Info}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Gets the parameters of a player given a player index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_af8664e4d52e36fcf2b2c765335d72de3}{initialise\+Logging\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Initialises the logging buffer and FIFO for storing player onset details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a76ac9f8dc299dc90d42ef9c221a29bdc}{start\+Logger\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Starts the logging loop that continuously logs player onset details to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a89764d6c8778af9b9d3524ca6cb51c99}{stop\+Logger\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the logger loop and joins the logger thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_aedb8d6aaab985d0203e7814ae80a133e}{logger\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Main loop for logging player onset details to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a531b4f266d892100351d4657e40649f0}{write\+Log\+Header}} (juce\+::\+File\+Output\+Stream \&log\+Stream)
+\item 
+void \mbox{\hyperlink{class_ensemble_model_ad96f46ee9258d5d03dc1aebc7aed4b9c}{log\+Onset\+Details}} (juce\+::\+File\+Output\+Stream \&log\+Stream)
+\begin{DoxyCompactList}\small\item\em Logs details of player onsets to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_ad238fbf951d142db1ea3136ae4572cac}{log\+Onset\+Details\+For\+Player}} (int buffer\+Index, juce\+::\+String \&onset\+Log, juce\+::\+String \&interval\+Log, juce\+::\+String \&user\+Input\+Log, juce\+::\+String \&delay\+Log, juce\+::\+String \&m\+Noise\+Log, juce\+::\+String \&tk\+Noise\+Log, juce\+::\+String \&async\+Log, juce\+::\+String \&alpha\+Log, juce\+::\+String \&beta\+Log, juce\+::\+String \&tk\+Noise\+Std\+Log, juce\+::\+String \&m\+Noise\+Std\+Log, juce\+::\+String \&velocity\+Log)
+\item 
+\Hypertarget{class_ensemble_model_af87ea55e89ecf4d04e232f5837958117}\label{class_ensemble_model_af87ea55e89ecf4d04e232f5837958117} 
+void {\bfseries post\+Latest\+Onsets} (const std\+::vector$<$ int $>$ \&onsets, const std\+::vector$<$ int $>$ \&delays)
+\item 
+void \mbox{\hyperlink{class_ensemble_model_aa0409cf687dcb20f57bb615dde40b373}{initialise\+Polling\+Buffers}} ()
+\begin{DoxyCompactList}\small\item\em Initialises the buffers for polling for new alpha values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_ad77ce6178c36b1935e3f24960a242141}{start\+Polling\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Starts the polling loop which polls for new alpha values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a53702dbb1b0baf76f2faa4dcb6a360b6}{stop\+Polling\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the polling loop for new alpha values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ensemble_model_a8dabdf9d19baeb953ffea24bfc90a2e3}{polling\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em Runs the polling loop to get new alpha values. \end{DoxyCompactList}\item 
+\Hypertarget{class_ensemble_model_ac6a54e412f9e544f2eebe7444712ea0f}\label{class_ensemble_model_ac6a54e412f9e544f2eebe7444712ea0f} 
+void {\bfseries get\+New\+Alphas} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_a10d7615b33ef4b62c3bcbd09743fec1a}\label{class_ensemble_model_a10d7615b33ef4b62c3bcbd09743fec1a} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*} {\bfseries processor} = nullptr
+\item 
+\Hypertarget{class_ensemble_model_a837fe9b25e03fbb91a23f35781047280}\label{class_ensemble_model_a837fe9b25e03fbb91a23f35781047280} 
+int {\bfseries num\+User\+Players} = 1
+\item 
+\Hypertarget{class_ensemble_model_a2d19e0c266a71e46e2a34f49f6e413ac}\label{class_ensemble_model_a2d19e0c266a71e46e2a34f49f6e413ac} 
+juce\+::\+Midi\+File {\bfseries midi\+File}
+\item 
+\Hypertarget{class_ensemble_model_a1cdc13ccbefbf5ceb8923e77b354b9cc}\label{class_ensemble_model_a1cdc13ccbefbf5ceb8923e77b354b9cc} 
+juce\+::\+File {\bfseries midi\+File\+Path}
+\item 
+\Hypertarget{class_ensemble_model_aa914842ef1b39db5e7bab46e86b7c656}\label{class_ensemble_model_aa914842ef1b39db5e7bab46e86b7c656} 
+bool {\bfseries midi\+Loaded} = false
+\item 
+\Hypertarget{class_ensemble_model_abeb2209816b26c18a611476a6e9c1a73}\label{class_ensemble_model_abeb2209816b26c18a611476a6e9c1a73} 
+double {\bfseries sample\+Rate} = 44100.\+0
+\item 
+\Hypertarget{class_ensemble_model_a10f40b7ad6e70b5aaf4a76a537fd55d2}\label{class_ensemble_model_a10f40b7ad6e70b5aaf4a76a537fd55d2} 
+int {\bfseries samples\+Per\+Beat} = sample\+Rate / 4
+\item 
+\Hypertarget{class_ensemble_model_a4d069b93b749045fc24c8fc18761d700}\label{class_ensemble_model_a4d069b93b749045fc24c8fc18761d700} 
+int {\bfseries score\+Counter} = 0
+\item 
+\Hypertarget{class_ensemble_model_ac6f8f2c3c80cb219f2d20afc3a4503b9}\label{class_ensemble_model_ac6f8f2c3c80cb219f2d20afc3a4503b9} 
+bool {\bfseries initial\+Tempo\+Set} = false
+\item 
+\Hypertarget{class_ensemble_model_a834a220a1c631cc2d6847e1442e4dcd2}\label{class_ensemble_model_a834a220a1c631cc2d6847e1442e4dcd2} 
+const int {\bfseries intro\+Tone\+Channel} = 16
+\item 
+\Hypertarget{class_ensemble_model_a339d16a6ac3166f6d2f8491948f22fb0}\label{class_ensemble_model_a339d16a6ac3166f6d2f8491948f22fb0} 
+int {\bfseries num\+Intro\+Tones} = 4
+\item 
+\Hypertarget{class_ensemble_model_a316fc808175ae6d4cd9005f00fb37f50}\label{class_ensemble_model_a316fc808175ae6d4cd9005f00fb37f50} 
+int {\bfseries intro\+Counter} = 0
+\item 
+\Hypertarget{class_ensemble_model_ab140637d54dd8bc43868b8791e0280eb}\label{class_ensemble_model_ab140637d54dd8bc43868b8791e0280eb} 
+int {\bfseries intro\+Tones\+Played} = 0
+\item 
+\Hypertarget{class_ensemble_model_a7cc9bbaa8cff125a3a3e8bf515f03f33}\label{class_ensemble_model_a7cc9bbaa8cff125a3a3e8bf515f03f33} 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ {\bfseries players}
+\item 
+\Hypertarget{class_ensemble_model_ae7252325c9a0d6be11d24351aaf61c2b}\label{class_ensemble_model_ae7252325c9a0d6be11d24351aaf61c2b} 
+std\+::atomic\+\_\+flag {\bfseries players\+In\+Use}
+\item 
+\Hypertarget{class_ensemble_model_a4b45668a18d0a8878859644d30c01ded}\label{class_ensemble_model_a4b45668a18d0a8878859644d30c01ded} 
+std\+::atomic\+\_\+flag {\bfseries reset\+Flag}
+\item 
+\Hypertarget{class_ensemble_model_a5264d40c920f1c13c9195a0b71c6bfba}\label{class_ensemble_model_a5264d40c920f1c13c9195a0b71c6bfba} 
+std\+::unique\+\_\+ptr$<$ juce\+::\+Abstract\+Fifo $>$ {\bfseries logging\+Fifo}
+\item 
+\Hypertarget{class_ensemble_model_a23838e24be2d877d2ae478b81794efaa}\label{class_ensemble_model_a23838e24be2d877d2ae478b81794efaa} 
+std\+::vector$<$ \mbox{\hyperlink{struct_ensemble_model_1_1_log_data}{Log\+Data}} $>$ {\bfseries logging\+Buffer}
+\item 
+\Hypertarget{class_ensemble_model_acb0d94f831cc0654d6044f6326914d0f}\label{class_ensemble_model_acb0d94f831cc0654d6044f6326914d0f} 
+std\+::thread {\bfseries logger\+Thread}
+\item 
+\Hypertarget{class_ensemble_model_a5be9419325aeb54af706c77ca3f8776b}\label{class_ensemble_model_a5be9419325aeb54af706c77ca3f8776b} 
+std\+::atomic$<$ bool $>$ {\bfseries continue\+Logging}
+\item 
+\Hypertarget{class_ensemble_model_abe6f428f403ccfbbae4e119aa5151f25}\label{class_ensemble_model_abe6f428f403ccfbbae4e119aa5151f25} 
+int {\bfseries log\+Line\+Counter} = 0
+\item 
+\Hypertarget{class_ensemble_model_af77a0e74ed9eb6b507dea2ad2ea2f353}\label{class_ensemble_model_af77a0e74ed9eb6b507dea2ad2ea2f353} 
+std\+::unique\+\_\+ptr$<$ juce\+::\+Abstract\+Fifo $>$ {\bfseries polling\+Fifo}
+\item 
+\Hypertarget{class_ensemble_model_a98cc86ad87b59d1a8c18fc70c1fe8d1e}\label{class_ensemble_model_a98cc86ad87b59d1a8c18fc70c1fe8d1e} 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ {\bfseries polling\+Buffer}
+\item 
+\Hypertarget{class_ensemble_model_aafae803170d6ff83fb7e6c752aa22441}\label{class_ensemble_model_aafae803170d6ff83fb7e6c752aa22441} 
+std\+::thread {\bfseries polling\+Thread}
+\item 
+\Hypertarget{class_ensemble_model_adb3498a3778f93bc217285f5aa68e1e7}\label{class_ensemble_model_adb3498a3778f93bc217285f5aa68e1e7} 
+std\+::atomic$<$ bool $>$ {\bfseries continue\+Polling}
+\item 
+\Hypertarget{class_ensemble_model_a4dc4aff5293d960677f7d7225d4b57de}\label{class_ensemble_model_a4dc4aff5293d960677f7d7225d4b57de} 
+std\+::atomic\+\_\+flag {\bfseries alphas\+Up\+To\+Date}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_ae23434cfb945f344c0849d8a58bce8bb}\label{class_ensemble_model_ae23434cfb945f344c0849d8a58bce8bb} 
+static const int {\bfseries intro\+Tone\+Note\+First} = 84
+\item 
+\Hypertarget{class_ensemble_model_a0fb845c75cf1adbabca2169e1c2ae1b2}\label{class_ensemble_model_a0fb845c75cf1adbabca2169e1c2ae1b2} 
+static const int {\bfseries intro\+Tone\+Note\+Other} = 72
+\item 
+\Hypertarget{class_ensemble_model_af9bdbe72effc910c84e53e057788ecd4}\label{class_ensemble_model_af9bdbe72effc910c84e53e057788ecd4} 
+static const juce\+::uint8 {\bfseries intro\+Tone\+Vel} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a}\index{EnsembleModel@{EnsembleModel}!EnsembleModel@{EnsembleModel}}
+\index{EnsembleModel@{EnsembleModel}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{EnsembleModel()}{EnsembleModel()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a} 
+Ensemble\+Model\+::\+Ensemble\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*}}]{processor\+Ptr}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Ensemble Model object. 
+
+This constructor initializes the \doxylink{class_ensemble_model}{Ensemble\+Model} by clearing the players\+In\+Use and reset\+Flag. In debug mode, it connects the OSC receiver and sender to default ports and IP address for testing purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em processor\+Ptr} & Pointer to the \doxylink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor} used to access parameters from the Metronome. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a9ceb0658e35ae43a2a92d6a12afed985}\index{EnsembleModel@{EnsembleModel}!````~EnsembleModel@{\texorpdfstring{$\sim$}{\string~}EnsembleModel}}
+\index{````~EnsembleModel@{\texorpdfstring{$\sim$}{\string~}EnsembleModel}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EnsembleModel()}{\string~EnsembleModel()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a9ceb0658e35ae43a2a92d6a12afed985} 
+Ensemble\+Model\+::\texorpdfstring{$\sim$}{\string~}\+Ensemble\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for \doxylink{class_ensemble_model}{Ensemble\+Model}. 
+
+This destructor stops the logger and polling threads when the \doxylink{class_ensemble_model}{Ensemble\+Model} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ensemble_model_ac29e0499b041f239b897b0ebe5c258cb}\index{EnsembleModel@{EnsembleModel}!calculateNewIntervals@{calculateNewIntervals}}
+\index{calculateNewIntervals@{calculateNewIntervals}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{calculateNewIntervals()}{calculateNewIntervals()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ac29e0499b041f239b897b0ebe5c258cb} 
+void Ensemble\+Model\+::calculate\+New\+Intervals (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculate new onset times for players in the ensemble model. 
+
+This function gets the most recent alphas from the processor and then calculates new onset times for all players in the ensemble model. It first updates the non-\/user players and then the user players. Finally, it adds details of the most recent onsets to buffers to be logged. \Hypertarget{class_ensemble_model_abe34215378c78b5135edb42d950b0aa8}\index{EnsembleModel@{EnsembleModel}!checkMidiSequenceHasNotes@{checkMidiSequenceHasNotes}}
+\index{checkMidiSequenceHasNotes@{checkMidiSequenceHasNotes}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{checkMidiSequenceHasNotes()}{checkMidiSequenceHasNotes()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_abe34215378c78b5135edb42d950b0aa8} 
+bool Ensemble\+Model\+::check\+Midi\+Sequence\+Has\+Notes (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}}]{seq}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a MIDI sequence contains any note on events. 
+
+This function takes a pointer to a MIDI sequence and iterates through all events in the sequence. If it finds a note on event, it immediately returns {\ttfamily true}. If the entire sequence is iterated through and no note on events are found, it returns {\ttfamily false}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & The MIDI sequence to be checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the sequence contains any note on events, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a2d9f7f1f98bf202dd83334a0a698bcc2}\index{EnsembleModel@{EnsembleModel}!clearOnsetsAvailable@{clearOnsetsAvailable}}
+\index{clearOnsetsAvailable@{clearOnsetsAvailable}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{clearOnsetsAvailable()}{clearOnsetsAvailable()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a2d9f7f1f98bf202dd83334a0a698bcc2} 
+void Ensemble\+Model\+::clear\+Onsets\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reset note played status for all players in the ensemble model. 
+
+This function iterates over all players in the ensemble model and resets their note played status. It is called by the calculate\+New\+Intervals function after calculating new onset times for all players. \Hypertarget{class_ensemble_model_a49d70f101c56ee7a23b6167d0beb4a5d}\index{EnsembleModel@{EnsembleModel}!connectOSCReceiver@{connectOSCReceiver}}
+\index{connectOSCReceiver@{connectOSCReceiver}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{connectOSCReceiver()}{connectOSCReceiver()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a49d70f101c56ee7a23b6167d0beb4a5d} 
+void Ensemble\+Model\+::connect\+OSCReceiver (\begin{DoxyParamCaption}\item[{int}]{port\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Connects the OSC receiver to a given port number. 
+
+This function connects the OSC receiver to a given port number. If the connection is successful, it also initialises the OSC receiver for the ensemble model, if it has not already been initialised.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Number} & The port number to connect to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a5600a255d4e106d196b777a687dadaaa}\index{EnsembleModel@{EnsembleModel}!connectOSCSender@{connectOSCSender}}
+\index{connectOSCSender@{connectOSCSender}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{connectOSCSender()}{connectOSCSender()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a5600a255d4e106d196b777a687dadaaa} 
+void Ensemble\+Model\+::connect\+OSCSender (\begin{DoxyParamCaption}\item[{int}]{port\+Number}{, }\item[{juce\+::\+String}]{IPAddress}{}\end{DoxyParamCaption})}
+
+
+
+Connects the OSC sender to a given IP address and port number. 
+
+This function connects the OSC sender to a given IP address and port number. If the connection is successful, it also initialises the OSC receiver for the ensemble model, if it has not already been initialised.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Number} & The port number to connect to. \\
+\hline
+{\em IPAddress} & The IP address to connect to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_ac6a52e9c021aa8630a8be7c9007bb3fc}\index{EnsembleModel@{EnsembleModel}!createAlphaBetaParameters@{createAlphaBetaParameters}}
+\index{createAlphaBetaParameters@{createAlphaBetaParameters}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{createAlphaBetaParameters()}{createAlphaBetaParameters()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ac6a52e9c021aa8630a8be7c9007bb3fc} 
+void Ensemble\+Model\+::create\+Alpha\+Beta\+Parameters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise matrix of alpha and beta parameters. 
+
+This function is called immediately after the players vector is populated. It sets the alpha and beta parameters for each player to a given value. The value is set to a default value of 0.\+25 for alpha and 0.\+1 for beta. If the user has specified a custom value for alpha and/or beta, then this function is not called.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb}{set\+Alpha\+Beta\+Params} 
+\end{DoxySeeAlso}
+\Hypertarget{class_ensemble_model_a5d5d0035fe2a5f64a0e92a2573f9daab}\index{EnsembleModel@{EnsembleModel}!createPlayers@{createPlayers}}
+\index{createPlayers@{createPlayers}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{createPlayers()}{createPlayers()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a5d5d0035fe2a5f64a0e92a2573f9daab} 
+void Ensemble\+Model\+::create\+Players (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+File \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Create a \doxylink{class_player}{Player} for each track in the file which has note on events. 
+
+This function is called by the load\+Midi\+File function and is used to create a \doxylink{class_player}{Player} object for each track in the MIDI file that has note on events. The function first deletes any existing players and then creates a new \doxylink{class_player}{Player} object for each track in the file. The function assigns channels to players in a cyclical manner and creates a \doxylink{class_user_player}{User\+Player} object if the player index is less than the number of user players; otherwise, it creates a \doxylink{class_player}{Player} object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & a reference to a juce\+::\+Midi\+File object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a2c7876fe797d2a53e6f74f95dec2b470}\index{EnsembleModel@{EnsembleModel}!getAlphaParameter@{getAlphaParameter}}
+\index{getAlphaParameter@{getAlphaParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getAlphaParameter()}{getAlphaParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a2c7876fe797d2a53e6f74f95dec2b470} 
+juce\+::\+Audio\+Parameter\+Float \& Ensemble\+Model\+::get\+Alpha\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player1\+Index}{, }\item[{int}]{player2\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the alpha parameter for a given player pair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1\+Index} & The index of the first player. \\
+\hline
+{\em player2\+Index} & The index of the second player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Float\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a0c138a7eca02a9690e98d095d5b002ee}\index{EnsembleModel@{EnsembleModel}!getBetaParameter@{getBetaParameter}}
+\index{getBetaParameter@{getBetaParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getBetaParameter()}{getBetaParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a0c138a7eca02a9690e98d095d5b002ee} 
+juce\+::\+Audio\+Parameter\+Float \& Ensemble\+Model\+::get\+Beta\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player1\+Index}{, }\item[{int}]{player2\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the beta parameter for a given player pair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1\+Index} & The index of the first player. \\
+\hline
+{\em player2\+Index} & The index of the second player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Float\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a0072eca9cce7271df0474270b52f47c4}\index{EnsembleModel@{EnsembleModel}!getLatestAlphas@{getLatestAlphas}}
+\index{getLatestAlphas@{getLatestAlphas}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getLatestAlphas()}{getLatestAlphas()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a0072eca9cce7271df0474270b52f47c4} 
+void Ensemble\+Model\+::get\+Latest\+Alphas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Poll the buffer for new alpha values and update the alpha parameters accordingly. 
+
+This function is called by the processor to get the latest alpha values from the buffer. It is used in the polling thread to update the parameters in the plugin.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_ensemble_model_ad77ce6178c36b1935e3f24960a242141}{start\+Polling\+Loop} 
+
+\doxylink{class_ensemble_model_a53702dbb1b0baf76f2faa4dcb6a360b6}{stop\+Polling\+Loop} 
+
+\doxylink{class_ensemble_model_aa0409cf687dcb20f57bb615dde40b373}{initialise\+Polling\+Buffers} 
+\end{DoxySeeAlso}
+\Hypertarget{class_ensemble_model_a480fbd3e7424882e759107e40d17309b}\index{EnsembleModel@{EnsembleModel}!getMidiFile@{getMidiFile}}
+\index{getMidiFile@{getMidiFile}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getMidiFile()}{getMidiFile()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a480fbd3e7424882e759107e40d17309b} 
+juce\+::\+File Ensemble\+Model\+::get\+Midi\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the MIDI file loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model}. 
+
+If no MIDI file has been loaded, an empty file object is returned.
+
+\begin{DoxyReturn}{Returns}
+The loaded MIDI file, or an empty file object if no MIDI file has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a5439d1bc9f2e350ad8151cfd349ae930}\index{EnsembleModel@{EnsembleModel}!getMidiFileName@{getMidiFileName}}
+\index{getMidiFileName@{getMidiFileName}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getMidiFileName()}{getMidiFileName()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a5439d1bc9f2e350ad8151cfd349ae930} 
+juce\+::\+String Ensemble\+Model\+::get\+Midi\+File\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the name of the MIDI file loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model}. 
+
+If no MIDI file has been loaded, an empty string is returned.
+
+\begin{DoxyReturn}{Returns}
+The name of the loaded MIDI file. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_ab582aa9121cf83c2218f0eed64e580a5}\index{EnsembleModel@{EnsembleModel}!getNumPlayers@{getNumPlayers}}
+\index{getNumPlayers@{getNumPlayers}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getNumPlayers()}{getNumPlayers()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ab582aa9121cf83c2218f0eed64e580a5} 
+int Ensemble\+Model\+::get\+Num\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the number of players in the ensemble model. 
+
+This function simply returns the number of players in the ensemble model. This is equivalent to the number of tracks in the loaded MIDI file.
+
+\begin{DoxyReturn}{Returns}
+The number of players in the ensemble model. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a1b192d0906fd4456709b3067196de68f}\index{EnsembleModel@{EnsembleModel}!getNumUserPlayers@{getNumUserPlayers}}
+\index{getNumUserPlayers@{getNumUserPlayers}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getNumUserPlayers()}{getNumUserPlayers()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a1b192d0906fd4456709b3067196de68f} 
+int Ensemble\+Model\+::get\+Num\+User\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the number of user players in the ensemble model. 
+
+This function returns the number of user players in the ensemble model. This is equivalent to the number of players that are being controlled by the user.
+
+\begin{DoxyReturn}{Returns}
+The number of user players in the ensemble model. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a8037d9b35af2415e8b0aa0ba94960d67}\index{EnsembleModel@{EnsembleModel}!getPlayerChannelParameter@{getPlayerChannelParameter}}
+\index{getPlayerChannelParameter@{getPlayerChannelParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getPlayerChannelParameter()}{getPlayerChannelParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a8037d9b35af2415e8b0aa0ba94960d67} 
+juce\+::\+Audio\+Parameter\+Int \& Ensemble\+Model\+::get\+Player\+Channel\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the channel parameter for a given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player to get the channel parameter for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Int\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_afd8161d7b9ab390157a731db55564e42}\index{EnsembleModel@{EnsembleModel}!getPlayerDelayParameter@{getPlayerDelayParameter}}
+\index{getPlayerDelayParameter@{getPlayerDelayParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getPlayerDelayParameter()}{getPlayerDelayParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_afd8161d7b9ab390157a731db55564e42} 
+juce\+::\+Audio\+Parameter\+Float \& Ensemble\+Model\+::get\+Player\+Delay\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the delay parameter for a given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player to get the delay parameter for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Float\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_ae535f1d011baca8f0756a65f4e9dc732}\index{EnsembleModel@{EnsembleModel}!getPlayerInfo@{getPlayerInfo}}
+\index{getPlayerInfo@{getPlayerInfo}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getPlayerInfo()}{getPlayerInfo()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ae535f1d011baca8f0756a65f4e9dc732} 
+\mbox{\hyperlink{class_ensemble_model_1_1_player_parameters}{Ensemble\+Model\+::\+Player\+Parameters}} Ensemble\+Model\+::get\+Player\+Info (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the parameters of a player given a player index. 
+
+Given a player index, this function returns the parameters of the player as a \doxylink{class_ensemble_model_1_1_player_parameters}{Player\+Parameters} object. The parameters include the latest onset delay, timekeeper noise standard deviation, motor noise standard deviation, volume, MIDI channel, and alpha and beta values for all other players.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player whose parameters will be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_ensemble_model_1_1_player_parameters}{Player\+Parameters} object containing the parameters of the specified player. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a36d1c40ac945ec76435e8b7934cb24f7}\index{EnsembleModel@{EnsembleModel}!getPlayerMotorNoiseParameter@{getPlayerMotorNoiseParameter}}
+\index{getPlayerMotorNoiseParameter@{getPlayerMotorNoiseParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getPlayerMotorNoiseParameter()}{getPlayerMotorNoiseParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a36d1c40ac945ec76435e8b7934cb24f7} 
+juce\+::\+Audio\+Parameter\+Float \& Ensemble\+Model\+::get\+Player\+Motor\+Noise\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the motor noise parameter for a given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player to get the motor noise parameter for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Float\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a57aff2fc4b4c57f80021b284cef138a8}\index{EnsembleModel@{EnsembleModel}!getPlayerTimeKeeperNoiseParameter@{getPlayerTimeKeeperNoiseParameter}}
+\index{getPlayerTimeKeeperNoiseParameter@{getPlayerTimeKeeperNoiseParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getPlayerTimeKeeperNoiseParameter()}{getPlayerTimeKeeperNoiseParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a57aff2fc4b4c57f80021b284cef138a8} 
+juce\+::\+Audio\+Parameter\+Float \& Ensemble\+Model\+::get\+Player\+Time\+Keeper\+Noise\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the time keeper noise parameter for a given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player to get the time keeper noise parameter for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Float\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_ab29e3ff1fb709520386046e080338a84}\index{EnsembleModel@{EnsembleModel}!getPlayerVolumeParameter@{getPlayerVolumeParameter}}
+\index{getPlayerVolumeParameter@{getPlayerVolumeParameter}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{getPlayerVolumeParameter()}{getPlayerVolumeParameter()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ab29e3ff1fb709520386046e080338a84} 
+juce\+::\+Audio\+Parameter\+Float \& Ensemble\+Model\+::get\+Player\+Volume\+Parameter (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Get the volume parameter for a given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player to get the volume parameter for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+juce\+::\+Audio\+Parameter\+Float\& 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_af8664e4d52e36fcf2b2c765335d72de3}\index{EnsembleModel@{EnsembleModel}!initialiseLoggingBuffer@{initialiseLoggingBuffer}}
+\index{initialiseLoggingBuffer@{initialiseLoggingBuffer}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{initialiseLoggingBuffer()}{initialiseLoggingBuffer()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_af8664e4d52e36fcf2b2c765335d72de3} 
+void Ensemble\+Model\+::initialise\+Logging\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialises the logging buffer and FIFO for storing player onset details. 
+
+This function sets up the logging buffer and FIFO based on the number of players. It calculates the buffer size, initialises the FIFO, resizes the logging buffer, and initialises each element in the buffer with vectors sized to the number of players for storing asynchronies, alpha, and beta parameters. \Hypertarget{class_ensemble_model_a1f9674d65fdd9b7ea279a3cf3af8787f}\index{EnsembleModel@{EnsembleModel}!initialiseOSC@{initialiseOSC}}
+\index{initialiseOSC@{initialiseOSC}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{initialiseOSC()}{initialiseOSC()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a1f9674d65fdd9b7ea279a3cf3af8787f} 
+void Ensemble\+Model\+::initialise\+OSC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialises the OSC listener for the ensemble model. 
+
+This function is called when the OSC sender is connected for the first time. It adds listeners for all of the OSC addresses that the ensemble model is interested in. The listeners are used to receive messages from the Max patcher that control the ensemble model. \Hypertarget{class_ensemble_model_aa0409cf687dcb20f57bb615dde40b373}\index{EnsembleModel@{EnsembleModel}!initialisePollingBuffers@{initialisePollingBuffers}}
+\index{initialisePollingBuffers@{initialisePollingBuffers}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{initialisePollingBuffers()}{initialisePollingBuffers()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_aa0409cf687dcb20f57bb615dde40b373} 
+void Ensemble\+Model\+::initialise\+Polling\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialises the buffers for polling for new alpha values. 
+
+The polling FIFO is created with a size of 10 times the number of players. The polling buffer is resized to the same size as the number of players and each player\textquotesingle{}s buffer is resized to the size of the FIFO and initialised to 0.\+0. \Hypertarget{class_ensemble_model_a6e9e3a7e9f2fb998a570f87ef53d1c48}\index{EnsembleModel@{EnsembleModel}!introToneOff@{introToneOff}}
+\index{introToneOff@{introToneOff}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{introToneOff()}{introToneOff()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a6e9e3a7e9f2fb998a570f87ef53d1c48} 
+void Ensemble\+Model\+::intro\+Tone\+Off (\begin{DoxyParamCaption}\item[{juce\+::\+Midi\+Buffer \&}]{midi}{, }\item[{int}]{sample\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Turns off the intro tone. 
+
+This function sends a MIDI note-\/off message for the intro tone. It determines whether to turn off the first or second note of the intro tone based on the number of intro tones played. If the number of intro tones played is divisible by 4, it turns off the first note; otherwise, it turns off the second note. This function is called by the play\+Intro\+Tones function as part of the intro tones playback process.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em midi} & a reference to a juce\+::\+Midi\+Buffer object \\
+\hline
+\mbox{\texttt{ in}}  & {\em sample\+Index} & an integer representing the sample index to add the midi event at \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a813885b8bd781e2f80e5546caa82c9a1}\index{EnsembleModel@{EnsembleModel}!introToneOn@{introToneOn}}
+\index{introToneOn@{introToneOn}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{introToneOn()}{introToneOn()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a813885b8bd781e2f80e5546caa82c9a1} 
+void Ensemble\+Model\+::intro\+Tone\+On (\begin{DoxyParamCaption}\item[{juce\+::\+Midi\+Buffer \&}]{midi}{, }\item[{int}]{sample\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Turns on the intro tone. 
+
+This function turns on either the first or second note of the intro tone, depending on whether the number of intro tones played is divisible by
+\begin{DoxyEnumerate}
+\item The function is called by the play\+Intro\+Tones function and is used to play the intro tones.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em midi} & a reference to a juce\+::\+Midi\+Buffer object \\
+\hline
+\mbox{\texttt{ in}}  & {\em sample\+Index} & an integer representing the sample index to add the midi event at \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a1e2e91caac2b24c18e3402c3cd61b9a5}\index{EnsembleModel@{EnsembleModel}!isMidiLoaded@{isMidiLoaded}}
+\index{isMidiLoaded@{isMidiLoaded}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{isMidiLoaded()}{isMidiLoaded()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a1e2e91caac2b24c18e3402c3cd61b9a5} 
+bool Ensemble\+Model\+::is\+Midi\+Loaded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if a MIDI file has been loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model}. 
+
+A MIDI file is considered loaded if it was successfully loaded into the \doxylink{class_ensemble_model}{Ensemble\+Model} via the load\+Midi\+File function.
+
+\begin{DoxyReturn}{Returns}
+true if a MIDI file has been loaded, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_ad6f0f8594780ec4f7e9b6e955bc6465e}\index{EnsembleModel@{EnsembleModel}!isOscReceiverConnected@{isOscReceiverConnected}}
+\index{isOscReceiverConnected@{isOscReceiverConnected}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{isOscReceiverConnected()}{isOscReceiverConnected()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ad6f0f8594780ec4f7e9b6e955bc6465e} 
+bool Ensemble\+Model\+::is\+Osc\+Receiver\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the OSC receiver is connected and ready to receive messages. 
+
+\begin{DoxyReturn}{Returns}
+True if the OSC receiver is connected, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a399a635c8b17e8fa2cfd20f86bb509cd}\index{EnsembleModel@{EnsembleModel}!isPlayerUserOperated@{isPlayerUserOperated}}
+\index{isPlayerUserOperated@{isPlayerUserOperated}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{isPlayerUserOperated()}{isPlayerUserOperated()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a399a635c8b17e8fa2cfd20f86bb509cd} 
+bool Ensemble\+Model\+::is\+Player\+User\+Operated (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Determine if a player is user-\/operated or not. 
+
+This function takes a player index and returns true if the player is user-\/operated, false if the player is not user-\/operated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & The index of the player to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player is user-\/operated, false if the player is not user-\/operated. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e}\index{EnsembleModel@{EnsembleModel}!loadConfigFromXml@{loadConfigFromXml}}
+\index{loadConfigFromXml@{loadConfigFromXml}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{loadConfigFromXml()}{loadConfigFromXml()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e} 
+void Ensemble\+Model\+::load\+Config\+From\+Xml (\begin{DoxyParamCaption}\item[{juce\+::\+File}]{config\+File}{}\end{DoxyParamCaption})}
+
+
+
+Loads an XML configuration file and updates the ensemble model with the values found in the file. 
+
+This function takes a juce\+::\+File object pointing to the configuration file to be loaded. The file is parsed into an XML document, and then the ensemble model is updated with the values found in the document.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+File} & The juce\+::\+File object pointing to the configuration file to be loaded. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_afde6a97f8d242fcca15c5af37e9b5e57}\index{EnsembleModel@{EnsembleModel}!loadConfigFromXml@{loadConfigFromXml}}
+\index{loadConfigFromXml@{loadConfigFromXml}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{loadConfigFromXml()}{loadConfigFromXml()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ensemble_model_afde6a97f8d242fcca15c5af37e9b5e57} 
+void Ensemble\+Model\+::load\+Config\+From\+Xml (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ juce\+::\+Xml\+Element $>$}]{loaded\+Config}{}\end{DoxyParamCaption})}
+
+
+
+Loads an XML configuration file and updates the ensemble model with the values found in the file. 
+
+This function takes a unique pointer to an Xml\+Element representing the configuration file to be loaded. The values in the document are used to update the ensemble model.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loaded\+Config} & The unique pointer to the Xml\+Element representing the configuration file to be loaded. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_aa9c846c94a467886c1d2a7c648c362a1}\index{EnsembleModel@{EnsembleModel}!loadMidiFile@{loadMidiFile}}
+\index{loadMidiFile@{loadMidiFile}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{loadMidiFile()}{loadMidiFile()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_aa9c846c94a467886c1d2a7c648c362a1} 
+bool Ensemble\+Model\+::load\+Midi\+File (\begin{DoxyParamCaption}\item[{const juce\+::\+File \&}]{file}{, }\item[{int}]{user\+Players}{}\end{DoxyParamCaption})}
+
+
+
+Load a MIDI file into the \doxylink{class_ensemble_model}{Ensemble\+Model} and create players for each track. 
+
+This function loads a MIDI file, creates players for each track in the file and resets the players. The user\+Players parameter determines how many user operated players are created. The function returns true if successful, false if the MIDI file is not loaded or if there is an error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file to load. \\
+\hline
+{\em user\+Players} & The number of user operated players to create.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false if the MIDI file is not loaded or if there is an error. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_aedb8d6aaab985d0203e7814ae80a133e}\index{EnsembleModel@{EnsembleModel}!loggerLoop@{loggerLoop}}
+\index{loggerLoop@{loggerLoop}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{loggerLoop()}{loggerLoop()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_aedb8d6aaab985d0203e7814ae80a133e} 
+void Ensemble\+Model\+::logger\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Main loop for logging player onset details to a file. 
+
+This function is run in a separate thread by \doxylink{class_ensemble_model_a76ac9f8dc299dc90d42ef9c221a29bdc}{start\+Logger\+Loop()}. It continuously logs player onset details to a file until the continue\+Logging flag is set to false. The log file is created in the default documents folder with a name in the format "{}\+Log\+\_\+$<$time$>$\+\_\+$<$date$>$.\+csv"{}. The file is truncated if it already exists. The log file header is written, and then the loop continuously logs player onset details at a rate of 20 Hz. \Hypertarget{class_ensemble_model_ad96f46ee9258d5d03dc1aebc7aed4b9c}\index{EnsembleModel@{EnsembleModel}!logOnsetDetails@{logOnsetDetails}}
+\index{logOnsetDetails@{logOnsetDetails}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{logOnsetDetails()}{logOnsetDetails()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ad96f46ee9258d5d03dc1aebc7aed4b9c} 
+void Ensemble\+Model\+::log\+Onset\+Details (\begin{DoxyParamCaption}\item[{juce\+::\+File\+Output\+Stream \&}]{log\+Stream}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Logs details of player onsets to a file. 
+
+This function reads onset data from a logging FIFO and writes the details to a specified log stream. It processes the data for each player, updating logs for onset times, intervals, user input status, delays, motor noise, and other parameters. The function appends the processed data to a CSV format log line and writes it to the log stream. After logging, it sends the latest onset and delay information to a server or other destination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+Stream} & The file stream where the log data is written. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_ad238fbf951d142db1ea3136ae4572cac}\index{EnsembleModel@{EnsembleModel}!logOnsetDetailsForPlayer@{logOnsetDetailsForPlayer}}
+\index{logOnsetDetailsForPlayer@{logOnsetDetailsForPlayer}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{logOnsetDetailsForPlayer()}{logOnsetDetailsForPlayer()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ad238fbf951d142db1ea3136ae4572cac} 
+void Ensemble\+Model\+::log\+Onset\+Details\+For\+Player (\begin{DoxyParamCaption}\item[{int}]{buffer\+Index}{, }\item[{juce\+::\+String \&}]{onset\+Log}{, }\item[{juce\+::\+String \&}]{interval\+Log}{, }\item[{juce\+::\+String \&}]{user\+Input\+Log}{, }\item[{juce\+::\+String \&}]{delay\+Log}{, }\item[{juce\+::\+String \&}]{m\+Noise\+Log}{, }\item[{juce\+::\+String \&}]{tk\+Noise\+Log}{, }\item[{juce\+::\+String \&}]{async\+Log}{, }\item[{juce\+::\+String \&}]{alpha\+Log}{, }\item[{juce\+::\+String \&}]{beta\+Log}{, }\item[{juce\+::\+String \&}]{tk\+Noise\+Std\+Log}{, }\item[{juce\+::\+String \&}]{m\+Noise\+Std\+Log}{, }\item[{juce\+::\+String \&}]{velocity\+Log}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Add the onset details for a given player to a set of logs. This function is only called from the logging thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Index} & The index into the logging\+Buffer array. \\
+\hline
+{\em onset\+Log} & The log to which to add the onset time. \\
+\hline
+{\em interval\+Log} & The log to which to add the onset interval. \\
+\hline
+{\em user\+Input\+Log} & The log to which to add whether the onset was user input. \\
+\hline
+{\em delay\+Log} & The log to which to add the delay of the onset. \\
+\hline
+{\em m\+Noise\+Log} & The log to which to add the motor noise. \\
+\hline
+{\em tk\+Noise\+Log} & The log to which to add the time keeper noise. \\
+\hline
+{\em async\+Log} & The log to which to add the async values. \\
+\hline
+{\em alpha\+Log} & The log to which to add the alpha values. \\
+\hline
+{\em beta\+Log} & The log to which to add the beta values. \\
+\hline
+{\em tk\+Noise\+Std\+Log} & The log to which to add the standard deviation of the time keeper noise. \\
+\hline
+{\em m\+Noise\+Std\+Log} & The log to which to add the standard deviation of the motor noise. \\
+\hline
+{\em velocity\+Log} & The log to which to add the velocity of the onset. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_ad3d5c4a2dc9348243a24ad1fabf21a1c}\index{EnsembleModel@{EnsembleModel}!newOnsetsAvailable@{newOnsetsAvailable}}
+\index{newOnsetsAvailable@{newOnsetsAvailable}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{newOnsetsAvailable()}{newOnsetsAvailable()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ad3d5c4a2dc9348243a24ad1fabf21a1c} 
+bool Ensemble\+Model\+::new\+Onsets\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if new onsets are available for all players in the ensemble model. 
+
+This function iterates over all players in the ensemble model and checks if each player has a new onset available. If all players have a new onset available, the function returns true. Otherwise, it returns false.
+
+\begin{DoxyReturn}{Returns}
+True if new onsets are available for all players, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a8b2bcf0b289dc176953177145bb8480c}\index{EnsembleModel@{EnsembleModel}!oscAcknowledge@{oscAcknowledge}}
+\index{oscAcknowledge@{oscAcknowledge}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{oscAcknowledge()}{oscAcknowledge()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a8b2bcf0b289dc176953177145bb8480c} 
+void Ensemble\+Model\+::osc\+Acknowledge (\begin{DoxyParamCaption}\item[{const juce\+::\+String \&}]{received\+Address}{}\end{DoxyParamCaption})}
+
+Send an OSC message to confirm that an OSC message was received. 
+\begin{DoxyParams}{Parameters}
+{\em received\+Address} & the address of the OSC message received \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a92d696efea2517eb7ddd85dc93f4393b}\index{EnsembleModel@{EnsembleModel}!oscMessageReceived@{oscMessageReceived}}
+\index{oscMessageReceived@{oscMessageReceived}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{oscMessageReceived()}{oscMessageReceived()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a92d696efea2517eb7ddd85dc93f4393b} 
+void Ensemble\+Model\+::osc\+Message\+Received (\begin{DoxyParamCaption}\item[{const juce\+::\+OSCMessage \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Processes received OSC messages. 
+
+This function handles incoming OSC messages by interpreting the address pattern and parameters within the message. Depending on the OSC address, it performs various actions, such as loading configuration files, setting log filenames, loading MIDI files, sending player details, and more. It also handles simple commands without parameters, like reset, ensemble details, and ping. After processing, it acknowledges the OSC message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The OSC message that has been received, containing the address and parameters to be processed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_ac44339ce6dd581a8254db8dde091dd82}\index{EnsembleModel@{EnsembleModel}!oscSendEnsembleDetails@{oscSendEnsembleDetails}}
+\index{oscSendEnsembleDetails@{oscSendEnsembleDetails}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{oscSendEnsembleDetails()}{oscSendEnsembleDetails()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ac44339ce6dd581a8254db8dde091dd82} 
+void Ensemble\+Model\+::osc\+Send\+Ensemble\+Details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sends an OSC message with all ensemble model details to the connected OSC receiver. 
+
+This function creates an OSC message with all the relevant ensemble model details and sends it to the connected OSC receiver. The ensemble model details are\+: current receive port, number of user players, path to the MIDI file, sample rate, samples per beat, score counter, initial tempo set, intro tone channel, number of intro tones, intro tone note (first), intro tone note (other), intro tone velocity, intro counter, and intro tones played. \Hypertarget{class_ensemble_model_a47c749e4e0b905fec8a88d0761d28176}\index{EnsembleModel@{EnsembleModel}!parseXmlConfigFileToXmlElement@{parseXmlConfigFileToXmlElement}}
+\index{parseXmlConfigFileToXmlElement@{parseXmlConfigFileToXmlElement}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{parseXmlConfigFileToXmlElement()}{parseXmlConfigFileToXmlElement()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a47c749e4e0b905fec8a88d0761d28176} 
+std\+::unique\+\_\+ptr$<$ juce\+::\+Xml\+Element $>$ Ensemble\+Model\+::parse\+Xml\+Config\+File\+To\+Xml\+Element (\begin{DoxyParamCaption}\item[{juce\+::\+File}]{config\+File}{}\end{DoxyParamCaption})}
+
+
+
+Converts an XML configuration file into an Xml\+Element. 
+
+This function takes a juce\+::\+File object representing the XML configuration file and parses it into an Xml\+Element. This Xml\+Element can then be used to update the ensemble model configuration or for other processing needs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+File} & The juce\+::\+File object representing the XML configuration file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the parsed Xml\+Element. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a5d933454a98698460828b4bd75044bef}\index{EnsembleModel@{EnsembleModel}!playIntroTones@{playIntroTones}}
+\index{playIntroTones@{playIntroTones}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{playIntroTones()}{playIntroTones()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a5d933454a98698460828b4bd75044bef} 
+void Ensemble\+Model\+::play\+Intro\+Tones (\begin{DoxyParamCaption}\item[{juce\+::\+Midi\+Buffer \&}]{midi}{, }\item[{int}]{sample\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plays intro tones at the start of the piece. 
+
+This function plays a repeating pattern of two notes at the start of the piece. The pattern is played on a separate midi channel to the rest of the piece. The function is called by the process\+Block function and is used to play the intro tones.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em midi} & a reference to a juce\+::\+Midi\+Buffer object \\
+\hline
+\mbox{\texttt{ in}}  & {\em sample\+Index} & an integer representing the sample index to add the midi event at \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a633b717d9a77d6110c8055116f39ee24}\index{EnsembleModel@{EnsembleModel}!playScore@{playScore}}
+\index{playScore@{playScore}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{playScore()}{playScore()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a633b717d9a77d6110c8055116f39ee24} 
+void Ensemble\+Model\+::play\+Score (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+Buffer \&}]{in\+Midi}{, }\item[{juce\+::\+Midi\+Buffer \&}]{out\+Midi}{, }\item[{int}]{sample\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes the current sample index for all players and updates score timing. 
+
+This function iterates over all players and processes their samples at the given sample index. Once all players have played a note, it updates the timing intervals and clears the onset availability status. The function also increments the score counter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Midi} & The input MIDI buffer containing MIDI events. \\
+\hline
+{\em out\+Midi} & The output MIDI buffer where processed MIDI events will be stored. \\
+\hline
+{\em sample\+Index} & The current sample index being processed for each player. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_adb85ab99330368c267f341258a74bd6f}\index{EnsembleModel@{EnsembleModel}!playUserIntro@{playUserIntro}}
+\index{playUserIntro@{playUserIntro}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{playUserIntro()}{playUserIntro()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_adb85ab99330368c267f341258a74bd6f} 
+void Ensemble\+Model\+::play\+User\+Intro (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+Buffer \&}]{in\+Midi}{, }\item[{juce\+::\+Midi\+Buffer \&}]{out\+Midi}{, }\item[{int}]{sample\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plays the intro tone for all user-\/operated players. 
+
+Given a sample index, this function iterates over all players and plays the intro tone for those which are user-\/operated. The intro tone is played on the note specified by the intro\+Tone\+Note\+Other parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Midi} & The input MIDI buffer containing MIDI events. \\
+\hline
+{\em out\+Midi} & The output MIDI buffer where processed MIDI events will be stored. \\
+\hline
+{\em sample\+Index} & The current sample index being processed for each player. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a8dabdf9d19baeb953ffea24bfc90a2e3}\index{EnsembleModel@{EnsembleModel}!pollingLoop@{pollingLoop}}
+\index{pollingLoop@{pollingLoop}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{pollingLoop()}{pollingLoop()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a8dabdf9d19baeb953ffea24bfc90a2e3} 
+void Ensemble\+Model\+::polling\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs the polling loop to get new alpha values. 
+
+This function runs until the continue\+Polling flag is false. It checks if the alphas are up to date, if not it calls get\+New\+Alphas to get the new values. It then waits for 50ms before checking again. This loop is started in the start\+Polling\+Loop function and stopped in the stop\+Polling\+Loop function. \Hypertarget{class_ensemble_model_a0bf43a9c5c50c3853ba5e01ebef909dc}\index{EnsembleModel@{EnsembleModel}!prepareToPlay@{prepareToPlay}}
+\index{prepareToPlay@{prepareToPlay}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{prepareToPlay()}{prepareToPlay()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a0bf43a9c5c50c3853ba5e01ebef909dc} 
+void Ensemble\+Model\+::prepare\+To\+Play (\begin{DoxyParamCaption}\item[{double}]{new\+Sample\+Rate}{}\end{DoxyParamCaption})}
+
+
+
+Prepare the ensemble model for playback. 
+
+This function should be called before any calls to process\+Midi\+Block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Sample\+Rate} & The sample rate at which the ensemble model should be prepared for playback. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_af06ee8adbc8e34be8e3c81d69da78373}\index{EnsembleModel@{EnsembleModel}!processMidiBlock@{processMidiBlock}}
+\index{processMidiBlock@{processMidiBlock}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{processMidiBlock()}{processMidiBlock()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_af06ee8adbc8e34be8e3c81d69da78373} 
+void Ensemble\+Model\+::process\+Midi\+Block (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+Buffer \&}]{in\+Midi}{, }\item[{juce\+::\+Midi\+Buffer \&}]{out\+Midi}{, }\item[{int}]{num\+Samples}{, }\item[{double}]{tempo}{}\end{DoxyParamCaption})}
+
+
+
+Processes a block of MIDI events and outputs the result. 
+
+This function processes the input MIDI buffer for the specified number of samples, updating the tempo and handling any reset flags. If intro tones are yet to be played, it will prioritise them before processing the main score. The function locks the player state to ensure thread safety during processing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Midi} & The input MIDI buffer containing MIDI events. \\
+\hline
+{\em out\+Midi} & The output MIDI buffer where processed MIDI events will be stored. \\
+\hline
+{\em num\+Samples} & The number of samples to process in the MIDI buffer. \\
+\hline
+{\em tempo} & The current tempo, in beats per minute, to be set for processing. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_ab19459d025312f1524ff7a2192c4ba2d}\index{EnsembleModel@{EnsembleModel}!releaseResources@{releaseResources}}
+\index{releaseResources@{releaseResources}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{releaseResources()}{releaseResources()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ab19459d025312f1524ff7a2192c4ba2d} 
+void Ensemble\+Model\+::release\+Resources (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Release any resources allocated by the ensemble model. 
+
+This function should be called when the ensemble model is no longer needed. It is currently a no-\/op, but may be used in the future to release resources allocated for the ensemble model. \Hypertarget{class_ensemble_model_a8c5e69d3481a64524323aa84d98e6027}\index{EnsembleModel@{EnsembleModel}!reset@{reset}}
+\index{reset@{reset}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a8c5e69d3481a64524323aa84d98e6027} 
+bool Ensemble\+Model\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the ensemble model and its players. 
+
+This function resets the ensemble model and its players, clearing any state that may have been set by processing MIDI events. The function will return false if the player state is not locked, indicating that the reset operation could not be completed.
+
+\begin{DoxyReturn}{Returns}
+true if the reset operation was successful, false if the player state is not locked. 
+\end{DoxyReturn}
+\Hypertarget{class_ensemble_model_a47fa226722c535fe8f1545ad542ec76a}\index{EnsembleModel@{EnsembleModel}!resetPlayers@{resetPlayers}}
+\index{resetPlayers@{resetPlayers}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{resetPlayers()}{resetPlayers()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a47fa226722c535fe8f1545ad542ec76a} 
+void Ensemble\+Model\+::reset\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the players in the ensemble model. 
+
+This function resets all players in the ensemble model, clearing any state that may have been set by processing MIDI events. The following actions are taken when resetting the players\+:
+\begin{DoxyItemize}
+\item Intro countdown is reset
+\item Score counter is reset
+\item \doxylink{class_player}{Player} tempo is updated when playback starts
+\item Logging of onset times is started
+\item Polling for new alpha values is started
+\item Each player is reset
+\item The reset flag is cleared 
+\end{DoxyItemize}\Hypertarget{class_ensemble_model_a5da733fe74f486ab15c5c26a7d90be2e}\index{EnsembleModel@{EnsembleModel}!saveConfigToXmlFile@{saveConfigToXmlFile}}
+\index{saveConfigToXmlFile@{saveConfigToXmlFile}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{saveConfigToXmlFile()}{saveConfigToXmlFile()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a5da733fe74f486ab15c5c26a7d90be2e} 
+void Ensemble\+Model\+::save\+Config\+To\+Xml\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Saves the current ensemble state to an XML file. 
+
+This function saves the number of user players, and the alpha and beta parameters for all players to an XML file. The XML file is currently saved in the user\textquotesingle{}s documents directory with the name "{}\+Ensemble\+Model\+Config.\+xml"{}.
+
+Note\+: This only works on Windows. On other platforms, the file is not saved. \Hypertarget{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb}\index{EnsembleModel@{EnsembleModel}!setAlphaBetaParams@{setAlphaBetaParams}}
+\index{setAlphaBetaParams@{setAlphaBetaParams}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{setAlphaBetaParams()}{setAlphaBetaParams()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb} 
+void Ensemble\+Model\+::set\+Alpha\+Beta\+Params (\begin{DoxyParamCaption}\item[{float}]{value\+In}{}\end{DoxyParamCaption})}
+
+
+
+Set the alpha and beta parameters for all players to a given value. 
+
+This function sets the alpha and beta parameters for all players to a given value. This is a convenience function for setting all of the parameters at once.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+In} & The value to set the alpha and beta parameters to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a91652dc39b17226ab242575700ea5a15}\index{EnsembleModel@{EnsembleModel}!setInitialPlayerTempo@{setInitialPlayerTempo}}
+\index{setInitialPlayerTempo@{setInitialPlayerTempo}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{setInitialPlayerTempo()}{setInitialPlayerTempo()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a91652dc39b17226ab242575700ea5a15} 
+void Ensemble\+Model\+::set\+Initial\+Player\+Tempo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set the initial tempo of all players in the ensemble model. 
+
+This function sets the initial tempo of all players in the ensemble model, specified in samples per beat. It is called by the set\+Tempo function after checking that the tempo has actually changed. \Hypertarget{class_ensemble_model_afaad68729d6e76b099e3161bc4990d12}\index{EnsembleModel@{EnsembleModel}!setTempo@{setTempo}}
+\index{setTempo@{setTempo}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{setTempo()}{setTempo()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_afaad68729d6e76b099e3161bc4990d12} 
+void Ensemble\+Model\+::set\+Tempo (\begin{DoxyParamCaption}\item[{double}]{bpm}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set the tempo of the ensemble model. 
+
+This function sets the tempo of the ensemble model, specified in beats per minute (bpm). It updates the number of samples per beat and resets the initial tempo of all players.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bpm} & The tempo in beats per minute. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_aca0da6aff00966cb55da0bea171a9b1f}\index{EnsembleModel@{EnsembleModel}!soundOffAllChannels@{soundOffAllChannels}}
+\index{soundOffAllChannels@{soundOffAllChannels}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{soundOffAllChannels()}{soundOffAllChannels()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_aca0da6aff00966cb55da0bea171a9b1f} 
+void Ensemble\+Model\+::sound\+Off\+All\+Channels (\begin{DoxyParamCaption}\item[{juce\+::\+Midi\+Buffer \&}]{midi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sends MIDI messages to turn off all notes, sound, and controllers on all channels. 
+
+This function iterates through all 16 MIDI channels and adds messages to the provided MIDI buffer to ensure that all notes, sound, and controllers are turned off. This is typically used to ensure that no lingering notes or sounds are present when resetting or stopping playback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em midi} & The MIDI buffer where the "{}all off"{} messages should be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a76ac9f8dc299dc90d42ef9c221a29bdc}\index{EnsembleModel@{EnsembleModel}!startLoggerLoop@{startLoggerLoop}}
+\index{startLoggerLoop@{startLoggerLoop}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{startLoggerLoop()}{startLoggerLoop()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a76ac9f8dc299dc90d42ef9c221a29bdc} 
+void Ensemble\+Model\+::start\+Logger\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Starts the logging loop that continuously logs player onset details to a file. 
+
+This function stops any existing logging loop, initializes the logging buffer and FIFO, sets a flag to continue logging, and spawns a new thread to run the logger loop. \Hypertarget{class_ensemble_model_ad77ce6178c36b1935e3f24960a242141}\index{EnsembleModel@{EnsembleModel}!startPollingLoop@{startPollingLoop}}
+\index{startPollingLoop@{startPollingLoop}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{startPollingLoop()}{startPollingLoop()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_ad77ce6178c36b1935e3f24960a242141} 
+void Ensemble\+Model\+::start\+Polling\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Starts the polling loop which polls for new alpha values. 
+
+This function stops any existing polling loop, initialises the polling buffers, sets the flag to continue polling, sets the flag to indicate that the alphas are up to date and starts the polling thread. \Hypertarget{class_ensemble_model_a89764d6c8778af9b9d3524ca6cb51c99}\index{EnsembleModel@{EnsembleModel}!stopLoggerLoop@{stopLoggerLoop}}
+\index{stopLoggerLoop@{stopLoggerLoop}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{stopLoggerLoop()}{stopLoggerLoop()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a89764d6c8778af9b9d3524ca6cb51c99} 
+void Ensemble\+Model\+::stop\+Logger\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stops the logger loop and joins the logger thread. 
+
+This function sets the continue\+Logging flag to false, which signals the logger loop to stop. If the logger\+Thread is joinable, it waits for the thread to finish execution by calling join. \Hypertarget{class_ensemble_model_a53702dbb1b0baf76f2faa4dcb6a360b6}\index{EnsembleModel@{EnsembleModel}!stopPollingLoop@{stopPollingLoop}}
+\index{stopPollingLoop@{stopPollingLoop}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{stopPollingLoop()}{stopPollingLoop()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a53702dbb1b0baf76f2faa4dcb6a360b6} 
+void Ensemble\+Model\+::stop\+Polling\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stops the polling loop for new alpha values. 
+
+This function sets the flag to stop polling and waits for the polling thread to finish before returning. \Hypertarget{class_ensemble_model_a6a7807101d6f80b898f4fd551e73a6d3}\index{EnsembleModel@{EnsembleModel}!storeOnsetDetailsForPlayer@{storeOnsetDetailsForPlayer}}
+\index{storeOnsetDetailsForPlayer@{storeOnsetDetailsForPlayer}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{storeOnsetDetailsForPlayer()}{storeOnsetDetailsForPlayer()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a6a7807101d6f80b898f4fd551e73a6d3} 
+void Ensemble\+Model\+::store\+Onset\+Details\+For\+Player (\begin{DoxyParamCaption}\item[{int}]{buffer\+Index}{, }\item[{int}]{player\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Store the onset details of a specific player into the logging buffer. 
+
+This function retrieves the latest onset details of a specified player and stores them in the logging buffer at the given buffer index. It logs various parameters including onset time, interval, user input status, delay, motor noise, time keeper noise, asynchronies with other players, alpha and beta parameters, time keeper noise standard deviation, motor noise standard deviation, and volume.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Index} & The index in the logging buffer where the onset details are to be stored. \\
+\hline
+{\em player\+Index} & The index of the player whose onset details are being logged. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ensemble_model_a531b4f266d892100351d4657e40649f0}\index{EnsembleModel@{EnsembleModel}!writeLogHeader@{writeLogHeader}}
+\index{writeLogHeader@{writeLogHeader}!EnsembleModel@{EnsembleModel}}
+\doxysubsubsection{\texorpdfstring{writeLogHeader()}{writeLogHeader()}}
+{\footnotesize\ttfamily \label{class_ensemble_model_a531b4f266d892100351d4657e40649f0} 
+void Ensemble\+Model\+::write\+Log\+Header (\begin{DoxyParamCaption}\item[{juce\+::\+File\+Output\+Stream \&}]{log\+Stream}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Write the header line of the log file. This function is only called from the logging thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+Stream} & The file stream to write to. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Ensemble\+Model.\+h\item 
+Source/Ensemble\+Model.\+cpp\end{DoxyCompactItemize}

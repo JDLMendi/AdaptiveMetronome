@@ -1,0 +1,191 @@
+\doxysection{User\+Player Class Reference}
+\hypertarget{class_user_player}{}\label{class_user_player}\index{UserPlayer@{UserPlayer}}
+Inheritance diagram for User\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_player_a2a7fb3549b6f92accaa73213796520ef}\label{class_user_player_a2a7fb3549b6f92accaa73213796520ef} 
+{\bfseries User\+Player} (int index, const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq, int midi\+Channel, const double \&sample\+Rate, const int \&score\+Counter, int initial\+Interval)
+\item 
+\Hypertarget{class_user_player_a0b4824fca511a069b126c0d50ada89c5}\label{class_user_player_a0b4824fca511a069b126c0d50ada89c5} 
+{\bfseries User\+Player} (int index, const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq, int midi\+Channel, const double \&sample\+Rate, const int \&score\+Counter, int initial\+Interval, \mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*}processor\+In)
+\item 
+bool \mbox{\hyperlink{class_user_player_aff03f7afdbbfadfdb970a2795baa2dca}{is\+User\+Operated}} () override
+\item 
+void \mbox{\hyperlink{class_user_player_afea89ab4a72d677f77cb860e3e88e0c7}{recalculate\+Onset\+Interval}} (int samples\+Per\+Beat, const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \&players) override
+\item 
+bool \mbox{\hyperlink{class_user_player_a07bd2f3a604aa164d0713da4b190f245}{was\+Latest\+Onset\+User\+Input}} () override
+\item 
+void \mbox{\hyperlink{class_user_player_af78da569c3293f6823041ae14a3d12b9}{process\+Intro\+Sample}} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index, int intro\+Note) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_player}{Player}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player} (int index, const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq, int midi\+Channel, const double \&sample\+Rate, const int \&score\+Counter, int initial\+Interval)
+\item 
+{\bfseries Player} (int index, const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq, int midi\+Channel, const double \&sample\+Rate, const int \&score\+Counter, int initial\+Interval, \mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*}processor\+Ptr)
+\item 
+void {\bfseries reset} ()
+\item 
+void {\bfseries set\+Onset\+Interval} (int interval)
+\item 
+int {\bfseries get\+Onset\+Interval} ()
+\item 
+int {\bfseries get\+Played\+Onset\+Interval} ()
+\item 
+double {\bfseries generate\+Motor\+Noise} ()
+\item 
+double {\bfseries generate\+Time\+Keeper\+Noise} ()
+\item 
+double {\bfseries generate\+HNoise} ()
+\item 
+double {\bfseries get\+Motor\+Noise} ()
+\item 
+double {\bfseries get\+Time\+Keeper\+Noise} ()
+\item 
+double {\bfseries get\+Motor\+Noise\+Std} ()
+\item 
+double {\bfseries get\+Time\+Keeper\+Noise\+Std} ()
+\item 
+int {\bfseries get\+Midi\+Channel} ()
+\item 
+bool {\bfseries has\+Note\+Played} ()
+\item 
+void {\bfseries reset\+Note\+Played} ()
+\item 
+int {\bfseries get\+Latest\+Onset\+Time} ()
+\item 
+int {\bfseries get\+Latest\+Onset\+Delay} ()
+\item 
+double {\bfseries get\+Latest\+Volume} ()
+\item 
+void {\bfseries process\+Sample} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index)
+\item 
+std\+::size\+\_\+t {\bfseries get\+Num\+Notes} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_player_a63918fa2e6b3021a7f37771cc128ff18}{process\+Note\+On}} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_player}{Player}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries initialise\+Score} (const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq)
+\item 
+void {\bfseries play\+Next\+Note} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index, int samples\+Delay=0)
+\item 
+void {\bfseries stop\+Previous\+Note} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_player_ab594ed8f7f55bf4c96da2c3bb4154241}\label{class_user_player_ab594ed8f7f55bf4c96da2c3bb4154241} 
+int {\bfseries intro\+Tone\+Length} = 100
+\item 
+\Hypertarget{class_user_player_ae30c2556421c8dd45d154937785ad627}\label{class_user_player_ae30c2556421c8dd45d154937785ad627} 
+int {\bfseries samples\+To\+Intro\+Tone\+Off} = -\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_player}{Player}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries player\+Index} = 0
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_player_1_1_note}{Note}} $>$ {\bfseries notes}
+\item 
+std\+::size\+\_\+t {\bfseries current\+Note\+Index} = 0
+\item 
+double {\bfseries latest\+Volume} = 0.\+0
+\item 
+int {\bfseries midi\+Channel}
+\item 
+const double \& {\bfseries sample\+Rate}
+\item 
+const int \& {\bfseries score\+Counter}
+\item 
+int {\bfseries onset\+Interval} = 0
+\item 
+int {\bfseries samples\+Since\+Last\+Onset} = 0
+\item 
+int {\bfseries samples\+To\+Next\+Offset} = -\/1
+\item 
+int {\bfseries current\+Onset\+Time} = 0
+\item 
+int {\bfseries previous\+Onset\+Time} = 0
+\item 
+int {\bfseries latest\+Delay} = 0
+\item 
+bool {\bfseries note\+Played} = false
+\item 
+bool {\bfseries note\+Triggered\+By\+User} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_player}{Player}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*} {\bfseries processor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_player_aff03f7afdbbfadfdb970a2795baa2dca}\index{UserPlayer@{UserPlayer}!isUserOperated@{isUserOperated}}
+\index{isUserOperated@{isUserOperated}!UserPlayer@{UserPlayer}}
+\doxysubsubsection{\texorpdfstring{isUserOperated()}{isUserOperated()}}
+{\footnotesize\ttfamily \label{class_user_player_aff03f7afdbbfadfdb970a2795baa2dca} 
+bool User\+Player\+::is\+User\+Operated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player}{Player}}.
+
+\Hypertarget{class_user_player_af78da569c3293f6823041ae14a3d12b9}\index{UserPlayer@{UserPlayer}!processIntroSample@{processIntroSample}}
+\index{processIntroSample@{processIntroSample}!UserPlayer@{UserPlayer}}
+\doxysubsubsection{\texorpdfstring{processIntroSample()}{processIntroSample()}}
+{\footnotesize\ttfamily \label{class_user_player_af78da569c3293f6823041ae14a3d12b9} 
+void User\+Player\+::process\+Intro\+Sample (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+Buffer \&}]{in\+Midi}{, }\item[{juce\+::\+Midi\+Buffer \&}]{out\+Midi}{, }\item[{int}]{sample\+Index}{, }\item[{int}]{intro\+Note}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player}{Player}}.
+
+\Hypertarget{class_user_player_a63918fa2e6b3021a7f37771cc128ff18}\index{UserPlayer@{UserPlayer}!processNoteOn@{processNoteOn}}
+\index{processNoteOn@{processNoteOn}!UserPlayer@{UserPlayer}}
+\doxysubsubsection{\texorpdfstring{processNoteOn()}{processNoteOn()}}
+{\footnotesize\ttfamily \label{class_user_player_a63918fa2e6b3021a7f37771cc128ff18} 
+void User\+Player\+::process\+Note\+On (\begin{DoxyParamCaption}\item[{const juce\+::\+Midi\+Buffer \&}]{in\+Midi}{, }\item[{juce\+::\+Midi\+Buffer \&}]{out\+Midi}{, }\item[{int}]{sample\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player}{Player}}.
+
+\Hypertarget{class_user_player_afea89ab4a72d677f77cb860e3e88e0c7}\index{UserPlayer@{UserPlayer}!recalculateOnsetInterval@{recalculateOnsetInterval}}
+\index{recalculateOnsetInterval@{recalculateOnsetInterval}!UserPlayer@{UserPlayer}}
+\doxysubsubsection{\texorpdfstring{recalculateOnsetInterval()}{recalculateOnsetInterval()}}
+{\footnotesize\ttfamily \label{class_user_player_afea89ab4a72d677f77cb860e3e88e0c7} 
+void User\+Player\+::recalculate\+Onset\+Interval (\begin{DoxyParamCaption}\item[{int}]{samples\+Per\+Beat}{, }\item[{const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \&}]{players}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player}{Player}}.
+
+\Hypertarget{class_user_player_a07bd2f3a604aa164d0713da4b190f245}\index{UserPlayer@{UserPlayer}!wasLatestOnsetUserInput@{wasLatestOnsetUserInput}}
+\index{wasLatestOnsetUserInput@{wasLatestOnsetUserInput}!UserPlayer@{UserPlayer}}
+\doxysubsubsection{\texorpdfstring{wasLatestOnsetUserInput()}{wasLatestOnsetUserInput()}}
+{\footnotesize\ttfamily \label{class_user_player_a07bd2f3a604aa164d0713da4b190f245} 
+bool User\+Player\+::was\+Latest\+Onset\+User\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_player}{Player}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/User\+Player.\+h\item 
+Source/User\+Player.\+cpp\end{DoxyCompactItemize}
