@@ -109,6 +109,8 @@ $(function(){initNavTree('class_player.html',''); initResizable(true); });
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_player-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Player Class Reference</div></div>
 </div><!--header-->
@@ -274,6 +276,36 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>notePlayed</b> = fals
 <tr class="memitem:a9c5d77edc841bb72da499d94e3d18cf2" id="r_a9c5d77edc841bb72da499d94e3d18cf2"><td class="memItemLeft" align="right" valign="top"><a id="a9c5d77edc841bb72da499d94e3d18cf2" name="a9c5d77edc841bb72da499d94e3d18cf2"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>noteTriggeredByUser</b> = false</td></tr>
 <tr class="separator:a9c5d77edc841bb72da499d94e3d18cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5fd4ea11ba7263eebbfe34f3b6a0996c" id="r_a5fd4ea11ba7263eebbfe34f3b6a0996c"><td class="memItemLeft" align="right" valign="top"><a id="a5fd4ea11ba7263eebbfe34f3b6a0996c" name="a5fd4ea11ba7263eebbfe34f3b6a0996c"></a>
+std::normal_distribution&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mNoiseDistribution</b></td></tr>
+<tr class="separator:a5fd4ea11ba7263eebbfe34f3b6a0996c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfaac099210d0dba5fb009b16ac5e29d" id="r_abfaac099210d0dba5fb009b16ac5e29d"><td class="memItemLeft" align="right" valign="top"><a id="abfaac099210d0dba5fb009b16ac5e29d" name="abfaac099210d0dba5fb009b16ac5e29d"></a>
+std::normal_distribution&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tkNoiseDistribution</b></td></tr>
+<tr class="separator:abfaac099210d0dba5fb009b16ac5e29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173ed1a1a6aa9e623e0a77ef9c965815" id="r_a173ed1a1a6aa9e623e0a77ef9c965815"><td class="memItemLeft" align="right" valign="top"><a id="a173ed1a1a6aa9e623e0a77ef9c965815" name="a173ed1a1a6aa9e623e0a77ef9c965815"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>currentMotorNoise</b> = 0.0</td></tr>
+<tr class="separator:a173ed1a1a6aa9e623e0a77ef9c965815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefbd4f5117e3dbfecab663c06d8c5e5c" id="r_aefbd4f5117e3dbfecab663c06d8c5e5c"><td class="memItemLeft" align="right" valign="top"><a id="aefbd4f5117e3dbfecab663c06d8c5e5c" name="aefbd4f5117e3dbfecab663c06d8c5e5c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>previousMotorNoise</b> = 0.0</td></tr>
+<tr class="separator:aefbd4f5117e3dbfecab663c06d8c5e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c774e1701172718096166a5bfb59be4" id="r_a5c774e1701172718096166a5bfb59be4"><td class="memItemLeft" align="right" valign="top"><a id="a5c774e1701172718096166a5bfb59be4" name="a5c774e1701172718096166a5bfb59be4"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>currentTimeKeeperNoise</b> = 0.0</td></tr>
+<tr class="separator:a5c774e1701172718096166a5bfb59be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7eb6ad31fda190b4a72894345b5431f" id="r_af7eb6ad31fda190b4a72894345b5431f"><td class="memItemLeft" align="right" valign="top"><a id="af7eb6ad31fda190b4a72894345b5431f" name="af7eb6ad31fda190b4a72894345b5431f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>timeKeeperMean</b> = 0.0</td></tr>
+<tr class="separator:af7eb6ad31fda190b4a72894345b5431f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a8d3fb556d45d0d88954de52d3f983a4c" id="r_a8d3fb556d45d0d88954de52d3f983a4c"><td class="memItemLeft" align="right" valign="top"><a id="a8d3fb556d45d0d88954de52d3f983a4c" name="a8d3fb556d45d0d88954de52d3f983a4c"></a>
+static std::random_device&#160;</td><td class="memItemRight" valign="bottom"><b>randomSeed</b></td></tr>
+<tr class="separator:a8d3fb556d45d0d88954de52d3f983a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22da54f0b64f9614d75c5d394088ab35" id="r_a22da54f0b64f9614d75c5d394088ab35"><td class="memItemLeft" align="right" valign="top"><a id="a22da54f0b64f9614d75c5d394088ab35" name="a22da54f0b64f9614d75c5d394088ab35"></a>
+static std::default_random_engine&#160;</td><td class="memItemRight" valign="bottom"><b>randomEngine</b></td></tr>
+<tr class="separator:a22da54f0b64f9614d75c5d394088ab35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Projects/ARME/AdaptiveMetronome/Source/<a class="el" href="_player_8h_source.html">Player.h</a></li>

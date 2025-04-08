@@ -104,9 +104,13 @@ $(function(){initNavTree('class_ensemble_model.html',''); initResizable(true); }
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_ensemble_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">EnsembleModel Class Reference</div></div>
 </div><!--header-->
@@ -118,112 +122,123 @@ Inheritance diagram for EnsembleModel:</div>
   <img src="class_ensemble_model.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensemble_model_1_1_flag_lock.html">FlagLock</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ensemble_model_1_1_log_data.html">LogData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ensemble_model_1_1_player_parameters.html">PlayerParameters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d561a3e3f1b84781fcf504ba7d3860a" id="r_a9d561a3e3f1b84781fcf504ba7d3860a"><td class="memItemLeft" align="right" valign="top"><a id="a9d561a3e3f1b84781fcf504ba7d3860a" name="a9d561a3e3f1b84781fcf504ba7d3860a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EnsembleModel</b> (<a class="el" href="class_adaptive_metronome_audio_processor.html">AdaptiveMetronomeAudioProcessor</a> *processorPtr)</td></tr>
+<tr class="memitem:a9d561a3e3f1b84781fcf504ba7d3860a" id="r_a9d561a3e3f1b84781fcf504ba7d3860a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d561a3e3f1b84781fcf504ba7d3860a">EnsembleModel</a> (<a class="el" href="class_adaptive_metronome_audio_processor.html">AdaptiveMetronomeAudioProcessor</a> *processorPtr)</td></tr>
+<tr class="memdesc:a9d561a3e3f1b84781fcf504ba7d3860a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Ensemble Model object.  <br /></td></tr>
 <tr class="separator:a9d561a3e3f1b84781fcf504ba7d3860a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9c846c94a467886c1d2a7c648c362a1" id="r_aa9c846c94a467886c1d2a7c648c362a1"><td class="memItemLeft" align="right" valign="top"><a id="aa9c846c94a467886c1d2a7c648c362a1" name="aa9c846c94a467886c1d2a7c648c362a1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>loadMidiFile</b> (const juce::File &amp;file, int userPlayers)</td></tr>
+<tr class="memitem:a9ceb0658e35ae43a2a92d6a12afed985" id="r_a9ceb0658e35ae43a2a92d6a12afed985"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ceb0658e35ae43a2a92d6a12afed985">~EnsembleModel</a> ()</td></tr>
+<tr class="memdesc:a9ceb0658e35ae43a2a92d6a12afed985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="class_ensemble_model.html">EnsembleModel</a>.  <br /></td></tr>
+<tr class="separator:a9ceb0658e35ae43a2a92d6a12afed985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c846c94a467886c1d2a7c648c362a1" id="r_aa9c846c94a467886c1d2a7c648c362a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9c846c94a467886c1d2a7c648c362a1">loadMidiFile</a> (const juce::File &amp;file, int userPlayers)</td></tr>
+<tr class="memdesc:aa9c846c94a467886c1d2a7c648c362a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a MIDI file into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a> and create players for each track.  <br /></td></tr>
 <tr class="separator:aa9c846c94a467886c1d2a7c648c362a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e2e91caac2b24c18e3402c3cd61b9a5" id="r_a1e2e91caac2b24c18e3402c3cd61b9a5"><td class="memItemLeft" align="right" valign="top"><a id="a1e2e91caac2b24c18e3402c3cd61b9a5" name="a1e2e91caac2b24c18e3402c3cd61b9a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMidiLoaded</b> ()</td></tr>
+<tr class="memitem:a1e2e91caac2b24c18e3402c3cd61b9a5" id="r_a1e2e91caac2b24c18e3402c3cd61b9a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e2e91caac2b24c18e3402c3cd61b9a5">isMidiLoaded</a> ()</td></tr>
+<tr class="memdesc:a1e2e91caac2b24c18e3402c3cd61b9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a MIDI file has been loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a>.  <br /></td></tr>
 <tr class="separator:a1e2e91caac2b24c18e3402c3cd61b9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5439d1bc9f2e350ad8151cfd349ae930" id="r_a5439d1bc9f2e350ad8151cfd349ae930"><td class="memItemLeft" align="right" valign="top"><a id="a5439d1bc9f2e350ad8151cfd349ae930" name="a5439d1bc9f2e350ad8151cfd349ae930"></a>
-juce::String&#160;</td><td class="memItemRight" valign="bottom"><b>getMidiFileName</b> ()</td></tr>
+<tr class="memitem:a5439d1bc9f2e350ad8151cfd349ae930" id="r_a5439d1bc9f2e350ad8151cfd349ae930"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5439d1bc9f2e350ad8151cfd349ae930">getMidiFileName</a> ()</td></tr>
+<tr class="memdesc:a5439d1bc9f2e350ad8151cfd349ae930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the MIDI file loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a>.  <br /></td></tr>
 <tr class="separator:a5439d1bc9f2e350ad8151cfd349ae930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a480fbd3e7424882e759107e40d17309b" id="r_a480fbd3e7424882e759107e40d17309b"><td class="memItemLeft" align="right" valign="top"><a id="a480fbd3e7424882e759107e40d17309b" name="a480fbd3e7424882e759107e40d17309b"></a>
-juce::File&#160;</td><td class="memItemRight" valign="bottom"><b>getMidiFile</b> ()</td></tr>
+<tr class="memitem:a480fbd3e7424882e759107e40d17309b" id="r_a480fbd3e7424882e759107e40d17309b"><td class="memItemLeft" align="right" valign="top">juce::File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a480fbd3e7424882e759107e40d17309b">getMidiFile</a> ()</td></tr>
+<tr class="memdesc:a480fbd3e7424882e759107e40d17309b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the MIDI file loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a>.  <br /></td></tr>
 <tr class="separator:a480fbd3e7424882e759107e40d17309b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf43a9c5c50c3853ba5e01ebef909dc" id="r_a0bf43a9c5c50c3853ba5e01ebef909dc"><td class="memItemLeft" align="right" valign="top"><a id="a0bf43a9c5c50c3853ba5e01ebef909dc" name="a0bf43a9c5c50c3853ba5e01ebef909dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>prepareToPlay</b> (double newSampleRate)</td></tr>
+<tr class="memitem:a0bf43a9c5c50c3853ba5e01ebef909dc" id="r_a0bf43a9c5c50c3853ba5e01ebef909dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bf43a9c5c50c3853ba5e01ebef909dc">prepareToPlay</a> (double newSampleRate)</td></tr>
+<tr class="memdesc:a0bf43a9c5c50c3853ba5e01ebef909dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the ensemble model for playback.  <br /></td></tr>
 <tr class="separator:a0bf43a9c5c50c3853ba5e01ebef909dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab19459d025312f1524ff7a2192c4ba2d" id="r_ab19459d025312f1524ff7a2192c4ba2d"><td class="memItemLeft" align="right" valign="top"><a id="ab19459d025312f1524ff7a2192c4ba2d" name="ab19459d025312f1524ff7a2192c4ba2d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>releaseResources</b> ()</td></tr>
+<tr class="memitem:ab19459d025312f1524ff7a2192c4ba2d" id="r_ab19459d025312f1524ff7a2192c4ba2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab19459d025312f1524ff7a2192c4ba2d">releaseResources</a> ()</td></tr>
+<tr class="memdesc:ab19459d025312f1524ff7a2192c4ba2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release any resources allocated by the ensemble model.  <br /></td></tr>
 <tr class="separator:ab19459d025312f1524ff7a2192c4ba2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af06ee8adbc8e34be8e3c81d69da78373" id="r_af06ee8adbc8e34be8e3c81d69da78373"><td class="memItemLeft" align="right" valign="top"><a id="af06ee8adbc8e34be8e3c81d69da78373" name="af06ee8adbc8e34be8e3c81d69da78373"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>processMidiBlock</b> (const juce::MidiBuffer &amp;inMidi, juce::MidiBuffer &amp;outMidi, int numSamples, double tempo)</td></tr>
+<tr class="memitem:af06ee8adbc8e34be8e3c81d69da78373" id="r_af06ee8adbc8e34be8e3c81d69da78373"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af06ee8adbc8e34be8e3c81d69da78373">processMidiBlock</a> (const juce::MidiBuffer &amp;inMidi, juce::MidiBuffer &amp;outMidi, int numSamples, double tempo)</td></tr>
+<tr class="memdesc:af06ee8adbc8e34be8e3c81d69da78373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a block of MIDI events and outputs the result.  <br /></td></tr>
 <tr class="separator:af06ee8adbc8e34be8e3c81d69da78373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c5e69d3481a64524323aa84d98e6027" id="r_a8c5e69d3481a64524323aa84d98e6027"><td class="memItemLeft" align="right" valign="top"><a id="a8c5e69d3481a64524323aa84d98e6027" name="a8c5e69d3481a64524323aa84d98e6027"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memitem:a8c5e69d3481a64524323aa84d98e6027" id="r_a8c5e69d3481a64524323aa84d98e6027"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c5e69d3481a64524323aa84d98e6027">reset</a> ()</td></tr>
+<tr class="memdesc:a8c5e69d3481a64524323aa84d98e6027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the ensemble model and its players.  <br /></td></tr>
 <tr class="separator:a8c5e69d3481a64524323aa84d98e6027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47fa226722c535fe8f1545ad542ec76a" id="r_a47fa226722c535fe8f1545ad542ec76a"><td class="memItemLeft" align="right" valign="top"><a id="a47fa226722c535fe8f1545ad542ec76a" name="a47fa226722c535fe8f1545ad542ec76a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPlayers</b> ()</td></tr>
+<tr class="memitem:a47fa226722c535fe8f1545ad542ec76a" id="r_a47fa226722c535fe8f1545ad542ec76a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47fa226722c535fe8f1545ad542ec76a">resetPlayers</a> ()</td></tr>
+<tr class="memdesc:a47fa226722c535fe8f1545ad542ec76a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the players in the ensemble model.  <br /></td></tr>
 <tr class="separator:a47fa226722c535fe8f1545ad542ec76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab582aa9121cf83c2218f0eed64e580a5" id="r_ab582aa9121cf83c2218f0eed64e580a5"><td class="memItemLeft" align="right" valign="top"><a id="ab582aa9121cf83c2218f0eed64e580a5" name="ab582aa9121cf83c2218f0eed64e580a5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getNumPlayers</b> ()</td></tr>
+<tr class="memitem:ab582aa9121cf83c2218f0eed64e580a5" id="r_ab582aa9121cf83c2218f0eed64e580a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab582aa9121cf83c2218f0eed64e580a5">getNumPlayers</a> ()</td></tr>
+<tr class="memdesc:ab582aa9121cf83c2218f0eed64e580a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of players in the ensemble model.  <br /></td></tr>
 <tr class="separator:ab582aa9121cf83c2218f0eed64e580a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b192d0906fd4456709b3067196de68f" id="r_a1b192d0906fd4456709b3067196de68f"><td class="memItemLeft" align="right" valign="top"><a id="a1b192d0906fd4456709b3067196de68f" name="a1b192d0906fd4456709b3067196de68f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getNumUserPlayers</b> ()</td></tr>
+<tr class="memitem:a1b192d0906fd4456709b3067196de68f" id="r_a1b192d0906fd4456709b3067196de68f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b192d0906fd4456709b3067196de68f">getNumUserPlayers</a> ()</td></tr>
+<tr class="memdesc:a1b192d0906fd4456709b3067196de68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of user players in the ensemble model.  <br /></td></tr>
 <tr class="separator:a1b192d0906fd4456709b3067196de68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399a635c8b17e8fa2cfd20f86bb509cd" id="r_a399a635c8b17e8fa2cfd20f86bb509cd"><td class="memItemLeft" align="right" valign="top"><a id="a399a635c8b17e8fa2cfd20f86bb509cd" name="a399a635c8b17e8fa2cfd20f86bb509cd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPlayerUserOperated</b> (int playerIndex)</td></tr>
+<tr class="memitem:a399a635c8b17e8fa2cfd20f86bb509cd" id="r_a399a635c8b17e8fa2cfd20f86bb509cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a399a635c8b17e8fa2cfd20f86bb509cd">isPlayerUserOperated</a> (int playerIndex)</td></tr>
+<tr class="memdesc:a399a635c8b17e8fa2cfd20f86bb509cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a player is user-operated or not.  <br /></td></tr>
 <tr class="separator:a399a635c8b17e8fa2cfd20f86bb509cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a2e36b8ff17e56bbfcb26e76c0ea7eb" id="r_a4a2e36b8ff17e56bbfcb26e76c0ea7eb"><td class="memItemLeft" align="right" valign="top"><a id="a4a2e36b8ff17e56bbfcb26e76c0ea7eb" name="a4a2e36b8ff17e56bbfcb26e76c0ea7eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setAlphaBetaParams</b> (float valueIn)</td></tr>
+<tr class="memitem:a4a2e36b8ff17e56bbfcb26e76c0ea7eb" id="r_a4a2e36b8ff17e56bbfcb26e76c0ea7eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a2e36b8ff17e56bbfcb26e76c0ea7eb">setAlphaBetaParams</a> (float valueIn)</td></tr>
+<tr class="memdesc:a4a2e36b8ff17e56bbfcb26e76c0ea7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the alpha and beta parameters for all players to a given value.  <br /></td></tr>
 <tr class="separator:a4a2e36b8ff17e56bbfcb26e76c0ea7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8037d9b35af2415e8b0aa0ba94960d67" id="r_a8037d9b35af2415e8b0aa0ba94960d67"><td class="memItemLeft" align="right" valign="top"><a id="a8037d9b35af2415e8b0aa0ba94960d67" name="a8037d9b35af2415e8b0aa0ba94960d67"></a>
-juce::AudioParameterInt &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerChannelParameter</b> (int playerIndex)</td></tr>
+<tr class="memitem:a8037d9b35af2415e8b0aa0ba94960d67" id="r_a8037d9b35af2415e8b0aa0ba94960d67"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterInt &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8037d9b35af2415e8b0aa0ba94960d67">getPlayerChannelParameter</a> (int playerIndex)</td></tr>
+<tr class="memdesc:a8037d9b35af2415e8b0aa0ba94960d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the channel parameter for a given player.  <br /></td></tr>
 <tr class="separator:a8037d9b35af2415e8b0aa0ba94960d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd8161d7b9ab390157a731db55564e42" id="r_afd8161d7b9ab390157a731db55564e42"><td class="memItemLeft" align="right" valign="top"><a id="afd8161d7b9ab390157a731db55564e42" name="afd8161d7b9ab390157a731db55564e42"></a>
-juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerDelayParameter</b> (int playerIndex)</td></tr>
+<tr class="memitem:afd8161d7b9ab390157a731db55564e42" id="r_afd8161d7b9ab390157a731db55564e42"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd8161d7b9ab390157a731db55564e42">getPlayerDelayParameter</a> (int playerIndex)</td></tr>
+<tr class="memdesc:afd8161d7b9ab390157a731db55564e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the delay parameter for a given player.  <br /></td></tr>
 <tr class="separator:afd8161d7b9ab390157a731db55564e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36d1c40ac945ec76435e8b7934cb24f7" id="r_a36d1c40ac945ec76435e8b7934cb24f7"><td class="memItemLeft" align="right" valign="top"><a id="a36d1c40ac945ec76435e8b7934cb24f7" name="a36d1c40ac945ec76435e8b7934cb24f7"></a>
-juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerMotorNoiseParameter</b> (int playerIndex)</td></tr>
+<tr class="memitem:a36d1c40ac945ec76435e8b7934cb24f7" id="r_a36d1c40ac945ec76435e8b7934cb24f7"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36d1c40ac945ec76435e8b7934cb24f7">getPlayerMotorNoiseParameter</a> (int playerIndex)</td></tr>
+<tr class="memdesc:a36d1c40ac945ec76435e8b7934cb24f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the motor noise parameter for a given player.  <br /></td></tr>
 <tr class="separator:a36d1c40ac945ec76435e8b7934cb24f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57aff2fc4b4c57f80021b284cef138a8" id="r_a57aff2fc4b4c57f80021b284cef138a8"><td class="memItemLeft" align="right" valign="top"><a id="a57aff2fc4b4c57f80021b284cef138a8" name="a57aff2fc4b4c57f80021b284cef138a8"></a>
-juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerTimeKeeperNoiseParameter</b> (int playerIndex)</td></tr>
+<tr class="memitem:a57aff2fc4b4c57f80021b284cef138a8" id="r_a57aff2fc4b4c57f80021b284cef138a8"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57aff2fc4b4c57f80021b284cef138a8">getPlayerTimeKeeperNoiseParameter</a> (int playerIndex)</td></tr>
+<tr class="memdesc:a57aff2fc4b4c57f80021b284cef138a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time keeper noise parameter for a given player.  <br /></td></tr>
 <tr class="separator:a57aff2fc4b4c57f80021b284cef138a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab29e3ff1fb709520386046e080338a84" id="r_ab29e3ff1fb709520386046e080338a84"><td class="memItemLeft" align="right" valign="top"><a id="ab29e3ff1fb709520386046e080338a84" name="ab29e3ff1fb709520386046e080338a84"></a>
-juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerVolumeParameter</b> (int playerIndex)</td></tr>
+<tr class="memitem:ab29e3ff1fb709520386046e080338a84" id="r_ab29e3ff1fb709520386046e080338a84"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab29e3ff1fb709520386046e080338a84">getPlayerVolumeParameter</a> (int playerIndex)</td></tr>
+<tr class="memdesc:ab29e3ff1fb709520386046e080338a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the volume parameter for a given player.  <br /></td></tr>
 <tr class="separator:ab29e3ff1fb709520386046e080338a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7876fe797d2a53e6f74f95dec2b470" id="r_a2c7876fe797d2a53e6f74f95dec2b470"><td class="memItemLeft" align="right" valign="top"><a id="a2c7876fe797d2a53e6f74f95dec2b470" name="a2c7876fe797d2a53e6f74f95dec2b470"></a>
-juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getAlphaParameter</b> (int player1Index, int player2Index)</td></tr>
+<tr class="memitem:a2c7876fe797d2a53e6f74f95dec2b470" id="r_a2c7876fe797d2a53e6f74f95dec2b470"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c7876fe797d2a53e6f74f95dec2b470">getAlphaParameter</a> (int player1Index, int player2Index)</td></tr>
+<tr class="memdesc:a2c7876fe797d2a53e6f74f95dec2b470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the alpha parameter for a given player pair.  <br /></td></tr>
 <tr class="separator:a2c7876fe797d2a53e6f74f95dec2b470"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c138a7eca02a9690e98d095d5b002ee" id="r_a0c138a7eca02a9690e98d095d5b002ee"><td class="memItemLeft" align="right" valign="top"><a id="a0c138a7eca02a9690e98d095d5b002ee" name="a0c138a7eca02a9690e98d095d5b002ee"></a>
-juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getBetaParameter</b> (int player1Index, int player2Index)</td></tr>
+<tr class="memitem:a0c138a7eca02a9690e98d095d5b002ee" id="r_a0c138a7eca02a9690e98d095d5b002ee"><td class="memItemLeft" align="right" valign="top">juce::AudioParameterFloat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c138a7eca02a9690e98d095d5b002ee">getBetaParameter</a> (int player1Index, int player2Index)</td></tr>
+<tr class="memdesc:a0c138a7eca02a9690e98d095d5b002ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the beta parameter for a given player pair.  <br /></td></tr>
 <tr class="separator:a0c138a7eca02a9690e98d095d5b002ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f9674d65fdd9b7ea279a3cf3af8787f" id="r_a1f9674d65fdd9b7ea279a3cf3af8787f"><td class="memItemLeft" align="right" valign="top"><a id="a1f9674d65fdd9b7ea279a3cf3af8787f" name="a1f9674d65fdd9b7ea279a3cf3af8787f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialiseOSC</b> ()</td></tr>
+<tr class="memitem:a1f9674d65fdd9b7ea279a3cf3af8787f" id="r_a1f9674d65fdd9b7ea279a3cf3af8787f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f9674d65fdd9b7ea279a3cf3af8787f">initialiseOSC</a> ()</td></tr>
+<tr class="memdesc:a1f9674d65fdd9b7ea279a3cf3af8787f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the OSC listener for the ensemble model.  <br /></td></tr>
 <tr class="separator:a1f9674d65fdd9b7ea279a3cf3af8787f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5600a255d4e106d196b777a687dadaaa" id="r_a5600a255d4e106d196b777a687dadaaa"><td class="memItemLeft" align="right" valign="top"><a id="a5600a255d4e106d196b777a687dadaaa" name="a5600a255d4e106d196b777a687dadaaa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>connectOSCSender</b> (int portNumber, juce::String IPAddress)</td></tr>
+<tr class="memitem:a5600a255d4e106d196b777a687dadaaa" id="r_a5600a255d4e106d196b777a687dadaaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5600a255d4e106d196b777a687dadaaa">connectOSCSender</a> (int portNumber, juce::String IPAddress)</td></tr>
+<tr class="memdesc:a5600a255d4e106d196b777a687dadaaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects the OSC sender to a given IP address and port number.  <br /></td></tr>
 <tr class="separator:a5600a255d4e106d196b777a687dadaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49d70f101c56ee7a23b6167d0beb4a5d" id="r_a49d70f101c56ee7a23b6167d0beb4a5d"><td class="memItemLeft" align="right" valign="top"><a id="a49d70f101c56ee7a23b6167d0beb4a5d" name="a49d70f101c56ee7a23b6167d0beb4a5d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>connectOSCReceiver</b> (int portNumber)</td></tr>
+<tr class="memitem:a49d70f101c56ee7a23b6167d0beb4a5d" id="r_a49d70f101c56ee7a23b6167d0beb4a5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49d70f101c56ee7a23b6167d0beb4a5d">connectOSCReceiver</a> (int portNumber)</td></tr>
+<tr class="memdesc:a49d70f101c56ee7a23b6167d0beb4a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects the OSC receiver to a given port number.  <br /></td></tr>
 <tr class="separator:a49d70f101c56ee7a23b6167d0beb4a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92d696efea2517eb7ddd85dc93f4393b" id="r_a92d696efea2517eb7ddd85dc93f4393b"><td class="memItemLeft" align="right" valign="top"><a id="a92d696efea2517eb7ddd85dc93f4393b" name="a92d696efea2517eb7ddd85dc93f4393b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>oscMessageReceived</b> (const juce::OSCMessage &amp;message)</td></tr>
+<tr class="memitem:a92d696efea2517eb7ddd85dc93f4393b" id="r_a92d696efea2517eb7ddd85dc93f4393b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92d696efea2517eb7ddd85dc93f4393b">oscMessageReceived</a> (const juce::OSCMessage &amp;message)</td></tr>
+<tr class="memdesc:a92d696efea2517eb7ddd85dc93f4393b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes received OSC messages.  <br /></td></tr>
 <tr class="separator:a92d696efea2517eb7ddd85dc93f4393b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b2bcf0b289dc176953177145bb8480c" id="r_a8b2bcf0b289dc176953177145bb8480c"><td class="memItemLeft" align="right" valign="top"><a id="a8b2bcf0b289dc176953177145bb8480c" name="a8b2bcf0b289dc176953177145bb8480c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>oscAcknowledge</b> (const juce::String &amp;receivedAddress)</td></tr>
+<tr class="memitem:a8b2bcf0b289dc176953177145bb8480c" id="r_a8b2bcf0b289dc176953177145bb8480c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b2bcf0b289dc176953177145bb8480c">oscAcknowledge</a> (const juce::String &amp;receivedAddress)</td></tr>
 <tr class="separator:a8b2bcf0b289dc176953177145bb8480c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac44339ce6dd581a8254db8dde091dd82" id="r_ac44339ce6dd581a8254db8dde091dd82"><td class="memItemLeft" align="right" valign="top"><a id="ac44339ce6dd581a8254db8dde091dd82" name="ac44339ce6dd581a8254db8dde091dd82"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>oscSendEnsembleDetails</b> ()</td></tr>
+<tr class="memitem:ac44339ce6dd581a8254db8dde091dd82" id="r_ac44339ce6dd581a8254db8dde091dd82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac44339ce6dd581a8254db8dde091dd82">oscSendEnsembleDetails</a> ()</td></tr>
+<tr class="memdesc:ac44339ce6dd581a8254db8dde091dd82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an OSC message with all ensemble model details to the connected OSC receiver.  <br /></td></tr>
 <tr class="separator:ac44339ce6dd581a8254db8dde091dd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6f0f8594780ec4f7e9b6e955bc6465e" id="r_ad6f0f8594780ec4f7e9b6e955bc6465e"><td class="memItemLeft" align="right" valign="top"><a id="ad6f0f8594780ec4f7e9b6e955bc6465e" name="ad6f0f8594780ec4f7e9b6e955bc6465e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isOscReceiverConnected</b> ()</td></tr>
+<tr class="memitem:ad6f0f8594780ec4f7e9b6e955bc6465e" id="r_ad6f0f8594780ec4f7e9b6e955bc6465e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6f0f8594780ec4f7e9b6e955bc6465e">isOscReceiverConnected</a> ()</td></tr>
+<tr class="memdesc:ad6f0f8594780ec4f7e9b6e955bc6465e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the OSC receiver is connected and ready to receive messages.  <br /></td></tr>
 <tr class="separator:ad6f0f8594780ec4f7e9b6e955bc6465e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5da733fe74f486ab15c5c26a7d90be2e" id="r_a5da733fe74f486ab15c5c26a7d90be2e"><td class="memItemLeft" align="right" valign="top"><a id="a5da733fe74f486ab15c5c26a7d90be2e" name="a5da733fe74f486ab15c5c26a7d90be2e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>saveConfigToXmlFile</b> ()</td></tr>
+<tr class="memitem:a5da733fe74f486ab15c5c26a7d90be2e" id="r_a5da733fe74f486ab15c5c26a7d90be2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5da733fe74f486ab15c5c26a7d90be2e">saveConfigToXmlFile</a> ()</td></tr>
+<tr class="memdesc:a5da733fe74f486ab15c5c26a7d90be2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the current ensemble state to an XML file.  <br /></td></tr>
 <tr class="separator:a5da733fe74f486ab15c5c26a7d90be2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bae6d708716fe8d2c27e98d38fe6e5e" id="r_a2bae6d708716fe8d2c27e98d38fe6e5e"><td class="memItemLeft" align="right" valign="top"><a id="a2bae6d708716fe8d2c27e98d38fe6e5e" name="a2bae6d708716fe8d2c27e98d38fe6e5e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadConfigFromXml</b> (juce::File configFile)</td></tr>
+<tr class="memitem:a2bae6d708716fe8d2c27e98d38fe6e5e" id="r_a2bae6d708716fe8d2c27e98d38fe6e5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bae6d708716fe8d2c27e98d38fe6e5e">loadConfigFromXml</a> (juce::File configFile)</td></tr>
+<tr class="memdesc:a2bae6d708716fe8d2c27e98d38fe6e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an XML configuration file and updates the ensemble model with the values found in the file.  <br /></td></tr>
 <tr class="separator:a2bae6d708716fe8d2c27e98d38fe6e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afde6a97f8d242fcca15c5af37e9b5e57" id="r_afde6a97f8d242fcca15c5af37e9b5e57"><td class="memItemLeft" align="right" valign="top"><a id="afde6a97f8d242fcca15c5af37e9b5e57" name="afde6a97f8d242fcca15c5af37e9b5e57"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadConfigFromXml</b> (std::unique_ptr&lt; juce::XmlElement &gt; loadedConfig)</td></tr>
+<tr class="memitem:afde6a97f8d242fcca15c5af37e9b5e57" id="r_afde6a97f8d242fcca15c5af37e9b5e57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde6a97f8d242fcca15c5af37e9b5e57">loadConfigFromXml</a> (std::unique_ptr&lt; juce::XmlElement &gt; loadedConfig)</td></tr>
+<tr class="memdesc:afde6a97f8d242fcca15c5af37e9b5e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an XML configuration file and updates the ensemble model with the values found in the file.  <br /></td></tr>
 <tr class="separator:afde6a97f8d242fcca15c5af37e9b5e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c749e4e0b905fec8a88d0761d28176" id="r_a47c749e4e0b905fec8a88d0761d28176"><td class="memItemLeft" align="right" valign="top"><a id="a47c749e4e0b905fec8a88d0761d28176" name="a47c749e4e0b905fec8a88d0761d28176"></a>
-std::unique_ptr&lt; juce::XmlElement &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>parseXmlConfigFileToXmlElement</b> (juce::File configFile)</td></tr>
+<tr class="memitem:a47c749e4e0b905fec8a88d0761d28176" id="r_a47c749e4e0b905fec8a88d0761d28176"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; juce::XmlElement &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47c749e4e0b905fec8a88d0761d28176">parseXmlConfigFileToXmlElement</a> (juce::File configFile)</td></tr>
+<tr class="memdesc:a47c749e4e0b905fec8a88d0761d28176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an XML configuration file into an XmlElement.  <br /></td></tr>
 <tr class="separator:a47c749e4e0b905fec8a88d0761d28176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aca0da6aff00966cb55da0bea171a9b1f" id="r_aca0da6aff00966cb55da0bea171a9b1f"><td class="memItemLeft" align="right" valign="top"><a id="aca0da6aff00966cb55da0bea171a9b1f" name="aca0da6aff00966cb55da0bea171a9b1f"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>soundOffAllChannels</b> (juce::MidiBuffer &amp;midi)</td></tr>
+<tr class="memitem:aca0da6aff00966cb55da0bea171a9b1f" id="r_aca0da6aff00966cb55da0bea171a9b1f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca0da6aff00966cb55da0bea171a9b1f">soundOffAllChannels</a> (juce::MidiBuffer &amp;midi)</td></tr>
+<tr class="memdesc:aca0da6aff00966cb55da0bea171a9b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends MIDI messages to turn off all notes, sound, and controllers on all channels.  <br /></td></tr>
 <tr class="separator:aca0da6aff00966cb55da0bea171a9b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe34215378c78b5135edb42d950b0aa8" id="r_abe34215378c78b5135edb42d950b0aa8"><td class="memItemLeft" align="right" valign="top"><a id="abe34215378c78b5135edb42d950b0aa8" name="abe34215378c78b5135edb42d950b0aa8"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkMidiSequenceHasNotes</b> (const juce::MidiMessageSequence *seq)</td></tr>
+<tr class="memitem:abe34215378c78b5135edb42d950b0aa8" id="r_abe34215378c78b5135edb42d950b0aa8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe34215378c78b5135edb42d950b0aa8">checkMidiSequenceHasNotes</a> (const juce::MidiMessageSequence *seq)</td></tr>
+<tr class="memdesc:abe34215378c78b5135edb42d950b0aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a MIDI sequence contains any note on events.  <br /></td></tr>
 <tr class="separator:abe34215378c78b5135edb42d950b0aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -249,7 +264,2010 @@ juce::String&#160;</td><td class="memItemRight" valign="bottom"><b>logFilenameOv
 <tr class="memitem:a17e14567b78a694f722892d74d91591a" id="r_a17e14567b78a694f722892d74d91591a"><td class="memItemLeft" align="right" valign="top"><a id="a17e14567b78a694f722892d74d91591a" name="a17e14567b78a694f722892d74d91591a"></a>
 juce::String&#160;</td><td class="memItemRight" valign="bottom"><b>configSubfolder</b> = &quot;&quot;</td></tr>
 <tr class="separator:a17e14567b78a694f722892d74d91591a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:afaad68729d6e76b099e3161bc4990d12" id="r_afaad68729d6e76b099e3161bc4990d12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaad68729d6e76b099e3161bc4990d12">setTempo</a> (double bpm)</td></tr>
+<tr class="memdesc:afaad68729d6e76b099e3161bc4990d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tempo of the ensemble model.  <br /></td></tr>
+<tr class="separator:afaad68729d6e76b099e3161bc4990d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91652dc39b17226ab242575700ea5a15" id="r_a91652dc39b17226ab242575700ea5a15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91652dc39b17226ab242575700ea5a15">setInitialPlayerTempo</a> ()</td></tr>
+<tr class="memdesc:a91652dc39b17226ab242575700ea5a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial tempo of all players in the ensemble model.  <br /></td></tr>
+<tr class="separator:a91652dc39b17226ab242575700ea5a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d5c4a2dc9348243a24ad1fabf21a1c" id="r_ad3d5c4a2dc9348243a24ad1fabf21a1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3d5c4a2dc9348243a24ad1fabf21a1c">newOnsetsAvailable</a> ()</td></tr>
+<tr class="memdesc:ad3d5c4a2dc9348243a24ad1fabf21a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if new onsets are available for all players in the ensemble model.  <br /></td></tr>
+<tr class="separator:ad3d5c4a2dc9348243a24ad1fabf21a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29e0499b041f239b897b0ebe5c258cb" id="r_ac29e0499b041f239b897b0ebe5c258cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac29e0499b041f239b897b0ebe5c258cb">calculateNewIntervals</a> ()</td></tr>
+<tr class="memdesc:ac29e0499b041f239b897b0ebe5c258cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate new onset times for players in the ensemble model.  <br /></td></tr>
+<tr class="separator:ac29e0499b041f239b897b0ebe5c258cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9f7f1f98bf202dd83334a0a698bcc2" id="r_a2d9f7f1f98bf202dd83334a0a698bcc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d9f7f1f98bf202dd83334a0a698bcc2">clearOnsetsAvailable</a> ()</td></tr>
+<tr class="memdesc:a2d9f7f1f98bf202dd83334a0a698bcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset note played status for all players in the ensemble model.  <br /></td></tr>
+<tr class="separator:a2d9f7f1f98bf202dd83334a0a698bcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d933454a98698460828b4bd75044bef" id="r_a5d933454a98698460828b4bd75044bef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d933454a98698460828b4bd75044bef">playIntroTones</a> (juce::MidiBuffer &amp;midi, int sampleIndex)</td></tr>
+<tr class="memdesc:a5d933454a98698460828b4bd75044bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays intro tones at the start of the piece.  <br /></td></tr>
+<tr class="separator:a5d933454a98698460828b4bd75044bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813885b8bd781e2f80e5546caa82c9a1" id="r_a813885b8bd781e2f80e5546caa82c9a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a813885b8bd781e2f80e5546caa82c9a1">introToneOn</a> (juce::MidiBuffer &amp;midi, int sampleIndex)</td></tr>
+<tr class="memdesc:a813885b8bd781e2f80e5546caa82c9a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on the intro tone.  <br /></td></tr>
+<tr class="separator:a813885b8bd781e2f80e5546caa82c9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e9e3a7e9f2fb998a570f87ef53d1c48" id="r_a6e9e3a7e9f2fb998a570f87ef53d1c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e9e3a7e9f2fb998a570f87ef53d1c48">introToneOff</a> (juce::MidiBuffer &amp;midi, int sampleIndex)</td></tr>
+<tr class="memdesc:a6e9e3a7e9f2fb998a570f87ef53d1c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns off the intro tone.  <br /></td></tr>
+<tr class="separator:a6e9e3a7e9f2fb998a570f87ef53d1c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3da4d22cfb9289222bd0baae55ac12" id="r_a9f3da4d22cfb9289222bd0baae55ac12"><td class="memItemLeft" align="right" valign="top"><a id="a9f3da4d22cfb9289222bd0baae55ac12" name="a9f3da4d22cfb9289222bd0baae55ac12"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>introToneOnOff</b> (juce::MidiBuffer &amp;midi, juce::MidiMessage(*function)(int, int, juce::uint8), int sampleIndex)</td></tr>
+<tr class="separator:a9f3da4d22cfb9289222bd0baae55ac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5d0035fe2a5f64a0e92a2573f9daab" id="r_a5d5d0035fe2a5f64a0e92a2573f9daab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d5d0035fe2a5f64a0e92a2573f9daab">createPlayers</a> (const juce::MidiFile &amp;file)</td></tr>
+<tr class="memdesc:a5d5d0035fe2a5f64a0e92a2573f9daab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="class_player.html">Player</a> for each track in the file which has note on events.  <br /></td></tr>
+<tr class="separator:a5d5d0035fe2a5f64a0e92a2573f9daab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a52e9c021aa8630a8be7c9007bb3fc" id="r_ac6a52e9c021aa8630a8be7c9007bb3fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6a52e9c021aa8630a8be7c9007bb3fc">createAlphaBetaParameters</a> ()</td></tr>
+<tr class="memdesc:ac6a52e9c021aa8630a8be7c9007bb3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise matrix of alpha and beta parameters.  <br /></td></tr>
+<tr class="separator:ac6a52e9c021aa8630a8be7c9007bb3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0072eca9cce7271df0474270b52f47c4" id="r_a0072eca9cce7271df0474270b52f47c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0072eca9cce7271df0474270b52f47c4">getLatestAlphas</a> ()</td></tr>
+<tr class="memdesc:a0072eca9cce7271df0474270b52f47c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poll the buffer for new alpha values and update the alpha parameters accordingly.  <br /></td></tr>
+<tr class="separator:a0072eca9cce7271df0474270b52f47c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7807101d6f80b898f4fd551e73a6d3" id="r_a6a7807101d6f80b898f4fd551e73a6d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a7807101d6f80b898f4fd551e73a6d3">storeOnsetDetailsForPlayer</a> (int bufferIndex, int playerIndex)</td></tr>
+<tr class="memdesc:a6a7807101d6f80b898f4fd551e73a6d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the onset details of a specific player into the logging buffer.  <br /></td></tr>
+<tr class="separator:a6a7807101d6f80b898f4fd551e73a6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633b717d9a77d6110c8055116f39ee24" id="r_a633b717d9a77d6110c8055116f39ee24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a633b717d9a77d6110c8055116f39ee24">playScore</a> (const juce::MidiBuffer &amp;inMidi, juce::MidiBuffer &amp;outMidi, int sampleIndex)</td></tr>
+<tr class="memdesc:a633b717d9a77d6110c8055116f39ee24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the current sample index for all players and updates score timing.  <br /></td></tr>
+<tr class="separator:a633b717d9a77d6110c8055116f39ee24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb85ab99330368c267f341258a74bd6f" id="r_adb85ab99330368c267f341258a74bd6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb85ab99330368c267f341258a74bd6f">playUserIntro</a> (const juce::MidiBuffer &amp;inMidi, juce::MidiBuffer &amp;outMidi, int sampleIndex)</td></tr>
+<tr class="memdesc:adb85ab99330368c267f341258a74bd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the intro tone for all user-operated players.  <br /></td></tr>
+<tr class="separator:adb85ab99330368c267f341258a74bd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae535f1d011baca8f0756a65f4e9dc732" id="r_ae535f1d011baca8f0756a65f4e9dc732"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ensemble_model_1_1_player_parameters.html">PlayerParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae535f1d011baca8f0756a65f4e9dc732">getPlayerInfo</a> (int playerIndex)</td></tr>
+<tr class="memdesc:ae535f1d011baca8f0756a65f4e9dc732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parameters of a player given a player index.  <br /></td></tr>
+<tr class="separator:ae535f1d011baca8f0756a65f4e9dc732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8664e4d52e36fcf2b2c765335d72de3" id="r_af8664e4d52e36fcf2b2c765335d72de3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8664e4d52e36fcf2b2c765335d72de3">initialiseLoggingBuffer</a> ()</td></tr>
+<tr class="memdesc:af8664e4d52e36fcf2b2c765335d72de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the logging buffer and FIFO for storing player onset details.  <br /></td></tr>
+<tr class="separator:af8664e4d52e36fcf2b2c765335d72de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ac9f8dc299dc90d42ef9c221a29bdc" id="r_a76ac9f8dc299dc90d42ef9c221a29bdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76ac9f8dc299dc90d42ef9c221a29bdc">startLoggerLoop</a> ()</td></tr>
+<tr class="memdesc:a76ac9f8dc299dc90d42ef9c221a29bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the logging loop that continuously logs player onset details to a file.  <br /></td></tr>
+<tr class="separator:a76ac9f8dc299dc90d42ef9c221a29bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89764d6c8778af9b9d3524ca6cb51c99" id="r_a89764d6c8778af9b9d3524ca6cb51c99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89764d6c8778af9b9d3524ca6cb51c99">stopLoggerLoop</a> ()</td></tr>
+<tr class="memdesc:a89764d6c8778af9b9d3524ca6cb51c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the logger loop and joins the logger thread.  <br /></td></tr>
+<tr class="separator:a89764d6c8778af9b9d3524ca6cb51c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb8d6aaab985d0203e7814ae80a133e" id="r_aedb8d6aaab985d0203e7814ae80a133e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedb8d6aaab985d0203e7814ae80a133e">loggerLoop</a> ()</td></tr>
+<tr class="memdesc:aedb8d6aaab985d0203e7814ae80a133e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop for logging player onset details to a file.  <br /></td></tr>
+<tr class="separator:aedb8d6aaab985d0203e7814ae80a133e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531b4f266d892100351d4657e40649f0" id="r_a531b4f266d892100351d4657e40649f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a531b4f266d892100351d4657e40649f0">writeLogHeader</a> (juce::FileOutputStream &amp;logStream)</td></tr>
+<tr class="separator:a531b4f266d892100351d4657e40649f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96f46ee9258d5d03dc1aebc7aed4b9c" id="r_ad96f46ee9258d5d03dc1aebc7aed4b9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad96f46ee9258d5d03dc1aebc7aed4b9c">logOnsetDetails</a> (juce::FileOutputStream &amp;logStream)</td></tr>
+<tr class="memdesc:ad96f46ee9258d5d03dc1aebc7aed4b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs details of player onsets to a file.  <br /></td></tr>
+<tr class="separator:ad96f46ee9258d5d03dc1aebc7aed4b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad238fbf951d142db1ea3136ae4572cac" id="r_ad238fbf951d142db1ea3136ae4572cac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad238fbf951d142db1ea3136ae4572cac">logOnsetDetailsForPlayer</a> (int bufferIndex, juce::String &amp;onsetLog, juce::String &amp;intervalLog, juce::String &amp;userInputLog, juce::String &amp;delayLog, juce::String &amp;mNoiseLog, juce::String &amp;tkNoiseLog, juce::String &amp;asyncLog, juce::String &amp;alphaLog, juce::String &amp;betaLog, juce::String &amp;tkNoiseStdLog, juce::String &amp;mNoiseStdLog, juce::String &amp;velocityLog)</td></tr>
+<tr class="separator:ad238fbf951d142db1ea3136ae4572cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87ea55e89ecf4d04e232f5837958117" id="r_af87ea55e89ecf4d04e232f5837958117"><td class="memItemLeft" align="right" valign="top"><a id="af87ea55e89ecf4d04e232f5837958117" name="af87ea55e89ecf4d04e232f5837958117"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>postLatestOnsets</b> (const std::vector&lt; int &gt; &amp;onsets, const std::vector&lt; int &gt; &amp;delays)</td></tr>
+<tr class="separator:af87ea55e89ecf4d04e232f5837958117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0409cf687dcb20f57bb615dde40b373" id="r_aa0409cf687dcb20f57bb615dde40b373"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0409cf687dcb20f57bb615dde40b373">initialisePollingBuffers</a> ()</td></tr>
+<tr class="memdesc:aa0409cf687dcb20f57bb615dde40b373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the buffers for polling for new alpha values.  <br /></td></tr>
+<tr class="separator:aa0409cf687dcb20f57bb615dde40b373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77ce6178c36b1935e3f24960a242141" id="r_ad77ce6178c36b1935e3f24960a242141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad77ce6178c36b1935e3f24960a242141">startPollingLoop</a> ()</td></tr>
+<tr class="memdesc:ad77ce6178c36b1935e3f24960a242141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the polling loop which polls for new alpha values.  <br /></td></tr>
+<tr class="separator:ad77ce6178c36b1935e3f24960a242141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53702dbb1b0baf76f2faa4dcb6a360b6" id="r_a53702dbb1b0baf76f2faa4dcb6a360b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53702dbb1b0baf76f2faa4dcb6a360b6">stopPollingLoop</a> ()</td></tr>
+<tr class="memdesc:a53702dbb1b0baf76f2faa4dcb6a360b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the polling loop for new alpha values.  <br /></td></tr>
+<tr class="separator:a53702dbb1b0baf76f2faa4dcb6a360b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dabdf9d19baeb953ffea24bfc90a2e3" id="r_a8dabdf9d19baeb953ffea24bfc90a2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dabdf9d19baeb953ffea24bfc90a2e3">pollingLoop</a> ()</td></tr>
+<tr class="memdesc:a8dabdf9d19baeb953ffea24bfc90a2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the polling loop to get new alpha values.  <br /></td></tr>
+<tr class="separator:a8dabdf9d19baeb953ffea24bfc90a2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a54e412f9e544f2eebe7444712ea0f" id="r_ac6a54e412f9e544f2eebe7444712ea0f"><td class="memItemLeft" align="right" valign="top"><a id="ac6a54e412f9e544f2eebe7444712ea0f" name="ac6a54e412f9e544f2eebe7444712ea0f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>getNewAlphas</b> ()</td></tr>
+<tr class="separator:ac6a54e412f9e544f2eebe7444712ea0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a10d7615b33ef4b62c3bcbd09743fec1a" id="r_a10d7615b33ef4b62c3bcbd09743fec1a"><td class="memItemLeft" align="right" valign="top"><a id="a10d7615b33ef4b62c3bcbd09743fec1a" name="a10d7615b33ef4b62c3bcbd09743fec1a"></a>
+<a class="el" href="class_adaptive_metronome_audio_processor.html">AdaptiveMetronomeAudioProcessor</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>processor</b> = nullptr</td></tr>
+<tr class="separator:a10d7615b33ef4b62c3bcbd09743fec1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837fe9b25e03fbb91a23f35781047280" id="r_a837fe9b25e03fbb91a23f35781047280"><td class="memItemLeft" align="right" valign="top"><a id="a837fe9b25e03fbb91a23f35781047280" name="a837fe9b25e03fbb91a23f35781047280"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numUserPlayers</b> = 1</td></tr>
+<tr class="separator:a837fe9b25e03fbb91a23f35781047280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d19e0c266a71e46e2a34f49f6e413ac" id="r_a2d19e0c266a71e46e2a34f49f6e413ac"><td class="memItemLeft" align="right" valign="top"><a id="a2d19e0c266a71e46e2a34f49f6e413ac" name="a2d19e0c266a71e46e2a34f49f6e413ac"></a>
+juce::MidiFile&#160;</td><td class="memItemRight" valign="bottom"><b>midiFile</b></td></tr>
+<tr class="separator:a2d19e0c266a71e46e2a34f49f6e413ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cdc13ccbefbf5ceb8923e77b354b9cc" id="r_a1cdc13ccbefbf5ceb8923e77b354b9cc"><td class="memItemLeft" align="right" valign="top"><a id="a1cdc13ccbefbf5ceb8923e77b354b9cc" name="a1cdc13ccbefbf5ceb8923e77b354b9cc"></a>
+juce::File&#160;</td><td class="memItemRight" valign="bottom"><b>midiFilePath</b></td></tr>
+<tr class="separator:a1cdc13ccbefbf5ceb8923e77b354b9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa914842ef1b39db5e7bab46e86b7c656" id="r_aa914842ef1b39db5e7bab46e86b7c656"><td class="memItemLeft" align="right" valign="top"><a id="aa914842ef1b39db5e7bab46e86b7c656" name="aa914842ef1b39db5e7bab46e86b7c656"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>midiLoaded</b> = false</td></tr>
+<tr class="separator:aa914842ef1b39db5e7bab46e86b7c656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb2209816b26c18a611476a6e9c1a73" id="r_abeb2209816b26c18a611476a6e9c1a73"><td class="memItemLeft" align="right" valign="top"><a id="abeb2209816b26c18a611476a6e9c1a73" name="abeb2209816b26c18a611476a6e9c1a73"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>sampleRate</b> = 44100.0</td></tr>
+<tr class="separator:abeb2209816b26c18a611476a6e9c1a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f40b7ad6e70b5aaf4a76a537fd55d2" id="r_a10f40b7ad6e70b5aaf4a76a537fd55d2"><td class="memItemLeft" align="right" valign="top"><a id="a10f40b7ad6e70b5aaf4a76a537fd55d2" name="a10f40b7ad6e70b5aaf4a76a537fd55d2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>samplesPerBeat</b> = sampleRate / 4</td></tr>
+<tr class="separator:a10f40b7ad6e70b5aaf4a76a537fd55d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d069b93b749045fc24c8fc18761d700" id="r_a4d069b93b749045fc24c8fc18761d700"><td class="memItemLeft" align="right" valign="top"><a id="a4d069b93b749045fc24c8fc18761d700" name="a4d069b93b749045fc24c8fc18761d700"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>scoreCounter</b> = 0</td></tr>
+<tr class="separator:a4d069b93b749045fc24c8fc18761d700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f8f2c3c80cb219f2d20afc3a4503b9" id="r_ac6f8f2c3c80cb219f2d20afc3a4503b9"><td class="memItemLeft" align="right" valign="top"><a id="ac6f8f2c3c80cb219f2d20afc3a4503b9" name="ac6f8f2c3c80cb219f2d20afc3a4503b9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>initialTempoSet</b> = false</td></tr>
+<tr class="separator:ac6f8f2c3c80cb219f2d20afc3a4503b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834a220a1c631cc2d6847e1442e4dcd2" id="r_a834a220a1c631cc2d6847e1442e4dcd2"><td class="memItemLeft" align="right" valign="top"><a id="a834a220a1c631cc2d6847e1442e4dcd2" name="a834a220a1c631cc2d6847e1442e4dcd2"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>introToneChannel</b> = 16</td></tr>
+<tr class="separator:a834a220a1c631cc2d6847e1442e4dcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339d16a6ac3166f6d2f8491948f22fb0" id="r_a339d16a6ac3166f6d2f8491948f22fb0"><td class="memItemLeft" align="right" valign="top"><a id="a339d16a6ac3166f6d2f8491948f22fb0" name="a339d16a6ac3166f6d2f8491948f22fb0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numIntroTones</b> = 4</td></tr>
+<tr class="separator:a339d16a6ac3166f6d2f8491948f22fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316fc808175ae6d4cd9005f00fb37f50" id="r_a316fc808175ae6d4cd9005f00fb37f50"><td class="memItemLeft" align="right" valign="top"><a id="a316fc808175ae6d4cd9005f00fb37f50" name="a316fc808175ae6d4cd9005f00fb37f50"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>introCounter</b> = 0</td></tr>
+<tr class="separator:a316fc808175ae6d4cd9005f00fb37f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab140637d54dd8bc43868b8791e0280eb" id="r_ab140637d54dd8bc43868b8791e0280eb"><td class="memItemLeft" align="right" valign="top"><a id="ab140637d54dd8bc43868b8791e0280eb" name="ab140637d54dd8bc43868b8791e0280eb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>introTonesPlayed</b> = 0</td></tr>
+<tr class="separator:ab140637d54dd8bc43868b8791e0280eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc9bbaa8cff125a3a3e8bf515f03f33" id="r_a7cc9bbaa8cff125a3a3e8bf515f03f33"><td class="memItemLeft" align="right" valign="top"><a id="a7cc9bbaa8cff125a3a3e8bf515f03f33" name="a7cc9bbaa8cff125a3a3e8bf515f03f33"></a>
+std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_player.html">Player</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>players</b></td></tr>
+<tr class="separator:a7cc9bbaa8cff125a3a3e8bf515f03f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7252325c9a0d6be11d24351aaf61c2b" id="r_ae7252325c9a0d6be11d24351aaf61c2b"><td class="memItemLeft" align="right" valign="top"><a id="ae7252325c9a0d6be11d24351aaf61c2b" name="ae7252325c9a0d6be11d24351aaf61c2b"></a>
+std::atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><b>playersInUse</b></td></tr>
+<tr class="separator:ae7252325c9a0d6be11d24351aaf61c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b45668a18d0a8878859644d30c01ded" id="r_a4b45668a18d0a8878859644d30c01ded"><td class="memItemLeft" align="right" valign="top"><a id="a4b45668a18d0a8878859644d30c01ded" name="a4b45668a18d0a8878859644d30c01ded"></a>
+std::atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><b>resetFlag</b></td></tr>
+<tr class="separator:a4b45668a18d0a8878859644d30c01ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5264d40c920f1c13c9195a0b71c6bfba" id="r_a5264d40c920f1c13c9195a0b71c6bfba"><td class="memItemLeft" align="right" valign="top"><a id="a5264d40c920f1c13c9195a0b71c6bfba" name="a5264d40c920f1c13c9195a0b71c6bfba"></a>
+std::unique_ptr&lt; juce::AbstractFifo &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>loggingFifo</b></td></tr>
+<tr class="separator:a5264d40c920f1c13c9195a0b71c6bfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23838e24be2d877d2ae478b81794efaa" id="r_a23838e24be2d877d2ae478b81794efaa"><td class="memItemLeft" align="right" valign="top"><a id="a23838e24be2d877d2ae478b81794efaa" name="a23838e24be2d877d2ae478b81794efaa"></a>
+std::vector&lt; <a class="el" href="struct_ensemble_model_1_1_log_data.html">LogData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>loggingBuffer</b></td></tr>
+<tr class="separator:a23838e24be2d877d2ae478b81794efaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0d94f831cc0654d6044f6326914d0f" id="r_acb0d94f831cc0654d6044f6326914d0f"><td class="memItemLeft" align="right" valign="top"><a id="acb0d94f831cc0654d6044f6326914d0f" name="acb0d94f831cc0654d6044f6326914d0f"></a>
+std::thread&#160;</td><td class="memItemRight" valign="bottom"><b>loggerThread</b></td></tr>
+<tr class="separator:acb0d94f831cc0654d6044f6326914d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be9419325aeb54af706c77ca3f8776b" id="r_a5be9419325aeb54af706c77ca3f8776b"><td class="memItemLeft" align="right" valign="top"><a id="a5be9419325aeb54af706c77ca3f8776b" name="a5be9419325aeb54af706c77ca3f8776b"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>continueLogging</b></td></tr>
+<tr class="separator:a5be9419325aeb54af706c77ca3f8776b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6f428f403ccfbbae4e119aa5151f25" id="r_abe6f428f403ccfbbae4e119aa5151f25"><td class="memItemLeft" align="right" valign="top"><a id="abe6f428f403ccfbbae4e119aa5151f25" name="abe6f428f403ccfbbae4e119aa5151f25"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>logLineCounter</b> = 0</td></tr>
+<tr class="separator:abe6f428f403ccfbbae4e119aa5151f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77a0e74ed9eb6b507dea2ad2ea2f353" id="r_af77a0e74ed9eb6b507dea2ad2ea2f353"><td class="memItemLeft" align="right" valign="top"><a id="af77a0e74ed9eb6b507dea2ad2ea2f353" name="af77a0e74ed9eb6b507dea2ad2ea2f353"></a>
+std::unique_ptr&lt; juce::AbstractFifo &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pollingFifo</b></td></tr>
+<tr class="separator:af77a0e74ed9eb6b507dea2ad2ea2f353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98cc86ad87b59d1a8c18fc70c1fe8d1e" id="r_a98cc86ad87b59d1a8c18fc70c1fe8d1e"><td class="memItemLeft" align="right" valign="top"><a id="a98cc86ad87b59d1a8c18fc70c1fe8d1e" name="a98cc86ad87b59d1a8c18fc70c1fe8d1e"></a>
+std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pollingBuffer</b></td></tr>
+<tr class="separator:a98cc86ad87b59d1a8c18fc70c1fe8d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafae803170d6ff83fb7e6c752aa22441" id="r_aafae803170d6ff83fb7e6c752aa22441"><td class="memItemLeft" align="right" valign="top"><a id="aafae803170d6ff83fb7e6c752aa22441" name="aafae803170d6ff83fb7e6c752aa22441"></a>
+std::thread&#160;</td><td class="memItemRight" valign="bottom"><b>pollingThread</b></td></tr>
+<tr class="separator:aafae803170d6ff83fb7e6c752aa22441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3498a3778f93bc217285f5aa68e1e7" id="r_adb3498a3778f93bc217285f5aa68e1e7"><td class="memItemLeft" align="right" valign="top"><a id="adb3498a3778f93bc217285f5aa68e1e7" name="adb3498a3778f93bc217285f5aa68e1e7"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>continuePolling</b></td></tr>
+<tr class="separator:adb3498a3778f93bc217285f5aa68e1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc4aff5293d960677f7d7225d4b57de" id="r_a4dc4aff5293d960677f7d7225d4b57de"><td class="memItemLeft" align="right" valign="top"><a id="a4dc4aff5293d960677f7d7225d4b57de" name="a4dc4aff5293d960677f7d7225d4b57de"></a>
+std::atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><b>alphasUpToDate</b></td></tr>
+<tr class="separator:a4dc4aff5293d960677f7d7225d4b57de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ae23434cfb945f344c0849d8a58bce8bb" id="r_ae23434cfb945f344c0849d8a58bce8bb"><td class="memItemLeft" align="right" valign="top"><a id="ae23434cfb945f344c0849d8a58bce8bb" name="ae23434cfb945f344c0849d8a58bce8bb"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>introToneNoteFirst</b> = 84</td></tr>
+<tr class="separator:ae23434cfb945f344c0849d8a58bce8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb845c75cf1adbabca2169e1c2ae1b2" id="r_a0fb845c75cf1adbabca2169e1c2ae1b2"><td class="memItemLeft" align="right" valign="top"><a id="a0fb845c75cf1adbabca2169e1c2ae1b2" name="a0fb845c75cf1adbabca2169e1c2ae1b2"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>introToneNoteOther</b> = 72</td></tr>
+<tr class="separator:a0fb845c75cf1adbabca2169e1c2ae1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9bdbe72effc910c84e53e057788ecd4" id="r_af9bdbe72effc910c84e53e057788ecd4"><td class="memItemLeft" align="right" valign="top"><a id="af9bdbe72effc910c84e53e057788ecd4" name="af9bdbe72effc910c84e53e057788ecd4"></a>
+static const juce::uint8&#160;</td><td class="memItemRight" valign="bottom"><b>introToneVel</b> = 100</td></tr>
+<tr class="separator:af9bdbe72effc910c84e53e057788ecd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9d561a3e3f1b84781fcf504ba7d3860a" name="a9d561a3e3f1b84781fcf504ba7d3860a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d561a3e3f1b84781fcf504ba7d3860a">&#9670;&#160;</a></span>EnsembleModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EnsembleModel::EnsembleModel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_adaptive_metronome_audio_processor.html">AdaptiveMetronomeAudioProcessor</a> *</td>          <td class="paramname"><span class="paramname"><em>processorPtr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Ensemble Model object. </p>
+<p>This constructor initializes the <a class="el" href="class_ensemble_model.html">EnsembleModel</a> by clearing the playersInUse and resetFlag. In debug mode, it connects the OSC receiver and sender to default ports and IP address for testing purposes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">processorPtr</td><td>Pointer to the <a class="el" href="class_adaptive_metronome_audio_processor.html">AdaptiveMetronomeAudioProcessor</a> used to access parameters from the Metronome. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9ceb0658e35ae43a2a92d6a12afed985" name="a9ceb0658e35ae43a2a92d6a12afed985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ceb0658e35ae43a2a92d6a12afed985">&#9670;&#160;</a></span>~EnsembleModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EnsembleModel::~EnsembleModel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor for <a class="el" href="class_ensemble_model.html">EnsembleModel</a>. </p>
+<p>This destructor stops the logger and polling threads when the <a class="el" href="class_ensemble_model.html">EnsembleModel</a> object is destroyed. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac29e0499b041f239b897b0ebe5c258cb" name="ac29e0499b041f239b897b0ebe5c258cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29e0499b041f239b897b0ebe5c258cb">&#9670;&#160;</a></span>calculateNewIntervals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::calculateNewIntervals </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate new onset times for players in the ensemble model. </p>
+<p>This function gets the most recent alphas from the processor and then calculates new onset times for all players in the ensemble model. It first updates the non-user players and then the user players. Finally, it adds details of the most recent onsets to buffers to be logged. </p>
+
+</div>
+</div>
+<a id="abe34215378c78b5135edb42d950b0aa8" name="abe34215378c78b5135edb42d950b0aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe34215378c78b5135edb42d950b0aa8">&#9670;&#160;</a></span>checkMidiSequenceHasNotes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::checkMidiSequenceHasNotes </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MidiMessageSequence *</td>          <td class="paramname"><span class="paramname"><em>seq</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a MIDI sequence contains any note on events. </p>
+<p>This function takes a pointer to a MIDI sequence and iterates through all events in the sequence. If it finds a note on event, it immediately returns <code>true</code>. If the entire sequence is iterated through and no note on events are found, it returns <code>false</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seq</td><td>The MIDI sequence to be checked.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the sequence contains any note on events, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a2d9f7f1f98bf202dd83334a0a698bcc2" name="a2d9f7f1f98bf202dd83334a0a698bcc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9f7f1f98bf202dd83334a0a698bcc2">&#9670;&#160;</a></span>clearOnsetsAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::clearOnsetsAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset note played status for all players in the ensemble model. </p>
+<p>This function iterates over all players in the ensemble model and resets their note played status. It is called by the calculateNewIntervals function after calculating new onset times for all players. </p>
+
+</div>
+</div>
+<a id="a49d70f101c56ee7a23b6167d0beb4a5d" name="a49d70f101c56ee7a23b6167d0beb4a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d70f101c56ee7a23b6167d0beb4a5d">&#9670;&#160;</a></span>connectOSCReceiver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::connectOSCReceiver </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>portNumber</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connects the OSC receiver to a given port number. </p>
+<p>This function connects the OSC receiver to a given port number. If the connection is successful, it also initialises the OSC receiver for the ensemble model, if it has not already been initialised.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">portNumber</td><td>The port number to connect to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5600a255d4e106d196b777a687dadaaa" name="a5600a255d4e106d196b777a687dadaaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5600a255d4e106d196b777a687dadaaa">&#9670;&#160;</a></span>connectOSCSender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::connectOSCSender </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>portNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String</td>          <td class="paramname"><span class="paramname"><em>IPAddress</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connects the OSC sender to a given IP address and port number. </p>
+<p>This function connects the OSC sender to a given IP address and port number. If the connection is successful, it also initialises the OSC receiver for the ensemble model, if it has not already been initialised.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">portNumber</td><td>The port number to connect to. </td></tr>
+    <tr><td class="paramname">IPAddress</td><td>The IP address to connect to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6a52e9c021aa8630a8be7c9007bb3fc" name="ac6a52e9c021aa8630a8be7c9007bb3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a52e9c021aa8630a8be7c9007bb3fc">&#9670;&#160;</a></span>createAlphaBetaParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::createAlphaBetaParameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialise matrix of alpha and beta parameters. </p>
+<p>This function is called immediately after the players vector is populated. It sets the alpha and beta parameters for each player to a given value. The value is set to a default value of 0.25 for alpha and 0.1 for beta. If the user has specified a custom value for alpha and/or beta, then this function is not called.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a4a2e36b8ff17e56bbfcb26e76c0ea7eb" title="Set the alpha and beta parameters for all players to a given value.">setAlphaBetaParams</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5d5d0035fe2a5f64a0e92a2573f9daab" name="a5d5d0035fe2a5f64a0e92a2573f9daab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d5d0035fe2a5f64a0e92a2573f9daab">&#9670;&#160;</a></span>createPlayers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::createPlayers </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MidiFile &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="class_player.html">Player</a> for each track in the file which has note on events. </p>
+<p>This function is called by the loadMidiFile function and is used to create a <a class="el" href="class_player.html">Player</a> object for each track in the MIDI file that has note on events. The function first deletes any existing players and then creates a new <a class="el" href="class_player.html">Player</a> object for each track in the file. The function assigns channels to players in a cyclical manner and creates a <a class="el" href="class_user_player.html">UserPlayer</a> object if the player index is less than the number of user players; otherwise, it creates a <a class="el" href="class_player.html">Player</a> object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>a reference to a juce::MidiFile object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c7876fe797d2a53e6f74f95dec2b470" name="a2c7876fe797d2a53e6f74f95dec2b470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7876fe797d2a53e6f74f95dec2b470">&#9670;&#160;</a></span>getAlphaParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterFloat &amp; EnsembleModel::getAlphaParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>player1Index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>player2Index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the alpha parameter for a given player pair. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player1Index</td><td>The index of the first player. </td></tr>
+    <tr><td class="paramname">player2Index</td><td>The index of the second player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterFloat&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a0c138a7eca02a9690e98d095d5b002ee" name="a0c138a7eca02a9690e98d095d5b002ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c138a7eca02a9690e98d095d5b002ee">&#9670;&#160;</a></span>getBetaParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterFloat &amp; EnsembleModel::getBetaParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>player1Index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>player2Index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the beta parameter for a given player pair. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player1Index</td><td>The index of the first player. </td></tr>
+    <tr><td class="paramname">player2Index</td><td>The index of the second player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterFloat&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a0072eca9cce7271df0474270b52f47c4" name="a0072eca9cce7271df0474270b52f47c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0072eca9cce7271df0474270b52f47c4">&#9670;&#160;</a></span>getLatestAlphas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::getLatestAlphas </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Poll the buffer for new alpha values and update the alpha parameters accordingly. </p>
+<p>This function is called by the processor to get the latest alpha values from the buffer. It is used in the polling thread to update the parameters in the plugin.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#ad77ce6178c36b1935e3f24960a242141" title="Starts the polling loop which polls for new alpha values.">startPollingLoop</a> </dd>
+<dd>
+<a class="el" href="#a53702dbb1b0baf76f2faa4dcb6a360b6" title="Stops the polling loop for new alpha values.">stopPollingLoop</a> </dd>
+<dd>
+<a class="el" href="#aa0409cf687dcb20f57bb615dde40b373" title="Initialises the buffers for polling for new alpha values.">initialisePollingBuffers</a> </dd></dl>
+
+</div>
+</div>
+<a id="a480fbd3e7424882e759107e40d17309b" name="a480fbd3e7424882e759107e40d17309b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a480fbd3e7424882e759107e40d17309b">&#9670;&#160;</a></span>getMidiFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::File EnsembleModel::getMidiFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the MIDI file loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a>. </p>
+<p>If no MIDI file has been loaded, an empty file object is returned.</p>
+<dl class="section return"><dt>Returns</dt><dd>The loaded MIDI file, or an empty file object if no MIDI file has been loaded. </dd></dl>
+
+</div>
+</div>
+<a id="a5439d1bc9f2e350ad8151cfd349ae930" name="a5439d1bc9f2e350ad8151cfd349ae930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5439d1bc9f2e350ad8151cfd349ae930">&#9670;&#160;</a></span>getMidiFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String EnsembleModel::getMidiFileName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of the MIDI file loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a>. </p>
+<p>If no MIDI file has been loaded, an empty string is returned.</p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the loaded MIDI file. </dd></dl>
+
+</div>
+</div>
+<a id="ab582aa9121cf83c2218f0eed64e580a5" name="ab582aa9121cf83c2218f0eed64e580a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab582aa9121cf83c2218f0eed64e580a5">&#9670;&#160;</a></span>getNumPlayers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EnsembleModel::getNumPlayers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of players in the ensemble model. </p>
+<p>This function simply returns the number of players in the ensemble model. This is equivalent to the number of tracks in the loaded MIDI file.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of players in the ensemble model. </dd></dl>
+
+</div>
+</div>
+<a id="a1b192d0906fd4456709b3067196de68f" name="a1b192d0906fd4456709b3067196de68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b192d0906fd4456709b3067196de68f">&#9670;&#160;</a></span>getNumUserPlayers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EnsembleModel::getNumUserPlayers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of user players in the ensemble model. </p>
+<p>This function returns the number of user players in the ensemble model. This is equivalent to the number of players that are being controlled by the user.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of user players in the ensemble model. </dd></dl>
+
+</div>
+</div>
+<a id="a8037d9b35af2415e8b0aa0ba94960d67" name="a8037d9b35af2415e8b0aa0ba94960d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8037d9b35af2415e8b0aa0ba94960d67">&#9670;&#160;</a></span>getPlayerChannelParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterInt &amp; EnsembleModel::getPlayerChannelParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the channel parameter for a given player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player to get the channel parameter for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterInt&amp; </dd></dl>
+
+</div>
+</div>
+<a id="afd8161d7b9ab390157a731db55564e42" name="afd8161d7b9ab390157a731db55564e42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8161d7b9ab390157a731db55564e42">&#9670;&#160;</a></span>getPlayerDelayParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterFloat &amp; EnsembleModel::getPlayerDelayParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the delay parameter for a given player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player to get the delay parameter for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterFloat&amp; </dd></dl>
+
+</div>
+</div>
+<a id="ae535f1d011baca8f0756a65f4e9dc732" name="ae535f1d011baca8f0756a65f4e9dc732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae535f1d011baca8f0756a65f4e9dc732">&#9670;&#160;</a></span>getPlayerInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ensemble_model_1_1_player_parameters.html">EnsembleModel::PlayerParameters</a> EnsembleModel::getPlayerInfo </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the parameters of a player given a player index. </p>
+<p>Given a player index, this function returns the parameters of the player as a <a class="el" href="class_ensemble_model_1_1_player_parameters.html">PlayerParameters</a> object. The parameters include the latest onset delay, timekeeper noise standard deviation, motor noise standard deviation, volume, MIDI channel, and alpha and beta values for all other players.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player whose parameters will be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_ensemble_model_1_1_player_parameters.html">PlayerParameters</a> object containing the parameters of the specified player. </dd></dl>
+
+</div>
+</div>
+<a id="a36d1c40ac945ec76435e8b7934cb24f7" name="a36d1c40ac945ec76435e8b7934cb24f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36d1c40ac945ec76435e8b7934cb24f7">&#9670;&#160;</a></span>getPlayerMotorNoiseParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterFloat &amp; EnsembleModel::getPlayerMotorNoiseParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the motor noise parameter for a given player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player to get the motor noise parameter for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterFloat&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a57aff2fc4b4c57f80021b284cef138a8" name="a57aff2fc4b4c57f80021b284cef138a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57aff2fc4b4c57f80021b284cef138a8">&#9670;&#160;</a></span>getPlayerTimeKeeperNoiseParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterFloat &amp; EnsembleModel::getPlayerTimeKeeperNoiseParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the time keeper noise parameter for a given player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player to get the time keeper noise parameter for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterFloat&amp; </dd></dl>
+
+</div>
+</div>
+<a id="ab29e3ff1fb709520386046e080338a84" name="ab29e3ff1fb709520386046e080338a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29e3ff1fb709520386046e080338a84">&#9670;&#160;</a></span>getPlayerVolumeParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::AudioParameterFloat &amp; EnsembleModel::getPlayerVolumeParameter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the volume parameter for a given player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player to get the volume parameter for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>juce::AudioParameterFloat&amp; </dd></dl>
+
+</div>
+</div>
+<a id="af8664e4d52e36fcf2b2c765335d72de3" name="af8664e4d52e36fcf2b2c765335d72de3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8664e4d52e36fcf2b2c765335d72de3">&#9670;&#160;</a></span>initialiseLoggingBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::initialiseLoggingBuffer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialises the logging buffer and FIFO for storing player onset details. </p>
+<p>This function sets up the logging buffer and FIFO based on the number of players. It calculates the buffer size, initialises the FIFO, resizes the logging buffer, and initialises each element in the buffer with vectors sized to the number of players for storing asynchronies, alpha, and beta parameters. </p>
+
+</div>
+</div>
+<a id="a1f9674d65fdd9b7ea279a3cf3af8787f" name="a1f9674d65fdd9b7ea279a3cf3af8787f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9674d65fdd9b7ea279a3cf3af8787f">&#9670;&#160;</a></span>initialiseOSC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::initialiseOSC </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialises the OSC listener for the ensemble model. </p>
+<p>This function is called when the OSC sender is connected for the first time. It adds listeners for all of the OSC addresses that the ensemble model is interested in. The listeners are used to receive messages from the Max patcher that control the ensemble model. </p>
+
+</div>
+</div>
+<a id="aa0409cf687dcb20f57bb615dde40b373" name="aa0409cf687dcb20f57bb615dde40b373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0409cf687dcb20f57bb615dde40b373">&#9670;&#160;</a></span>initialisePollingBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::initialisePollingBuffers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialises the buffers for polling for new alpha values. </p>
+<p>The polling FIFO is created with a size of 10 times the number of players. The polling buffer is resized to the same size as the number of players and each player's buffer is resized to the size of the FIFO and initialised to 0.0. </p>
+
+</div>
+</div>
+<a id="a6e9e3a7e9f2fb998a570f87ef53d1c48" name="a6e9e3a7e9f2fb998a570f87ef53d1c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e9e3a7e9f2fb998a570f87ef53d1c48">&#9670;&#160;</a></span>introToneOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::introToneOff </td>
+          <td>(</td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>midi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turns off the intro tone. </p>
+<p>This function sends a MIDI note-off message for the intro tone. It determines whether to turn off the first or second note of the intro tone based on the number of intro tones played. If the number of intro tones played is divisible by 4, it turns off the first note; otherwise, it turns off the second note. This function is called by the playIntroTones function as part of the intro tones playback process.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">midi</td><td>a reference to a juce::MidiBuffer object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sampleIndex</td><td>an integer representing the sample index to add the midi event at </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a813885b8bd781e2f80e5546caa82c9a1" name="a813885b8bd781e2f80e5546caa82c9a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813885b8bd781e2f80e5546caa82c9a1">&#9670;&#160;</a></span>introToneOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::introToneOn </td>
+          <td>(</td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>midi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turns on the intro tone. </p>
+<p>This function turns on either the first or second note of the intro tone, depending on whether the number of intro tones played is divisible by</p><ol type="1">
+<li>The function is called by the playIntroTones function and is used to play the intro tones.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">midi</td><td>a reference to a juce::MidiBuffer object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sampleIndex</td><td>an integer representing the sample index to add the midi event at </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1e2e91caac2b24c18e3402c3cd61b9a5" name="a1e2e91caac2b24c18e3402c3cd61b9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2e91caac2b24c18e3402c3cd61b9a5">&#9670;&#160;</a></span>isMidiLoaded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::isMidiLoaded </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a MIDI file has been loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a>. </p>
+<p>A MIDI file is considered loaded if it was successfully loaded into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a> via the loadMidiFile function.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if a MIDI file has been loaded, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ad6f0f8594780ec4f7e9b6e955bc6465e" name="ad6f0f8594780ec4f7e9b6e955bc6465e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6f0f8594780ec4f7e9b6e955bc6465e">&#9670;&#160;</a></span>isOscReceiverConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::isOscReceiverConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the OSC receiver is connected and ready to receive messages. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the OSC receiver is connected, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a399a635c8b17e8fa2cfd20f86bb509cd" name="a399a635c8b17e8fa2cfd20f86bb509cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a399a635c8b17e8fa2cfd20f86bb509cd">&#9670;&#160;</a></span>isPlayerUserOperated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::isPlayerUserOperated </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine if a player is user-operated or not. </p>
+<p>This function takes a player index and returns true if the player is user-operated, false if the player is not user-operated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerIndex</td><td>The index of the player to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the player is user-operated, false if the player is not user-operated. </dd></dl>
+
+</div>
+</div>
+<a id="a2bae6d708716fe8d2c27e98d38fe6e5e" name="a2bae6d708716fe8d2c27e98d38fe6e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bae6d708716fe8d2c27e98d38fe6e5e">&#9670;&#160;</a></span>loadConfigFromXml() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::loadConfigFromXml </td>
+          <td>(</td>
+          <td class="paramtype">juce::File</td>          <td class="paramname"><span class="paramname"><em>configFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads an XML configuration file and updates the ensemble model with the values found in the file. </p>
+<p>This function takes a juce::File object pointing to the configuration file to be loaded. The file is parsed into an XML document, and then the ensemble model is updated with the values found in the document.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configFile</td><td>The juce::File object pointing to the configuration file to be loaded. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afde6a97f8d242fcca15c5af37e9b5e57" name="afde6a97f8d242fcca15c5af37e9b5e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde6a97f8d242fcca15c5af37e9b5e57">&#9670;&#160;</a></span>loadConfigFromXml() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::loadConfigFromXml </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; juce::XmlElement &gt;</td>          <td class="paramname"><span class="paramname"><em>loadedConfig</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads an XML configuration file and updates the ensemble model with the values found in the file. </p>
+<p>This function takes a unique pointer to an XmlElement representing the configuration file to be loaded. The values in the document are used to update the ensemble model.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loadedConfig</td><td>The unique pointer to the XmlElement representing the configuration file to be loaded. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9c846c94a467886c1d2a7c648c362a1" name="aa9c846c94a467886c1d2a7c648c362a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c846c94a467886c1d2a7c648c362a1">&#9670;&#160;</a></span>loadMidiFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::loadMidiFile </td>
+          <td>(</td>
+          <td class="paramtype">const juce::File &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>userPlayers</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load a MIDI file into the <a class="el" href="class_ensemble_model.html">EnsembleModel</a> and create players for each track. </p>
+<p>This function loads a MIDI file, creates players for each track in the file and resets the players. The userPlayers parameter determines how many user operated players are created. The function returns true if successful, false if the MIDI file is not loaded or if there is an error.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file to load. </td></tr>
+    <tr><td class="paramname">userPlayers</td><td>The number of user operated players to create.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false if the MIDI file is not loaded or if there is an error. </dd></dl>
+
+</div>
+</div>
+<a id="aedb8d6aaab985d0203e7814ae80a133e" name="aedb8d6aaab985d0203e7814ae80a133e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb8d6aaab985d0203e7814ae80a133e">&#9670;&#160;</a></span>loggerLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::loggerLoop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main loop for logging player onset details to a file. </p>
+<p>This function is run in a separate thread by <a class="el" href="#a76ac9f8dc299dc90d42ef9c221a29bdc" title="Starts the logging loop that continuously logs player onset details to a file.">startLoggerLoop()</a>. It continuously logs player onset details to a file until the continueLogging flag is set to false. The log file is created in the default documents folder with a name in the format "Log_&lt;time&gt;_&lt;date&gt;.csv". The file is truncated if it already exists. The log file header is written, and then the loop continuously logs player onset details at a rate of 20 Hz. </p>
+
+</div>
+</div>
+<a id="ad96f46ee9258d5d03dc1aebc7aed4b9c" name="ad96f46ee9258d5d03dc1aebc7aed4b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad96f46ee9258d5d03dc1aebc7aed4b9c">&#9670;&#160;</a></span>logOnsetDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::logOnsetDetails </td>
+          <td>(</td>
+          <td class="paramtype">juce::FileOutputStream &amp;</td>          <td class="paramname"><span class="paramname"><em>logStream</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs details of player onsets to a file. </p>
+<p>This function reads onset data from a logging FIFO and writes the details to a specified log stream. It processes the data for each player, updating logs for onset times, intervals, user input status, delays, motor noise, and other parameters. The function appends the processed data to a CSV format log line and writes it to the log stream. After logging, it sends the latest onset and delay information to a server or other destination.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logStream</td><td>The file stream where the log data is written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad238fbf951d142db1ea3136ae4572cac" name="ad238fbf951d142db1ea3136ae4572cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad238fbf951d142db1ea3136ae4572cac">&#9670;&#160;</a></span>logOnsetDetailsForPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::logOnsetDetailsForPlayer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bufferIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>onsetLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>intervalLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>userInputLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>delayLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>mNoiseLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>tkNoiseLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>asyncLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>alphaLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>betaLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>tkNoiseStdLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>mNoiseStdLog</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>velocityLog</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Add the onset details for a given player to a set of logs. This function is only called from the logging thread.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bufferIndex</td><td>The index into the loggingBuffer array. </td></tr>
+    <tr><td class="paramname">onsetLog</td><td>The log to which to add the onset time. </td></tr>
+    <tr><td class="paramname">intervalLog</td><td>The log to which to add the onset interval. </td></tr>
+    <tr><td class="paramname">userInputLog</td><td>The log to which to add whether the onset was user input. </td></tr>
+    <tr><td class="paramname">delayLog</td><td>The log to which to add the delay of the onset. </td></tr>
+    <tr><td class="paramname">mNoiseLog</td><td>The log to which to add the motor noise. </td></tr>
+    <tr><td class="paramname">tkNoiseLog</td><td>The log to which to add the time keeper noise. </td></tr>
+    <tr><td class="paramname">asyncLog</td><td>The log to which to add the async values. </td></tr>
+    <tr><td class="paramname">alphaLog</td><td>The log to which to add the alpha values. </td></tr>
+    <tr><td class="paramname">betaLog</td><td>The log to which to add the beta values. </td></tr>
+    <tr><td class="paramname">tkNoiseStdLog</td><td>The log to which to add the standard deviation of the time keeper noise. </td></tr>
+    <tr><td class="paramname">mNoiseStdLog</td><td>The log to which to add the standard deviation of the motor noise. </td></tr>
+    <tr><td class="paramname">velocityLog</td><td>The log to which to add the velocity of the onset. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad3d5c4a2dc9348243a24ad1fabf21a1c" name="ad3d5c4a2dc9348243a24ad1fabf21a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d5c4a2dc9348243a24ad1fabf21a1c">&#9670;&#160;</a></span>newOnsetsAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::newOnsetsAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if new onsets are available for all players in the ensemble model. </p>
+<p>This function iterates over all players in the ensemble model and checks if each player has a new onset available. If all players have a new onset available, the function returns true. Otherwise, it returns false.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if new onsets are available for all players, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a8b2bcf0b289dc176953177145bb8480c" name="a8b2bcf0b289dc176953177145bb8480c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b2bcf0b289dc176953177145bb8480c">&#9670;&#160;</a></span>oscAcknowledge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::oscAcknowledge </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;</td>          <td class="paramname"><span class="paramname"><em>receivedAddress</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Send an OSC message to confirm that an OSC message was received. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">receivedAddress</td><td>the address of the OSC message received </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92d696efea2517eb7ddd85dc93f4393b" name="a92d696efea2517eb7ddd85dc93f4393b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d696efea2517eb7ddd85dc93f4393b">&#9670;&#160;</a></span>oscMessageReceived()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::oscMessageReceived </td>
+          <td>(</td>
+          <td class="paramtype">const juce::OSCMessage &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes received OSC messages. </p>
+<p>This function handles incoming OSC messages by interpreting the address pattern and parameters within the message. Depending on the OSC address, it performs various actions, such as loading configuration files, setting log filenames, loading MIDI files, sending player details, and more. It also handles simple commands without parameters, like reset, ensemble details, and ping. After processing, it acknowledges the OSC message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The OSC message that has been received, containing the address and parameters to be processed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac44339ce6dd581a8254db8dde091dd82" name="ac44339ce6dd581a8254db8dde091dd82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac44339ce6dd581a8254db8dde091dd82">&#9670;&#160;</a></span>oscSendEnsembleDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::oscSendEnsembleDetails </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends an OSC message with all ensemble model details to the connected OSC receiver. </p>
+<p>This function creates an OSC message with all the relevant ensemble model details and sends it to the connected OSC receiver. The ensemble model details are: current receive port, number of user players, path to the MIDI file, sample rate, samples per beat, score counter, initial tempo set, intro tone channel, number of intro tones, intro tone note (first), intro tone note (other), intro tone velocity, intro counter, and intro tones played. </p>
+
+</div>
+</div>
+<a id="a47c749e4e0b905fec8a88d0761d28176" name="a47c749e4e0b905fec8a88d0761d28176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c749e4e0b905fec8a88d0761d28176">&#9670;&#160;</a></span>parseXmlConfigFileToXmlElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; juce::XmlElement &gt; EnsembleModel::parseXmlConfigFileToXmlElement </td>
+          <td>(</td>
+          <td class="paramtype">juce::File</td>          <td class="paramname"><span class="paramname"><em>configFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts an XML configuration file into an XmlElement. </p>
+<p>This function takes a juce::File object representing the XML configuration file and parses it into an XmlElement. This XmlElement can then be used to update the ensemble model configuration or for other processing needs.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configFile</td><td>The juce::File object representing the XML configuration file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the parsed XmlElement. </dd></dl>
+
+</div>
+</div>
+<a id="a5d933454a98698460828b4bd75044bef" name="a5d933454a98698460828b4bd75044bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d933454a98698460828b4bd75044bef">&#9670;&#160;</a></span>playIntroTones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::playIntroTones </td>
+          <td>(</td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>midi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Plays intro tones at the start of the piece. </p>
+<p>This function plays a repeating pattern of two notes at the start of the piece. The pattern is played on a separate midi channel to the rest of the piece. The function is called by the processBlock function and is used to play the intro tones.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">midi</td><td>a reference to a juce::MidiBuffer object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sampleIndex</td><td>an integer representing the sample index to add the midi event at </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a633b717d9a77d6110c8055116f39ee24" name="a633b717d9a77d6110c8055116f39ee24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633b717d9a77d6110c8055116f39ee24">&#9670;&#160;</a></span>playScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::playScore </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>inMidi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>outMidi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes the current sample index for all players and updates score timing. </p>
+<p>This function iterates over all players and processes their samples at the given sample index. Once all players have played a note, it updates the timing intervals and clears the onset availability status. The function also increments the score counter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inMidi</td><td>The input MIDI buffer containing MIDI events. </td></tr>
+    <tr><td class="paramname">outMidi</td><td>The output MIDI buffer where processed MIDI events will be stored. </td></tr>
+    <tr><td class="paramname">sampleIndex</td><td>The current sample index being processed for each player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb85ab99330368c267f341258a74bd6f" name="adb85ab99330368c267f341258a74bd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb85ab99330368c267f341258a74bd6f">&#9670;&#160;</a></span>playUserIntro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::playUserIntro </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>inMidi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>outMidi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Plays the intro tone for all user-operated players. </p>
+<p>Given a sample index, this function iterates over all players and plays the intro tone for those which are user-operated. The intro tone is played on the note specified by the introToneNoteOther parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inMidi</td><td>The input MIDI buffer containing MIDI events. </td></tr>
+    <tr><td class="paramname">outMidi</td><td>The output MIDI buffer where processed MIDI events will be stored. </td></tr>
+    <tr><td class="paramname">sampleIndex</td><td>The current sample index being processed for each player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8dabdf9d19baeb953ffea24bfc90a2e3" name="a8dabdf9d19baeb953ffea24bfc90a2e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dabdf9d19baeb953ffea24bfc90a2e3">&#9670;&#160;</a></span>pollingLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::pollingLoop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs the polling loop to get new alpha values. </p>
+<p>This function runs until the continuePolling flag is false. It checks if the alphas are up to date, if not it calls getNewAlphas to get the new values. It then waits for 50ms before checking again. This loop is started in the startPollingLoop function and stopped in the stopPollingLoop function. </p>
+
+</div>
+</div>
+<a id="a0bf43a9c5c50c3853ba5e01ebef909dc" name="a0bf43a9c5c50c3853ba5e01ebef909dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bf43a9c5c50c3853ba5e01ebef909dc">&#9670;&#160;</a></span>prepareToPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::prepareToPlay </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>newSampleRate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prepare the ensemble model for playback. </p>
+<p>This function should be called before any calls to processMidiBlock.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newSampleRate</td><td>The sample rate at which the ensemble model should be prepared for playback. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af06ee8adbc8e34be8e3c81d69da78373" name="af06ee8adbc8e34be8e3c81d69da78373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af06ee8adbc8e34be8e3c81d69da78373">&#9670;&#160;</a></span>processMidiBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::processMidiBlock </td>
+          <td>(</td>
+          <td class="paramtype">const juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>inMidi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>outMidi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numSamples</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tempo</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes a block of MIDI events and outputs the result. </p>
+<p>This function processes the input MIDI buffer for the specified number of samples, updating the tempo and handling any reset flags. If intro tones are yet to be played, it will prioritise them before processing the main score. The function locks the player state to ensure thread safety during processing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inMidi</td><td>The input MIDI buffer containing MIDI events. </td></tr>
+    <tr><td class="paramname">outMidi</td><td>The output MIDI buffer where processed MIDI events will be stored. </td></tr>
+    <tr><td class="paramname">numSamples</td><td>The number of samples to process in the MIDI buffer. </td></tr>
+    <tr><td class="paramname">tempo</td><td>The current tempo, in beats per minute, to be set for processing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab19459d025312f1524ff7a2192c4ba2d" name="ab19459d025312f1524ff7a2192c4ba2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19459d025312f1524ff7a2192c4ba2d">&#9670;&#160;</a></span>releaseResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::releaseResources </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Release any resources allocated by the ensemble model. </p>
+<p>This function should be called when the ensemble model is no longer needed. It is currently a no-op, but may be used in the future to release resources allocated for the ensemble model. </p>
+
+</div>
+</div>
+<a id="a8c5e69d3481a64524323aa84d98e6027" name="a8c5e69d3481a64524323aa84d98e6027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c5e69d3481a64524323aa84d98e6027">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EnsembleModel::reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the ensemble model and its players. </p>
+<p>This function resets the ensemble model and its players, clearing any state that may have been set by processing MIDI events. The function will return false if the player state is not locked, indicating that the reset operation could not be completed.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the reset operation was successful, false if the player state is not locked. </dd></dl>
+
+</div>
+</div>
+<a id="a47fa226722c535fe8f1545ad542ec76a" name="a47fa226722c535fe8f1545ad542ec76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47fa226722c535fe8f1545ad542ec76a">&#9670;&#160;</a></span>resetPlayers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::resetPlayers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the players in the ensemble model. </p>
+<p>This function resets all players in the ensemble model, clearing any state that may have been set by processing MIDI events. The following actions are taken when resetting the players:</p><ul>
+<li>Intro countdown is reset</li>
+<li>Score counter is reset</li>
+<li><a class="el" href="class_player.html">Player</a> tempo is updated when playback starts</li>
+<li>Logging of onset times is started</li>
+<li>Polling for new alpha values is started</li>
+<li>Each player is reset</li>
+<li>The reset flag is cleared </li>
+</ul>
+
+</div>
+</div>
+<a id="a5da733fe74f486ab15c5c26a7d90be2e" name="a5da733fe74f486ab15c5c26a7d90be2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da733fe74f486ab15c5c26a7d90be2e">&#9670;&#160;</a></span>saveConfigToXmlFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::saveConfigToXmlFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves the current ensemble state to an XML file. </p>
+<p>This function saves the number of user players, and the alpha and beta parameters for all players to an XML file. The XML file is currently saved in the user's documents directory with the name "EnsembleModelConfig.xml".</p>
+<p>Note: This only works on Windows. On other platforms, the file is not saved. </p>
+
+</div>
+</div>
+<a id="a4a2e36b8ff17e56bbfcb26e76c0ea7eb" name="a4a2e36b8ff17e56bbfcb26e76c0ea7eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2e36b8ff17e56bbfcb26e76c0ea7eb">&#9670;&#160;</a></span>setAlphaBetaParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::setAlphaBetaParams </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>valueIn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the alpha and beta parameters for all players to a given value. </p>
+<p>This function sets the alpha and beta parameters for all players to a given value. This is a convenience function for setting all of the parameters at once.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valueIn</td><td>The value to set the alpha and beta parameters to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a91652dc39b17226ab242575700ea5a15" name="a91652dc39b17226ab242575700ea5a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91652dc39b17226ab242575700ea5a15">&#9670;&#160;</a></span>setInitialPlayerTempo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::setInitialPlayerTempo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the initial tempo of all players in the ensemble model. </p>
+<p>This function sets the initial tempo of all players in the ensemble model, specified in samples per beat. It is called by the setTempo function after checking that the tempo has actually changed. </p>
+
+</div>
+</div>
+<a id="afaad68729d6e76b099e3161bc4990d12" name="afaad68729d6e76b099e3161bc4990d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaad68729d6e76b099e3161bc4990d12">&#9670;&#160;</a></span>setTempo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::setTempo </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>bpm</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the tempo of the ensemble model. </p>
+<p>This function sets the tempo of the ensemble model, specified in beats per minute (bpm). It updates the number of samples per beat and resets the initial tempo of all players.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bpm</td><td>The tempo in beats per minute. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca0da6aff00966cb55da0bea171a9b1f" name="aca0da6aff00966cb55da0bea171a9b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0da6aff00966cb55da0bea171a9b1f">&#9670;&#160;</a></span>soundOffAllChannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::soundOffAllChannels </td>
+          <td>(</td>
+          <td class="paramtype">juce::MidiBuffer &amp;</td>          <td class="paramname"><span class="paramname"><em>midi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends MIDI messages to turn off all notes, sound, and controllers on all channels. </p>
+<p>This function iterates through all 16 MIDI channels and adds messages to the provided MIDI buffer to ensure that all notes, sound, and controllers are turned off. This is typically used to ensure that no lingering notes or sounds are present when resetting or stopping playback.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">midi</td><td>The MIDI buffer where the "all off" messages should be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a76ac9f8dc299dc90d42ef9c221a29bdc" name="a76ac9f8dc299dc90d42ef9c221a29bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ac9f8dc299dc90d42ef9c221a29bdc">&#9670;&#160;</a></span>startLoggerLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::startLoggerLoop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts the logging loop that continuously logs player onset details to a file. </p>
+<p>This function stops any existing logging loop, initializes the logging buffer and FIFO, sets a flag to continue logging, and spawns a new thread to run the logger loop. </p>
+
+</div>
+</div>
+<a id="ad77ce6178c36b1935e3f24960a242141" name="ad77ce6178c36b1935e3f24960a242141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77ce6178c36b1935e3f24960a242141">&#9670;&#160;</a></span>startPollingLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::startPollingLoop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts the polling loop which polls for new alpha values. </p>
+<p>This function stops any existing polling loop, initialises the polling buffers, sets the flag to continue polling, sets the flag to indicate that the alphas are up to date and starts the polling thread. </p>
+
+</div>
+</div>
+<a id="a89764d6c8778af9b9d3524ca6cb51c99" name="a89764d6c8778af9b9d3524ca6cb51c99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89764d6c8778af9b9d3524ca6cb51c99">&#9670;&#160;</a></span>stopLoggerLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::stopLoggerLoop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stops the logger loop and joins the logger thread. </p>
+<p>This function sets the continueLogging flag to false, which signals the logger loop to stop. If the loggerThread is joinable, it waits for the thread to finish execution by calling join. </p>
+
+</div>
+</div>
+<a id="a53702dbb1b0baf76f2faa4dcb6a360b6" name="a53702dbb1b0baf76f2faa4dcb6a360b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53702dbb1b0baf76f2faa4dcb6a360b6">&#9670;&#160;</a></span>stopPollingLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::stopPollingLoop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stops the polling loop for new alpha values. </p>
+<p>This function sets the flag to stop polling and waits for the polling thread to finish before returning. </p>
+
+</div>
+</div>
+<a id="a6a7807101d6f80b898f4fd551e73a6d3" name="a6a7807101d6f80b898f4fd551e73a6d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a7807101d6f80b898f4fd551e73a6d3">&#9670;&#160;</a></span>storeOnsetDetailsForPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::storeOnsetDetailsForPlayer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bufferIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>playerIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Store the onset details of a specific player into the logging buffer. </p>
+<p>This function retrieves the latest onset details of a specified player and stores them in the logging buffer at the given buffer index. It logs various parameters including onset time, interval, user input status, delay, motor noise, time keeper noise, asynchronies with other players, alpha and beta parameters, time keeper noise standard deviation, motor noise standard deviation, and volume.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bufferIndex</td><td>The index in the logging buffer where the onset details are to be stored. </td></tr>
+    <tr><td class="paramname">playerIndex</td><td>The index of the player whose onset details are being logged. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a531b4f266d892100351d4657e40649f0" name="a531b4f266d892100351d4657e40649f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a531b4f266d892100351d4657e40649f0">&#9670;&#160;</a></span>writeLogHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnsembleModel::writeLogHeader </td>
+          <td>(</td>
+          <td class="paramtype">juce::FileOutputStream &amp;</td>          <td class="paramname"><span class="paramname"><em>logStream</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write the header line of the log file. This function is only called from the logging thread.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logStream</td><td>The file stream to write to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Projects/ARME/AdaptiveMetronome/Source/<a class="el" href="_ensemble_model_8h_source.html">EnsembleModel.h</a></li>
 <li>D:/Projects/ARME/AdaptiveMetronome/Source/<b>EnsembleModel.cpp</b></li>

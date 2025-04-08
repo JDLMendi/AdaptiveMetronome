@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userplayer_0',['UserPlayer',['../class_user_player.html',1,'']]]
+  ['oschandler_0',['OSCHandler',['../class_o_s_c_handler.html',1,'']]]
 ];
