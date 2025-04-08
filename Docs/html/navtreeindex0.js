@@ -1,0 +1,24 @@
+var NAVTREEINDEX0 =
+{
+"_ensemble_model_8h_source.html":[1,0,0,0],
+"_o_s_c_handler_8h_source.html":[1,0,0,1],
+"_player_8h_source.html":[1,0,0,2],
+"_plugin_editor_8h_source.html":[1,0,0,3],
+"_plugin_processor_8h_source.html":[1,0,0,4],
+"_user_player_8h_source.html":[1,0,0,5],
+"annotated.html":[0,0],
+"class_adaptive_metronome_audio_processor.html":[0,0,0],
+"class_adaptive_metronome_audio_processor_1_1_parameter_index_getter.html":[0,0,0,0],
+"class_adaptive_metronome_audio_processor_editor.html":[0,0,1],
+"class_ensemble_model.html":[0,0,2],
+"class_o_s_c_handler.html":[0,0,3],
+"class_player.html":[0,0,4],
+"class_user_player.html":[0,0,5],
+"classes.html":[0,1],
+"dir_74389ed8173ad57b461b9d623a1f3867.html":[1,0,0],
+"files.html":[1,0],
+"hierarchy.html":[0,2],
+"index.html":[],
+"pages.html":[],
+"struct_player_1_1_note.html":[0,0,4,0]
+};

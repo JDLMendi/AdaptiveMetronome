@@ -1,0 +1,146 @@
+\doxysection{Ensemble\+Model Class Reference}
+\hypertarget{class_ensemble_model}{}\label{class_ensemble_model}\index{EnsembleModel@{EnsembleModel}}
+Inheritance diagram for Ensemble\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.031308cm]{class_ensemble_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a}\label{class_ensemble_model_a9d561a3e3f1b84781fcf504ba7d3860a} 
+{\bfseries Ensemble\+Model} (\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*}processor\+Ptr)
+\item 
+\Hypertarget{class_ensemble_model_aa9c846c94a467886c1d2a7c648c362a1}\label{class_ensemble_model_aa9c846c94a467886c1d2a7c648c362a1} 
+bool {\bfseries load\+Midi\+File} (const juce\+::\+File \&file, int user\+Players)
+\item 
+\Hypertarget{class_ensemble_model_a1e2e91caac2b24c18e3402c3cd61b9a5}\label{class_ensemble_model_a1e2e91caac2b24c18e3402c3cd61b9a5} 
+bool {\bfseries is\+Midi\+Loaded} ()
+\item 
+\Hypertarget{class_ensemble_model_a5439d1bc9f2e350ad8151cfd349ae930}\label{class_ensemble_model_a5439d1bc9f2e350ad8151cfd349ae930} 
+juce\+::\+String {\bfseries get\+Midi\+File\+Name} ()
+\item 
+\Hypertarget{class_ensemble_model_a480fbd3e7424882e759107e40d17309b}\label{class_ensemble_model_a480fbd3e7424882e759107e40d17309b} 
+juce\+::\+File {\bfseries get\+Midi\+File} ()
+\item 
+\Hypertarget{class_ensemble_model_a0bf43a9c5c50c3853ba5e01ebef909dc}\label{class_ensemble_model_a0bf43a9c5c50c3853ba5e01ebef909dc} 
+void {\bfseries prepare\+To\+Play} (double new\+Sample\+Rate)
+\item 
+\Hypertarget{class_ensemble_model_ab19459d025312f1524ff7a2192c4ba2d}\label{class_ensemble_model_ab19459d025312f1524ff7a2192c4ba2d} 
+void {\bfseries release\+Resources} ()
+\item 
+\Hypertarget{class_ensemble_model_af06ee8adbc8e34be8e3c81d69da78373}\label{class_ensemble_model_af06ee8adbc8e34be8e3c81d69da78373} 
+void {\bfseries process\+Midi\+Block} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int num\+Samples, double tempo)
+\item 
+\Hypertarget{class_ensemble_model_a8c5e69d3481a64524323aa84d98e6027}\label{class_ensemble_model_a8c5e69d3481a64524323aa84d98e6027} 
+bool {\bfseries reset} ()
+\item 
+\Hypertarget{class_ensemble_model_a47fa226722c535fe8f1545ad542ec76a}\label{class_ensemble_model_a47fa226722c535fe8f1545ad542ec76a} 
+void {\bfseries reset\+Players} ()
+\item 
+\Hypertarget{class_ensemble_model_ab582aa9121cf83c2218f0eed64e580a5}\label{class_ensemble_model_ab582aa9121cf83c2218f0eed64e580a5} 
+int {\bfseries get\+Num\+Players} ()
+\item 
+\Hypertarget{class_ensemble_model_a1b192d0906fd4456709b3067196de68f}\label{class_ensemble_model_a1b192d0906fd4456709b3067196de68f} 
+int {\bfseries get\+Num\+User\+Players} ()
+\item 
+\Hypertarget{class_ensemble_model_a399a635c8b17e8fa2cfd20f86bb509cd}\label{class_ensemble_model_a399a635c8b17e8fa2cfd20f86bb509cd} 
+bool {\bfseries is\+Player\+User\+Operated} (int player\+Index)
+\item 
+\Hypertarget{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb}\label{class_ensemble_model_a4a2e36b8ff17e56bbfcb26e76c0ea7eb} 
+void {\bfseries set\+Alpha\+Beta\+Params} (float value\+In)
+\item 
+\Hypertarget{class_ensemble_model_a8037d9b35af2415e8b0aa0ba94960d67}\label{class_ensemble_model_a8037d9b35af2415e8b0aa0ba94960d67} 
+juce\+::\+Audio\+Parameter\+Int \& {\bfseries get\+Player\+Channel\+Parameter} (int player\+Index)
+\item 
+\Hypertarget{class_ensemble_model_afd8161d7b9ab390157a731db55564e42}\label{class_ensemble_model_afd8161d7b9ab390157a731db55564e42} 
+juce\+::\+Audio\+Parameter\+Float \& {\bfseries get\+Player\+Delay\+Parameter} (int player\+Index)
+\item 
+\Hypertarget{class_ensemble_model_a36d1c40ac945ec76435e8b7934cb24f7}\label{class_ensemble_model_a36d1c40ac945ec76435e8b7934cb24f7} 
+juce\+::\+Audio\+Parameter\+Float \& {\bfseries get\+Player\+Motor\+Noise\+Parameter} (int player\+Index)
+\item 
+\Hypertarget{class_ensemble_model_a57aff2fc4b4c57f80021b284cef138a8}\label{class_ensemble_model_a57aff2fc4b4c57f80021b284cef138a8} 
+juce\+::\+Audio\+Parameter\+Float \& {\bfseries get\+Player\+Time\+Keeper\+Noise\+Parameter} (int player\+Index)
+\item 
+\Hypertarget{class_ensemble_model_ab29e3ff1fb709520386046e080338a84}\label{class_ensemble_model_ab29e3ff1fb709520386046e080338a84} 
+juce\+::\+Audio\+Parameter\+Float \& {\bfseries get\+Player\+Volume\+Parameter} (int player\+Index)
+\item 
+\Hypertarget{class_ensemble_model_a2c7876fe797d2a53e6f74f95dec2b470}\label{class_ensemble_model_a2c7876fe797d2a53e6f74f95dec2b470} 
+juce\+::\+Audio\+Parameter\+Float \& {\bfseries get\+Alpha\+Parameter} (int player1\+Index, int player2\+Index)
+\item 
+\Hypertarget{class_ensemble_model_a0c138a7eca02a9690e98d095d5b002ee}\label{class_ensemble_model_a0c138a7eca02a9690e98d095d5b002ee} 
+juce\+::\+Audio\+Parameter\+Float \& {\bfseries get\+Beta\+Parameter} (int player1\+Index, int player2\+Index)
+\item 
+\Hypertarget{class_ensemble_model_a1f9674d65fdd9b7ea279a3cf3af8787f}\label{class_ensemble_model_a1f9674d65fdd9b7ea279a3cf3af8787f} 
+void {\bfseries initialise\+OSC} ()
+\item 
+\Hypertarget{class_ensemble_model_a5600a255d4e106d196b777a687dadaaa}\label{class_ensemble_model_a5600a255d4e106d196b777a687dadaaa} 
+void {\bfseries connect\+OSCSender} (int port\+Number, juce\+::\+String IPAddress)
+\item 
+\Hypertarget{class_ensemble_model_a49d70f101c56ee7a23b6167d0beb4a5d}\label{class_ensemble_model_a49d70f101c56ee7a23b6167d0beb4a5d} 
+void {\bfseries connect\+OSCReceiver} (int port\+Number)
+\item 
+\Hypertarget{class_ensemble_model_a92d696efea2517eb7ddd85dc93f4393b}\label{class_ensemble_model_a92d696efea2517eb7ddd85dc93f4393b} 
+void {\bfseries osc\+Message\+Received} (const juce\+::\+OSCMessage \&message)
+\item 
+\Hypertarget{class_ensemble_model_a8b2bcf0b289dc176953177145bb8480c}\label{class_ensemble_model_a8b2bcf0b289dc176953177145bb8480c} 
+void {\bfseries osc\+Acknowledge} (const juce\+::\+String \&received\+Address)
+\item 
+\Hypertarget{class_ensemble_model_ac44339ce6dd581a8254db8dde091dd82}\label{class_ensemble_model_ac44339ce6dd581a8254db8dde091dd82} 
+void {\bfseries osc\+Send\+Ensemble\+Details} ()
+\item 
+\Hypertarget{class_ensemble_model_ad6f0f8594780ec4f7e9b6e955bc6465e}\label{class_ensemble_model_ad6f0f8594780ec4f7e9b6e955bc6465e} 
+bool {\bfseries is\+Osc\+Receiver\+Connected} ()
+\item 
+\Hypertarget{class_ensemble_model_a5da733fe74f486ab15c5c26a7d90be2e}\label{class_ensemble_model_a5da733fe74f486ab15c5c26a7d90be2e} 
+void {\bfseries save\+Config\+To\+Xml\+File} ()
+\item 
+\Hypertarget{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e}\label{class_ensemble_model_a2bae6d708716fe8d2c27e98d38fe6e5e} 
+void {\bfseries load\+Config\+From\+Xml} (juce\+::\+File config\+File)
+\item 
+\Hypertarget{class_ensemble_model_afde6a97f8d242fcca15c5af37e9b5e57}\label{class_ensemble_model_afde6a97f8d242fcca15c5af37e9b5e57} 
+void {\bfseries load\+Config\+From\+Xml} (std\+::unique\+\_\+ptr$<$ juce\+::\+Xml\+Element $>$ loaded\+Config)
+\item 
+\Hypertarget{class_ensemble_model_a47c749e4e0b905fec8a88d0761d28176}\label{class_ensemble_model_a47c749e4e0b905fec8a88d0761d28176} 
+std\+::unique\+\_\+ptr$<$ juce\+::\+Xml\+Element $>$ {\bfseries parse\+Xml\+Config\+File\+To\+Xml\+Element} (juce\+::\+File config\+File)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_aca0da6aff00966cb55da0bea171a9b1f}\label{class_ensemble_model_aca0da6aff00966cb55da0bea171a9b1f} 
+static void {\bfseries sound\+Off\+All\+Channels} (juce\+::\+Midi\+Buffer \&midi)
+\item 
+\Hypertarget{class_ensemble_model_abe34215378c78b5135edb42d950b0aa8}\label{class_ensemble_model_abe34215378c78b5135edb42d950b0aa8} 
+static bool {\bfseries check\+Midi\+Sequence\+Has\+Notes} (const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ensemble_model_a2cc693efd20bc92631421fa707378b18}\label{class_ensemble_model_a2cc693efd20bc92631421fa707378b18} 
+juce\+::\+OSCSender {\bfseries OSCSender}
+\item 
+\Hypertarget{class_ensemble_model_abd75458e6e32c47a0d766c7800d15602}\label{class_ensemble_model_abd75458e6e32c47a0d766c7800d15602} 
+juce\+::\+OSCReceiver {\bfseries OSCReceiver}
+\item 
+\Hypertarget{class_ensemble_model_aa05125f90a784d54a8ff53fad406e471}\label{class_ensemble_model_aa05125f90a784d54a8ff53fad406e471} 
+bool {\bfseries is\+OSCInitialised} = false
+\item 
+\Hypertarget{class_ensemble_model_aa394d06e7e24a023c8183f3129371cbf}\label{class_ensemble_model_aa394d06e7e24a023c8183f3129371cbf} 
+int {\bfseries current\+Receive\+Port} = -\/1
+\item 
+\Hypertarget{class_ensemble_model_a0e5e3e32bbaa2632668f11a6141b7a55}\label{class_ensemble_model_a0e5e3e32bbaa2632668f11a6141b7a55} 
+juce\+::\+String {\bfseries log\+Subfolder} = "{}"{}
+\item 
+\Hypertarget{class_ensemble_model_af4eabb1e67e4e0c343e08eeb016f2934}\label{class_ensemble_model_af4eabb1e67e4e0c343e08eeb016f2934} 
+juce\+::\+String {\bfseries log\+Filename\+Override} = "{}"{}
+\item 
+\Hypertarget{class_ensemble_model_a17e14567b78a694f722892d74d91591a}\label{class_ensemble_model_a17e14567b78a694f722892d74d91591a} 
+juce\+::\+String {\bfseries config\+Subfolder} = "{}"{}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Ensemble\+Model.\+h\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Ensemble\+Model.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\doxysection{OSCHandler.\+h}
+\hypertarget{_o_s_c_handler_8h_source}{}\label{_o_s_c_handler_8h_source}\index{D:/Projects/ARME/AdaptiveMetronome/Source/OSCHandler.h@{D:/Projects/ARME/AdaptiveMetronome/Source/OSCHandler.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <JuceHeader.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}OSCHandler.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}EnsembleModel.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }OSCHandler\ :}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{private}\ juce::OSCReceiver::ListenerWithOSCAddress\ <juce::OSCReceiver::MessageLoopCallback>}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//==============================================================================}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Constructor\ and\ Destructor}}
+\DoxyCodeLine{00017\ \ \ \ \ OSCHandler(\mbox{\hyperlink{class_ensemble_model}{EnsembleModel}}\ *ensemblePtr,\ \textcolor{keywordtype}{int}\ portNumber);}
+\DoxyCodeLine{00018\ \ \ \ \ \string~OSCHandler()\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ MessageRecieved(\textcolor{keyword}{const}\ juce::OSCMessage\&\ message);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ ConfirmedMessage(\textcolor{keyword}{const}\ juce::String\&\ receivedAddress);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ SendEnsembleDetails();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ isConnected();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_ensemble_model}{EnsembleModel}}*\ ensemble;}
+\DoxyCodeLine{00027\ \ \ \ \ juce::OSCSender\ sender;}
+\DoxyCodeLine{00028\ \ \ \ \ juce::OSCReceiver\ receiver;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOSCInitialised\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ currentPort\ =\ -\/1;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ ConnectSender();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ ConnectReceiver();}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+
+\end{DoxyCode}

@@ -1,0 +1,166 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_player_1_1_note}{Note}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a321dff0097d18da8e5277f5c9f15c104}\label{class_player_a321dff0097d18da8e5277f5c9f15c104} 
+{\bfseries Player} (int index, const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq, int midi\+Channel, const double \&sample\+Rate, const int \&score\+Counter, int initial\+Interval)
+\item 
+\Hypertarget{class_player_a598f8193fc86d0302329759c978e6475}\label{class_player_a598f8193fc86d0302329759c978e6475} 
+{\bfseries Player} (int index, const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq, int midi\+Channel, const double \&sample\+Rate, const int \&score\+Counter, int initial\+Interval, \mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*}processor\+Ptr)
+\item 
+\Hypertarget{class_player_a5b106b0cb418125c9c5573fc4fab485e}\label{class_player_a5b106b0cb418125c9c5573fc4fab485e} 
+virtual bool {\bfseries is\+User\+Operated} ()
+\item 
+\Hypertarget{class_player_a1af5d39f7bac2aeaa1e30c7dda2332fa}\label{class_player_a1af5d39f7bac2aeaa1e30c7dda2332fa} 
+void {\bfseries reset} ()
+\item 
+\Hypertarget{class_player_aa5f2f93d78d94eaba6c79951e55dc5bf}\label{class_player_aa5f2f93d78d94eaba6c79951e55dc5bf} 
+void {\bfseries set\+Onset\+Interval} (int interval)
+\item 
+\Hypertarget{class_player_a480dd629b3a39a31940d28dfe016ce11}\label{class_player_a480dd629b3a39a31940d28dfe016ce11} 
+int {\bfseries get\+Onset\+Interval} ()
+\item 
+\Hypertarget{class_player_a6d40bb8d0b541e0cb72edbb1d588b544}\label{class_player_a6d40bb8d0b541e0cb72edbb1d588b544} 
+int {\bfseries get\+Played\+Onset\+Interval} ()
+\item 
+\Hypertarget{class_player_a949829bd938a99a40a7b2619a20f3367}\label{class_player_a949829bd938a99a40a7b2619a20f3367} 
+virtual void {\bfseries recalculate\+Onset\+Interval} (int samples\+Per\+Beat, const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \&players)
+\item 
+\Hypertarget{class_player_a72b210913c78507dd26326e174c51d5f}\label{class_player_a72b210913c78507dd26326e174c51d5f} 
+double {\bfseries generate\+Motor\+Noise} ()
+\item 
+\Hypertarget{class_player_abf1679628859e9cb89f35be5d9f7dff8}\label{class_player_abf1679628859e9cb89f35be5d9f7dff8} 
+double {\bfseries generate\+Time\+Keeper\+Noise} ()
+\item 
+\Hypertarget{class_player_a095caa10ad0f3614fdc4a66fb6cdc86d}\label{class_player_a095caa10ad0f3614fdc4a66fb6cdc86d} 
+double {\bfseries generate\+HNoise} ()
+\item 
+\Hypertarget{class_player_a1688ba66afaa829a0d62616fc6e72809}\label{class_player_a1688ba66afaa829a0d62616fc6e72809} 
+double {\bfseries get\+Motor\+Noise} ()
+\item 
+\Hypertarget{class_player_ae8b12698565e5c55a288720c3a72e6d5}\label{class_player_ae8b12698565e5c55a288720c3a72e6d5} 
+double {\bfseries get\+Time\+Keeper\+Noise} ()
+\item 
+\Hypertarget{class_player_a9b4d437693b09401de8f8f71772ad78a}\label{class_player_a9b4d437693b09401de8f8f71772ad78a} 
+double {\bfseries get\+Motor\+Noise\+Std} ()
+\item 
+\Hypertarget{class_player_adac641f8d63afaf5d28c488b29c41e65}\label{class_player_adac641f8d63afaf5d28c488b29c41e65} 
+double {\bfseries get\+Time\+Keeper\+Noise\+Std} ()
+\item 
+\Hypertarget{class_player_ad62a5cb4f551d816594d1e2fe9466627}\label{class_player_ad62a5cb4f551d816594d1e2fe9466627} 
+int {\bfseries get\+Midi\+Channel} ()
+\item 
+\Hypertarget{class_player_a41fbca2bdfc6dcbfada4a7aa6564efc6}\label{class_player_a41fbca2bdfc6dcbfada4a7aa6564efc6} 
+bool {\bfseries has\+Note\+Played} ()
+\item 
+\Hypertarget{class_player_a323514bed6f8718d1cecc6cc7d2dcd7a}\label{class_player_a323514bed6f8718d1cecc6cc7d2dcd7a} 
+void {\bfseries reset\+Note\+Played} ()
+\item 
+\Hypertarget{class_player_aaaee465a3e7e21ca6bd396530ca4d2c1}\label{class_player_aaaee465a3e7e21ca6bd396530ca4d2c1} 
+int {\bfseries get\+Latest\+Onset\+Time} ()
+\item 
+\Hypertarget{class_player_ae2f0ccd2b5a31868e553b0f355c029a4}\label{class_player_ae2f0ccd2b5a31868e553b0f355c029a4} 
+int {\bfseries get\+Latest\+Onset\+Delay} ()
+\item 
+\Hypertarget{class_player_a748777cdf84d4da477f4b1d2a7260c39}\label{class_player_a748777cdf84d4da477f4b1d2a7260c39} 
+double {\bfseries get\+Latest\+Volume} ()
+\item 
+\Hypertarget{class_player_a69e290fdec2301fa7c02ede87d33542d}\label{class_player_a69e290fdec2301fa7c02ede87d33542d} 
+virtual bool {\bfseries was\+Latest\+Onset\+User\+Input} ()
+\item 
+\Hypertarget{class_player_a7d8fec08ac1216430d39afc32651beef}\label{class_player_a7d8fec08ac1216430d39afc32651beef} 
+void {\bfseries process\+Sample} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index)
+\item 
+\Hypertarget{class_player_afcd2135da7e4741c4ac2511c4c76bcb2}\label{class_player_afcd2135da7e4741c4ac2511c4c76bcb2} 
+virtual void {\bfseries process\+Intro\+Sample} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index, int intro\+Note)
+\item 
+\Hypertarget{class_player_abb71d73b012c99ff1505a5124a53be4d}\label{class_player_abb71d73b012c99ff1505a5124a53be4d} 
+std\+::size\+\_\+t {\bfseries get\+Num\+Notes} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a2cec5dcd26a35845867f5e9193cb05d4}\label{class_player_a2cec5dcd26a35845867f5e9193cb05d4} 
+\mbox{\hyperlink{class_adaptive_metronome_audio_processor}{Adaptive\+Metronome\+Audio\+Processor}} \texorpdfstring{$\ast$}{*} {\bfseries processor}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a7ed167e341e7c240c2fda9468379a6bb}\label{class_player_a7ed167e341e7c240c2fda9468379a6bb} 
+void {\bfseries initialise\+Score} (const juce\+::\+Midi\+Message\+Sequence \texorpdfstring{$\ast$}{*}seq)
+\item 
+\Hypertarget{class_player_a1e69f6d165a018e21e3963145ae294da}\label{class_player_a1e69f6d165a018e21e3963145ae294da} 
+void {\bfseries play\+Next\+Note} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index, int samples\+Delay=0)
+\item 
+\Hypertarget{class_player_a8c8d779155320954b13823131d6d3829}\label{class_player_a8c8d779155320954b13823131d6d3829} 
+void {\bfseries stop\+Previous\+Note} (juce\+::\+Midi\+Buffer \&midi, int sample\+Index)
+\item 
+\Hypertarget{class_player_a55206986a35affac8b2df1003dfaa3e8}\label{class_player_a55206986a35affac8b2df1003dfaa3e8} 
+virtual void {\bfseries process\+Note\+On} (const juce\+::\+Midi\+Buffer \&in\+Midi, juce\+::\+Midi\+Buffer \&out\+Midi, int sample\+Index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a56bc3219d722262d6810d4a91532e6f8}\label{class_player_a56bc3219d722262d6810d4a91532e6f8} 
+int {\bfseries player\+Index} = 0
+\item 
+\Hypertarget{class_player_aed27dc0e3704152cc3cf99e149fee01a}\label{class_player_aed27dc0e3704152cc3cf99e149fee01a} 
+std\+::vector$<$ \mbox{\hyperlink{struct_player_1_1_note}{Note}} $>$ {\bfseries notes}
+\item 
+\Hypertarget{class_player_a3693c8464de5ea7d93edf0e2b7c67785}\label{class_player_a3693c8464de5ea7d93edf0e2b7c67785} 
+std\+::size\+\_\+t {\bfseries current\+Note\+Index} = 0
+\item 
+\Hypertarget{class_player_ad6d71e62ce978ae7759db7483cae8de5}\label{class_player_ad6d71e62ce978ae7759db7483cae8de5} 
+double {\bfseries latest\+Volume} = 0.\+0
+\item 
+\Hypertarget{class_player_a6a272b7971f4a3bbdc9dd935040c9687}\label{class_player_a6a272b7971f4a3bbdc9dd935040c9687} 
+int {\bfseries midi\+Channel}
+\item 
+\Hypertarget{class_player_a742dba50a38eec2bf3d9bfc67e597d61}\label{class_player_a742dba50a38eec2bf3d9bfc67e597d61} 
+const double \& {\bfseries sample\+Rate}
+\item 
+\Hypertarget{class_player_a15be9209950cdadcd55f5f1267081f8d}\label{class_player_a15be9209950cdadcd55f5f1267081f8d} 
+const int \& {\bfseries score\+Counter}
+\item 
+\Hypertarget{class_player_a1327331d43c341d25867224e53dcfed7}\label{class_player_a1327331d43c341d25867224e53dcfed7} 
+int {\bfseries onset\+Interval} = 0
+\item 
+\Hypertarget{class_player_aa0c5e11f62c232c9b5d024e2237c5ada}\label{class_player_aa0c5e11f62c232c9b5d024e2237c5ada} 
+int {\bfseries samples\+Since\+Last\+Onset} = 0
+\item 
+\Hypertarget{class_player_abfe996c7a243d257b5841682092bbc2c}\label{class_player_abfe996c7a243d257b5841682092bbc2c} 
+int {\bfseries samples\+To\+Next\+Offset} = -\/1
+\item 
+\Hypertarget{class_player_adbf0d8c38fa8d87e4f380679c27f0d2f}\label{class_player_adbf0d8c38fa8d87e4f380679c27f0d2f} 
+int {\bfseries current\+Onset\+Time} = 0
+\item 
+\Hypertarget{class_player_a79ec3d876ae7ef0f62f47d3bac7fca8e}\label{class_player_a79ec3d876ae7ef0f62f47d3bac7fca8e} 
+int {\bfseries previous\+Onset\+Time} = 0
+\item 
+\Hypertarget{class_player_a0eb51e436573c0686cf24c7cf59ac336}\label{class_player_a0eb51e436573c0686cf24c7cf59ac336} 
+int {\bfseries latest\+Delay} = 0
+\item 
+\Hypertarget{class_player_aa09c6fe6d804c1e975a68277aa7a498d}\label{class_player_aa09c6fe6d804c1e975a68277aa7a498d} 
+bool {\bfseries note\+Played} = false
+\item 
+\Hypertarget{class_player_a9c5d77edc841bb72da499d94e3d18cf2}\label{class_player_a9c5d77edc841bb72da499d94e3d18cf2} 
+bool {\bfseries note\+Triggered\+By\+User} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Player.\+h\item 
+D\+:/\+Projects/\+ARME/\+Adaptive\+Metronome/\+Source/Player.\+cpp\end{DoxyCompactItemize}
